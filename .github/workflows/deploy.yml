@@ -1,0 +1,50 @@
+# .github/workflows/deploy.yml
+name: Deploy to GitHub Pages
+
+# Trigger the workflow on pushes to the main branch or pull requests
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+# Define the jobs to be run
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+        # Step 1: Check out the code from your repository
+      - name: Checkout
+        uses: actions/checkout@v3
+
+        # Step 2: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+        # Step 3: Install dependencies
+      - name: Install dependencies
+        run: |
+          npm ci
+          npm install -g @angular/cli
+          npm install -g @scullyio/init
+
+        # Step 4: Build the Angular app
+      - name: Build
+        run: |
+          npm run build
+          npm run scully
+
+        # Step 5: Deploy to GitHub Pages
+      - name: Deploy to GitHub pages
+        if: github.ref == 'refs/heads/main'  # Only deploy on main branch
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          branch: gh-pages
+          folder: dist/static
+          clean: true
