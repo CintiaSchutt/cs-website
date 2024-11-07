@@ -45,6 +45,6 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
           branch: gh-pages
-          folder: dist/cs-website
+          folder: dist/cs-website/browser
           clean: true
           token: ${{ secrets.GH_TOKEN }}
