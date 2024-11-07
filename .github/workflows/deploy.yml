@@ -47,3 +47,4 @@ jobs:
           branch: gh-pages
           folder: ./dist/cs-website
           clean: true
+          token: ${{ secrets.GH_TOKEN }}
