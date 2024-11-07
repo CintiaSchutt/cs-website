@@ -7,6 +7,10 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "scully": "scully",
+    "scully:serve": "scully serve",
+    "predeploy": "npm run build && npm run scully",
+    "deploy": "npm run predeploy",
     "serve:ssr:cs-website": "node dist/cs-website/server/server.mjs"
   },
   "private": true,
