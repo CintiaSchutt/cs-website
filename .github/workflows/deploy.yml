@@ -38,7 +38,7 @@ jobs:
       - name: Build
         run: |
           npm run build
-          npm run scully
+        #   npm run scully
 
         # Step 5: Deploy to GitHub Pages
       - name: Deploy to GitHub pages
