@@ -32,7 +32,7 @@ jobs:
         run: |
           npm ci
           npm install -g @angular/cli
-          npm install -g @scullyio/init
+        #   npm install -g @scullyio/init
 
         # Step 4: Build the Angular app
       - name: Build
