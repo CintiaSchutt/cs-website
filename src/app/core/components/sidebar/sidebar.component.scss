@@ -1,0 +1,33 @@
+.app-sidebar {
+    
+    &__sidenav {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        padding: 20px;
+        width: 240px;
+    }
+    
+    &__logo {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        height: 80px;
+        font-size: 24px;
+        font-weight: bold;
+        color: blueviolet;
+    }
+
+    &__nav {
+        flex: 1;
+        margin-top: 20px;
+    }
+
+    &__footer {
+        font-size: 12px;
+        margin-top: auto;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+}
