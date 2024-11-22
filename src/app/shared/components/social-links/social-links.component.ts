@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './social-links.component.html',
-  styleUrl: './social-links.component.scss'
+  styleUrl: './social-links.component.css'
 })
 export class SocialLinksComponent {
 

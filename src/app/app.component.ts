@@ -10,7 +10,7 @@ import { SidebarComponent } from './core/components/sidebar/sidebar.component';
     SidebarComponent
   ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'Cintia Schutt - Software Developer';

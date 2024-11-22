@@ -23,7 +23,7 @@ interface NavItem {
     MatListModule
   ],
   templateUrl: './sidebar.component.html',
-  styleUrl: './sidebar.component.scss'
+  styleUrl: './sidebar.component.css'
 })
 export class SidebarComponent {
 
