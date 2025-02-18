@@ -1,23 +1,32 @@
 <mat-sidenav-container>
-    <mat-sidenav #sidenav class="sidenav" mode="side" opened fixedInViewport>
+  <mat-sidenav #sidenav class="sidenav" mode="side" opened fixedInViewport>
     <div class="logo">
-        <span>CS</span>
+      <span>CS</span>
     </div>
-        <mat-nav-list class="nav">
-            <!-- <a mat-list-item
+    <mat-nav-list class="nav">
+      <!-- <a mat-list-item
                 *ngFor="let item of navItems"
                 [routerLink]="item.path">
                 <span matListItemTitle>{{ item.label }}</span>
             </a> -->
-            
-            @for (item of navItems; track item) {
-                <a mat-list-item [routerLink]="item.path">
-                    {{ item.label }}
-                </a>
-            }
-        </mat-nav-list>
-        <div class="footer">
-            <p>&copy; 2025 Cintia Schutt. All rights reserved.</p>
-        </div>
-    </mat-sidenav>
+
+      @for (item of navItems; track item) {
+      <a mat-list-item [routerLink]="item.path">
+        {{ item.label }}
+      </a>
+      }
+    </mat-nav-list>
+    <div class="social">
+      <a href="https://www.linkedin.com/in/cintia-schutt/" target="_blank">
+        <img src="/src/assets/icons/linkedin.jpg" alt="LinkedIn" />
+      </a>
+      <a href="https://github.com/CintiaSchutt" target="_blank">
+        <img src="/src/assets/icons/github.jpg" alt="GitHub" />
+      </a>
+    </div>
+
+    <div class="footer">
+      <p>&copy; 2025 Cintia Schutt. All rights reserved.</p>
+    </div>
+  </mat-sidenav>
 </mat-sidenav-container>
