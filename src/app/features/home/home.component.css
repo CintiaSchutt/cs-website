@@ -1,5 +1,5 @@
 .home-container {
-  font: var(--font-primary);
+  font: var(--ff-primary);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,7 +14,7 @@
 }
 
 .home-intro {
-  color: var(--eggplant);
+  color: var(--clr-eggplant);
 }
 
 .home-title {
@@ -25,6 +25,7 @@
 }
 
 .home-headline {
+  font-family: var(--ff-secundary);
   font-size: 3.5rem;
   margin: 20px 0;
 }
@@ -35,7 +36,7 @@
   white-space: nowrap;
   animation: typing 5s steps(60, end) 1s 1 normal both,
     blink 0.7s step-end infinite;
-  border-right: 4px solid var(--grape);
+  border-right: 4px solid var(--clr-grape);
   max-width: 100%;
   width: fit-content;
 }

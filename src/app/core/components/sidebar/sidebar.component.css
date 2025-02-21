@@ -1,82 +1,84 @@
 .sidenav-container {
-    display: flex;
-    min-height: 100vh;
+  display: flex;
+  min-height: 100vh;
+  color: var(--clr-white);
 }
 
 .sidenav {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    padding: 0 16px;
-    width: 240px;
-    justify-content: space-between;
-    border-radius: 0;
+  background-color: var(--clr-black);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0 16px;
+  width: 240px;
+  justify-content: space-between;
+  border-radius: 0;
 }
 
 .logo {
-    font: var(--font-secundary);
-    align-items: center;
-    display: flex;
-    justify-content: start;
-    padding-left: 16px;
-    height: 80px;
-    font-size: 24px;
-    font-weight: bold;
+  font-family: var(--ff-secundary);
+  padding: 2.5rem 1rem;
+  margin-bottom: 4rem;
+  height: 80px;
+  font-size: 2.75rem;
+  font-weight: bold;
 }
 
 .nav {
-    font: var(--font-primary);
-    margin-top: 20px;
-    flex-grow: 1;
+  font: var(--ff-primary);
+  font-size: 1.5rem;
+  margin-top: 20px;
+  height: 300px;
 }
 
 .nav a {
-    text-decoration: none;
-    color: var(--primary-color);
-    font-weight: normal;
-    position: relative;
-    transition: font-weight 0.3s ease;
+  text-decoration: none;
+  font-weight: normal;
+  position: relative;
+  height: 4rem;
 }
 
 /* Strikethrough effect */
 .nav a::after {
-    content: '';
-    position: absolute;
-    left: 10px;
-    right: 100px;
-    top: 65%;
-    bottom: 0;
-    height: 3px;
-    background: linear-gradient(45deg, var(--grape), var(--eggplant));
-    transform: scaleX(0);
-    transition: transform 0.3s ease-in-out;
+  content: "";
+  position: absolute;
+  left: 10px;
+  right: 100px;
+  top: 65%;
+  bottom: 0;
+  height: 3px;
+  background: linear-gradient(45deg, var(--clr-grape), var(--clr-eggplant));
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
 }
 
 /* Show strikethrough on hover */
 .nav a:hover::after {
-    transform: scaleX(1);
+  color: var(--clr-white);
+  transform: scaleX(1);
 }
 
 .social-icons {
-    margin-top: auto;
+  margin-top: auto;
 }
 
-.social-icons  a {
-    display: flex;
-    margin-bottom: 8px;
-    padding-left: 16px;
+.social-icons a {
+  display: flex;
+  margin-bottom: 8px;
+  padding-left: 16px;
 }
 
 .footer {
-    bottom: 0;
-    position: fixed;
-    width: 240px;
+  bottom: 0;
+  position: fixed;
+  width: 240px;
 }
 
 .footer p {
-    font: var(--font-primary);
-    font-size: 0.75rem;
-    padding: 8px 16px;
-    margin-top: 24px;
-    width: 100%;
+  font-family: var(--ff-primary);
+  color: var(--clr-white);
+  font-size: 0.75rem;
+  padding: 8px 16px;
+  margin-top: 24px;
+  width: 100%;
 }
