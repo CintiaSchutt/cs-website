@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { ButtonComponent } from '../../../shared/components/button/button.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
@@ -17,7 +16,6 @@ interface NavItem {
   imports: [
     RouterModule,
     CommonModule,
-    ButtonComponent,
     MatSidenavModule,
     MatIconModule,
     MatListModule
@@ -31,7 +29,6 @@ export class SidebarComponent {
     { path: '/', label: 'HOME' },
     { path: '/about', label: 'ABOUT' },
     { path: '/projects', label: 'PROJECTS' },
-    { path: '/blog', label: 'BLOG' },
     { path: '/contact', label: 'CONTACT' }
   ];
 
