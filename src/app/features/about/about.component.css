@@ -1,0 +1,13 @@
+.about-container {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+}
+
+.responsive-image {
+    max-width: 1000px;
+    width: 100%;
+    height: auto;
+    opacity: 0.5;
+    border-radius: 0.5rem;
+}

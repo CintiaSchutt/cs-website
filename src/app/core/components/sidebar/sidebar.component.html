@@ -1,8 +1,8 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #sidenav class="sidenav" mode="side" opened fixedInViewport>
-    <section class="logo">
+    <div class="logo">
       <span>CS</span>
-    </section>
+    </div>
     <mat-nav-list class="nav">
       @for (item of navItems; track item) {
       <a mat-list-item [routerLink]="item.path">
