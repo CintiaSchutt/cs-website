@@ -1,0 +1,82 @@
+.sidenav-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidenav {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0 16px;
+    width: 240px;
+    justify-content: space-between;
+    border-radius: 0;
+}
+
+.logo {
+    font: var(--font-secundary);
+    align-items: center;
+    display: flex;
+    justify-content: start;
+    padding-left: 16px;
+    height: 80px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav {
+    font: var(--font-primary);
+    margin-top: 20px;
+    flex-grow: 1;
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: normal;
+    position: relative;
+    transition: font-weight 0.3s ease;
+}
+
+/* Strikethrough effect */
+.nav a::after {
+    content: '';
+    position: absolute;
+    left: 10px;
+    right: 100px;
+    top: 65%;
+    bottom: 0;
+    height: 3px;
+    background: linear-gradient(45deg, var(--grape), var(--eggplant));
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Show strikethrough on hover */
+.nav a:hover::after {
+    transform: scaleX(1);
+}
+
+.social-icons {
+    margin-top: auto;
+}
+
+.social-icons  a {
+    display: flex;
+    margin-bottom: 8px;
+    padding-left: 16px;
+}
+
+.footer {
+    bottom: 0;
+    position: fixed;
+    width: 240px;
+}
+
+.footer p {
+    font: var(--font-primary);
+    font-size: 0.75rem;
+    padding: 8px 16px;
+    margin-top: 24px;
+    width: 100%;
+}

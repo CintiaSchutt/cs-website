@@ -26,13 +26,11 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "@angular/material/prebuilt-themes/magenta-violet.css",
+              "src/styles/styles.css"
             ],
             "scripts": [],
             "server": "src/main.server.ts",
@@ -96,7 +94,8 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "@angular/material/prebuilt-themes/magenta-violet.css",
+              "src/styles/styles.css"
             ],
             "scripts": []
           }

@@ -1,0 +1,74 @@
+.home-container {
+  font: var(--font-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  overflow: hidden;
+  background-image: url("/assets/images/home.jpg");
+  background-size: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.home-intro {
+  color: var(--eggplant);
+}
+
+.home-title {
+  font-size: 2rem;
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+.home-headline {
+  font-size: 3.5rem;
+  margin: 20px 0;
+}
+
+.typewriter {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 5s steps(60, end) 1s 1 normal both,
+    blink 0.7s step-end infinite;
+  border-right: 4px solid var(--grape);
+  max-width: 100%;
+  width: fit-content;
+}
+
+.home-subheadline {
+  font-size: 1.2rem;
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 4s;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
