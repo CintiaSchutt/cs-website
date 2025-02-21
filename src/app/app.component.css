@@ -1,15 +1,10 @@
 .app-container {
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--background-color);
+    display: grid;
+    grid-template-columns: 240px 1fr;
   }
   
 .main-content {
-    flex: 1;
     width: 100%;
     max-width: 1440px;
-    margin: 0 auto;
-    padding: var(--spacing-md);
-    box-sizing: border-box;
   }

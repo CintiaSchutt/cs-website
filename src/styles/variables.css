@@ -1,9 +1,16 @@
-:root {
+@import "./styles.css";
 
-    --primary-color: #ffffff;
-    --secondary-color: #000501;
-    --grape: #94618E;
-    --eggplant: #49274A;
-    --sand: #F4DECB;
-    --shell: #F8EEE7;
+:root {
+  /* Colors */
+  --primary-color: #ffffff;
+  --secondary-color: #000501;
+  --grape: #94618e;
+  --eggplant: #49274a;
+  --sand: #f4decb;
+  --shell: #f8eee7;
+
+  /* Font Families */
+  --font-primary: 'IBM Plex Sans', sans-serif;
+  --font-secundary: 'IBM Plex Serif', serif;
+  --font-mono: 'IBM Plex Mono', monospace;
 }
