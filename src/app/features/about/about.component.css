@@ -1,14 +1,17 @@
 .about-container {
   padding: 2rem;
-  max-width: 1200px;
-  width: 100%;
+  max-width: 960px;
   margin: 0 auto;
 }
 
 .about-header-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   gap: 2rem;
+  grid-template-columns: 1fr 1fr;
+
+  @media (width < 768px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .about-left {
@@ -23,6 +26,11 @@
 
 .about-title h1 {
   font-size: 2.5rem;
+}
+
+.about-photo-wrapper {
+  display: block;
+  max-width: 100%;
 }
 
 .about-intro {
@@ -47,14 +55,19 @@
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: space-between;
+
+  @media (width < 768px) {
+    flex-direction: column;
+  }
 }
 
 .about-contact-info-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-  border-radius: 4px;
+  line-height: 1.5;
+}
+
+.about-contact-info-item-icon {
+  margin-inline: 0.5rem;
+  padding-top: 0.2rem;
 }
 
 .about-expertise {
@@ -87,11 +100,14 @@
 
 .about-experience {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   color: var(--clr-white);
   margin-top: 2rem;
   background: linear-gradient(90deg, var(--clr-grape), var(--clr-sand));
   padding: 2rem;
+
+  @media (width < 600px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .about-experience-left {
@@ -144,14 +160,4 @@
 
 .about-job p {
   margin: 0.25rem 0;
-}
-
-@media (max-width: 768px) {
-  .about-header-wrapper {
-    grid-template-columns: 1fr;
-  }
-
-  .about-experience {
-    grid-template-columns: 1fr;
-  }
 }
