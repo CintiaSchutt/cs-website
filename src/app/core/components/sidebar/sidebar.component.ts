@@ -18,21 +18,18 @@ interface NavItem {
     CommonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
   ],
   templateUrl: './sidebar.component.html',
-  styleUrl: './sidebar.component.css'
+  styleUrl: './sidebar.component.css',
 })
 export class SidebarComponent {
-
   readonly navItems: NavItem[] = [
     { path: '/', label: 'HOME' },
     { path: '/about', label: 'ABOUT' },
     { path: '/projects', label: 'PROJECTS' },
-    { path: '/contact', label: 'CONTACT' }
+    { path: '/contact', label: 'CONTACT' },
   ];
 
   constructor(private router: Router) {}
-
- 
 }

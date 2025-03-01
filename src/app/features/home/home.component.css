@@ -1,5 +1,5 @@
 .home-container {
-  font: var(--font-primary);
+  font: var(--ff-primary);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,14 +7,17 @@
   text-align: center;
   overflow: hidden;
   background-image: url("/assets/images/home.jpg");
-  background-size: auto;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+
+  @media (width < 768px) {
+    max-width: 100%;
+  }
 }
 
 .home-intro {
-  color: var(--eggplant);
+  color: var(--clr-eggplant);
 }
 
 .home-title {
@@ -22,11 +25,20 @@
   opacity: 0;
   animation: fadeIn 1s ease-out forwards;
   animation-delay: 0.5s;
+
+  @media (width < 768px) {
+    font-size: 1.5rem;
+  }
 }
 
 .home-headline {
+  font-family: var(--ff-secundary);
   font-size: 3.5rem;
   margin: 20px 0;
+
+  @media (width < 768px) {
+    font-size: 2.5rem;
+  }
 }
 
 .typewriter {
@@ -35,16 +47,21 @@
   white-space: nowrap;
   animation: typing 5s steps(60, end) 1s 1 normal both,
     blink 0.7s step-end infinite;
-  border-right: 4px solid var(--grape);
+  border-right: 4px solid var(--clr-grape);
   max-width: 100%;
   width: fit-content;
+
+  @media (width < 768px) {
+    text-wrap: wrap;
+    animation: none;
+  }
 }
 
 .home-subheadline {
   font-size: 1.2rem;
   opacity: 0;
   animation: fadeIn 1s ease-out forwards;
-  animation-delay: 4s;
+  animation-delay: 3s;
 }
 
 @keyframes typing {
