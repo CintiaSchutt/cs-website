@@ -1,17 +1,14 @@
 .about-container {
-  padding: 2rem;
-  max-width: 960px;
+  padding: 1rem;
   margin: 0 auto;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
 }
 
 .about-header-wrapper {
   display: grid;
   gap: 2rem;
   grid-template-columns: 1fr 1fr;
-
-  @media (width < 768px) {
-    grid-template-columns: 1fr;
-  }
 }
 
 .about-left {
@@ -29,17 +26,17 @@
 }
 
 .about-photo-wrapper {
-  display: block;
   max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
 }
 
 .about-intro {
   text-align: center;
-  max-width: 500px;
 }
 
 .about-intro h1 {
-  color: var(--clr-grape);
   font-size: 3rem;
 }
 
@@ -51,14 +48,17 @@
 }
 
 .about-contact-info {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
 
-  @media (width < 768px) {
-    flex-direction: column;
-  }
+.about-contact-info-item:nth-child(odd) {
+  justify-self: start;
+}
+
+.about-contact-info-item:nth-child(even) {
+  justify-self: end;
 }
 
 .about-contact-info-item {
@@ -81,7 +81,6 @@
 
 .about-expertise-content h3 {
   font-size: 2.5rem;
-  color: var(--clr-grape);
 }
 
 .about-expertise-content p {
@@ -92,29 +91,21 @@
 .about-quote {
   margin: 1rem 0;
   padding: 1rem;
-  background: var(--clr-black);
-  color: var(--clr-white);
-  max-width: 600px;
+  background: var(--clr-cursed-black);
   border-radius: 8px;
 }
 
 .about-experience {
   display: grid;
-  color: var(--clr-white);
+  grid-template-columns: 1fr 1fr;
   margin-top: 2rem;
-  background: linear-gradient(90deg, var(--clr-grape), var(--clr-sand));
-  padding: 2rem;
-
-  @media (width < 600px) {
-    grid-template-columns: 1fr;
-  }
 }
 
 .about-experience-left {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  margin-top: 1rem;
+  padding-top: 1rem;
 }
 
 .about-experience-left h2 {
@@ -160,4 +151,22 @@
 
 .about-job p {
   margin: 0.25rem 0;
+}
+
+@media (width < 768px) {
+  .about-container,
+  .about-header-wrapper,
+  .about-contact-info {
+    grid-template-columns: 1fr;
+  }
+
+  .about-experience {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .about-contact-info-item:nth-child(even) {
+    justify-self: start;
+  }
 }

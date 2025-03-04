@@ -3,21 +3,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   text-align: center;
   overflow: hidden;
-  background-image: url("/assets/images/home.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  @media (width < 768px) {
-    max-width: 100%;
-  }
 }
 
 .home-intro {
-  color: var(--clr-eggplant);
+  color: var(--clr-white);
 }
 
 .home-title {
@@ -28,17 +20,15 @@
 
   @media (width < 768px) {
     font-size: 1.5rem;
+    margin-bottom: 2.5rem;
   }
 }
 
 .home-headline {
-  font-family: var(--ff-secundary);
-  font-size: 3.5rem;
+  font-family: var(--ff-mono);
+  font-size: 2.5rem;
+  line-height: 1.5;
   margin: 20px 0;
-
-  @media (width < 768px) {
-    font-size: 2.5rem;
-  }
 }
 
 .typewriter {
@@ -47,13 +37,13 @@
   white-space: nowrap;
   animation: typing 5s steps(60, end) 1s 1 normal both,
     blink 0.7s step-end infinite;
-  border-right: 4px solid var(--clr-grape);
+  border-right: 4px solid var(--clr-white);
   max-width: 100%;
-  width: fit-content;
 
   @media (width < 768px) {
     text-wrap: wrap;
     animation: none;
+    border-right: none;
   }
 }
 
