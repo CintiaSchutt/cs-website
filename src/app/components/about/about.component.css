@@ -1,0 +1,47 @@
+.about-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.about-title {
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 0.5rem;
+}
+
+.about-content {
+  display: grid;
+  gap: 3rem;
+  color: var(--clr-extra-light-grey);
+  max-width: 900px;
+}
+
+.about-text {
+  min-width: 300px;
+  line-height: 2.5;
+}
+
+.about-resume {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1rem;
+  background-color: var(--clr-eclipse);
+  width: 250px;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+.about-resume:hover {
+  color: var(--clr-white);
+  background-color: var(--clr-grey);
+}
+
+@media (max-width: 35em) {
+    .about-content {
+        margin: 1rem;
+    }
+}
