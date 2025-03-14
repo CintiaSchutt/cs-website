@@ -63,29 +63,3 @@
   transform: scaleX(1);
 }
 
-.social-icons {
-  margin-top: auto;
-}
-
-.social-icons a {
-  display: flex;
-  margin-bottom: 8px;
-  padding-left: 16px;
-}
-
-.footer {
-  bottom: 0;
-  position: fixed;
-}
-
-.footer p {
-  font-family: var(--ff-primary);
-  font-size: 0.75rem;
-  margin-top: 24px;
-  margin-bottom: 8px;
-  text-wrap: wrap;
-
-  @media (width < 768px) {
-    font-size: 0.6rem;
-  }
-}
