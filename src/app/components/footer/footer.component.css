@@ -1,0 +1,40 @@
+.footer {
+  position: fixed;
+  height: 4rem;
+  bottom: 0;
+  width: 100%;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(---clr-dark-grey);
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.social-icons {
+  display: flex;
+  margin: 2rem;
+  gap: 1rem;
+}
+
+.footer-text {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 35em) {
+  .footer-content {
+    gap: 0;
+  }
+
+  .social-icons {
+    margin: 1rem;
+  }
+
+  
+}

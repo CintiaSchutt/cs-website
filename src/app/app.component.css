@@ -1,16 +1,4 @@
 .app-container {
-  background: radial-gradient(circle, #4a4a4a, #3c3c3c, #1e1e1e);
-  display: grid;
-  grid-template-columns: 180px 1fr;
-
-  @media (width < 768px) {
-    background: radial-gradient(
-      ellipse at center,
-      #4a4a4a 30%,
-      #3c3c3c 60%,
-      #1e1e1e 100%
-    );
-    grid-template-columns: 120px 1fr;
-    min-height: 100vh;
-  }
+  background: var(--clr-black);
+  min-height: 100vh;
 }
