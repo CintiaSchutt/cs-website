@@ -1,23 +1,25 @@
 <div class="header">
   <div>
-    <img
-      class="logo"
-      src="assets/images/logo-cs.png"
-      alt="Cintia Schutt logo"
-    />
+    <a href="/">
+      <img
+        class="logo"
+        src="assets/images/logo-cs.png"
+        alt="Cintia Schutt logo"
+      />
+    </a>
   </div>
   <button
     (click)="toggleMenu()"
     class="mobile-nav-toggle"
     aria-controls="nav-wrapper"
     [attr.aria-expanded]="isMenuOpen"
-    [ngClass]="{ 'menu-open' : isMenuOpen }"
+    [ngClass]="{ 'menu-open': isMenuOpen }"
   >
     <span class="sr-only">Menu</span>
   </button>
   <nav>
     <ul id="nav-wrapper" class="nav-wrapper" [class.open]="isMenuOpen">
-      <li><a href="/home">Home</a></li>
+      <li><a href="/">Home</a></li>
       <li><a href="/about">About</a></li>
       <li><a href="/projects">Projects</a></li>
       <li><a href="/contact">Contact</a></li>
