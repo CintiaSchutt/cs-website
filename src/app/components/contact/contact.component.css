@@ -1,0 +1,30 @@
+.contact-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  margin: 3rem;
+}
+
+.contact-title {
+    text-align: center;
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 0.5rem;
+  }
+
+.contact-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-item {
+  display: flex;
+  gap: 1.5rem;
+  margin: 2rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.contact-item:hover {
+  color: var(--clr-grey);
+}

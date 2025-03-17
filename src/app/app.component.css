@@ -1,4 +1,6 @@
 .app-container {
   background: var(--clr-black);
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
