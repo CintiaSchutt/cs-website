@@ -1,0 +1,15 @@
+<div class="projects-wrapper">
+  <h1 class="projects-title">PROJECTS</h1>
+  <div class="projects-items">
+    @for (project of projects; track project) {
+    <div class="projects-card">
+      <div class="projects-card-header">
+        <img [src]="project.image" class="projects-image" alt="project.title" />
+        <h2 class="projects-card-title">{{ project.title }}</h2>
+      </div>
+      <p class="projects-card-description">{{ project.description }}</p>
+    </div>
+    }
+  </div>
+
+</div>

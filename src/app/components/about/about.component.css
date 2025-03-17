@@ -5,6 +5,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 3rem;
+  margin: 3rem;
 }
 
 .about-title {
@@ -17,12 +18,12 @@
   display: grid;
   gap: 3rem;
   color: var(--clr-extra-light-grey);
-  max-width: 900px;
+  max-width: 960px;
 }
 
 .about-text {
   min-width: 300px;
-  line-height: 2.5;
+  line-height: 2.2;
 }
 
 .about-resume {
@@ -40,8 +41,64 @@
   background-color: var(--clr-grey);
 }
 
+.about-expertise-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+  max-width: 960px;
+  background-color: var(--clr-eclipse);
+  border: 1px solid var(--clr-white);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.about-card {
+  flex: 1;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-expertise-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.about-icon {
+  height: 3rem;
+  width: 3rem;
+  margin-right: 0.75rem;
+  align-items: flex-start;
+}
+
+.about-card-title {
+  font-size: clamp(1.25rem, 5vw, 2rem);
+  font-weight: bold;
+}
+
+.about-divider {
+  width: 2px;
+  background-color: var(--clr-white);
+  height: auto;
+}
+
+.highlight {
+  border-bottom: 3px solid var(--clr-grape);
+}
+
 @media (max-width: 35em) {
-    .about-content {
-        margin: 1rem;
-    }
+  .about-content {
+    margin: 1rem;
+  }
+
+  .about-expertise-wrapper {
+    flex-direction: column;
+  }
+
+  .about-divider {
+    width: 100%;
+    height: 2px;
+  }
 }
