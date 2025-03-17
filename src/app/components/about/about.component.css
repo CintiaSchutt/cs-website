@@ -89,6 +89,10 @@
 }
 
 @media (max-width: 35em) {
+  .about-wrapper {
+    margin: 1rem;
+  }
+  
   .about-content {
     margin: 1rem;
   }
