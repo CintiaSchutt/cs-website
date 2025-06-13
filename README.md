@@ -3,7 +3,7 @@
 Welcome to the source code for my personal website – [cintiaschutt.com](https://cintiaschutt.com)!  
 This site was built to showcase my background as a Front-End Developer, highlight my technical skills, and serve as a home for future personal projects and case studies.
 
-## 🚀 Tech Stack
+## Tech Stack
 
 - **Framework:** Angular 18
 - **Styling:** Angular Material, SCSS
@@ -11,7 +11,7 @@ This site was built to showcase my background as a Front-End Developer, highligh
 - **Build Tools:** Angular CLI
 - **CI/CD:** GitHub Actions
 
-## 🎯 Purpose
+## Purpose
 
 The goal of this website is to:
 - Provide a professional overview of my experience and background
