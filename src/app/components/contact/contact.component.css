@@ -1,17 +1,18 @@
 .contact-wrapper {
   display: flex;
+  flex: 1;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   gap: 3rem;
-  margin: 3rem;
+  padding: 3rem;
 }
 
 .contact-title {
-    text-align: center;
-    font-size: clamp(2rem, 5vw, 3rem);
-    margin-bottom: 0.5rem;
-  }
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 0.5rem;
+}
 
 .contact-content {
   display: flex;
