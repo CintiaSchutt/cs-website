@@ -1,10 +1,11 @@
 .projects-wrapper {
   display: flex;
+  flex: 1;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   gap: 3rem;
-  margin: 3rem;
+  padding: 3rem;
 }
 
 .projects-title {
@@ -24,7 +25,7 @@
   border: 1px solid var(--clr-white);
   padding: 1.5rem;
   border-radius: 10px;
-  background-color: var(---clr-dark-grey);
+  background-color: var(--clr-dark-grey);
   transition: transform 0.3s ease-in-out;
 }
 
@@ -33,16 +34,16 @@
 }
 
 .projects-card-header {
-    align-items: center;
-    margin-bottom: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
 .projects-image {
-    padding: 1rem;
+  padding: 1rem;
 }
 
 @media (max-width: 35em) {
-    .projects-items {
-        grid-template-columns: 1fr;
-    }
+  .projects-items {
+    grid-template-columns: 1fr;
+  }
 }
