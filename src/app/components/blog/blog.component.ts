@@ -1,27 +1,26 @@
-import { Component, OnInit } from '@angular/core';
-import { ScullyRoutesService, ScullyRoute } from '@scullyio/ng-lib';
-import { Observable } from 'rxjs';
+import { Component, inject, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
-    selector: 'app-blog',
-    imports: [
-      
-    ],
-    templateUrl: './blog.component.html',
-    styleUrl: './blog.component.scss'
+  selector: 'app-blog',
+  standalone: true,
+  imports: [CommonModule, RouterModule],
+  templateUrl: './blog.component.html',
+  styleUrl: './blog.component.css',
 })
 export class BlogComponent implements OnInit {
-  blogPosts$: Observable<ScullyRoute[]>; // Observable of prerendered routes
-
-  constructor(private scully: ScullyRoutesService) {}
+  posts: any[] = [];
+  http = inject(HttpClient);
 
   ngOnInit(): void {
-    // Filter all blog routes
-    this.blogPosts$ = this.scully.available$.pipe(
-      // Only include blog posts
-      map((routes: ScullyRoute[]) =>
-        routes.filter((r) => r.route.startsWith('/blog/'))
-      )
-    );
+    this.load();
+  }
+
+  load() {
+    this.http.get('/assets/blog/posts.json').subscribe((data) => {
+      this.posts = data as any;
+    });
   }
 }
