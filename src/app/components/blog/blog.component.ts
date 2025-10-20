@@ -3,11 +3,10 @@ import { ScullyRoutesService, ScullyRoute } from '@scullyio/ng-lib';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-blog',
-  standalone: true,
-  imports: [],
-  templateUrl: './blog.component.html',
-  styleUrl: './blog.component.scss'
+    selector: 'app-blog',
+    imports: [],
+    templateUrl: './blog.component.html',
+    styleUrl: './blog.component.scss'
 })
 export class BlogComponent implements OnInit {
   blogPosts$: Observable<ScullyRoute[]>; // Observable of prerendered routes
