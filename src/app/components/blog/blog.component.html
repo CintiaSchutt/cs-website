@@ -1,0 +1,6 @@
+<h1>My Blog</h1>
+<ul>
+  <li *ngFor="let post of blogPosts$ | async">
+    <a [routerLink]="post.route">{{ post.title || post.route }}</a>
+  </li>
+</ul>

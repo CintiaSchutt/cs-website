@@ -1,0 +1,11 @@
+identifier: m1g9y5les67dd749
+appPort: 1864
+staticPort: 1668
+reloadPort: 2667
+hostName: localhost
+projectName: cs-website
+homeFolder: /Users/cintiaschutt/Code/cs-website
+distFolder: ./dist/cs-website/browser
+outDir: /Users/cintiaschutt/Code/cs-website/dist/static
+handle404: ''
+allowErrorCollect: true
