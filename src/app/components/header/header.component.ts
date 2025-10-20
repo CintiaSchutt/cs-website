@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [NgClass],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrl: './header.component.css',
 })
 export class HeaderComponent {
   isMenuOpen = false;
@@ -20,5 +20,4 @@ export class HeaderComponent {
       button.setAttribute('aria-expanded', String(this.isMenuOpen));
     }
   }
-
 }

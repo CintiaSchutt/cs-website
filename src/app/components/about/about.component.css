@@ -26,6 +26,10 @@
   line-height: 2.2;
 }
 
+.about-text-title {
+  padding: 1rem 0;
+}
+
 .about-resume {
   display: flex;
   gap: 1.5rem;
