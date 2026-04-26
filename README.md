@@ -5,7 +5,7 @@ This site was built to showcase my background as a Front-End Developer, highligh
 
 ## Tech Stack
 
-- **Framework:** Angular 18
+- **Framework:** Angular 21
 - **Styling:** Angular Material, CSS
 - **Hosting:** GitHub Pages
 - **Build Tools:** Angular CLI
