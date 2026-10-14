@@ -1,3 +1,4 @@
+import { ButtonLink } from '../components/ButtonLink';
 import { ExperienceEntry } from '../components/ExperienceEntry';
 import { LearningItem } from '../components/LearningItem';
 import { PageHeader } from '../components/PageHeader';
@@ -6,6 +7,7 @@ import { StrengthList } from '../components/StrengthList';
 import { roles } from '../content/experience';
 import { learning } from '../content/learning';
 import { visible } from '../content/placeholders';
+import { site } from '../content/site';
 import { strengths } from '../content/strengths';
 
 export function Experience() {
@@ -15,7 +17,7 @@ export function Experience() {
     <div className="container page">
       <PageHeader
         title="Healthcare software, banking and sales."
-        lede="Three roles, newest first, my education, and the strengths that carry over into security work, each linked to where it is backed up."
+        lede="The short version. The full detail is on my résumé."
       />
 
       <Section id="history" title="Work history">
@@ -24,6 +26,11 @@ export function Experience() {
             <ExperienceEntry key={role.id} role={role} />
           ))}
         </div>
+        <p>
+          <ButtonLink href={site.resume.href} variant="secondary">
+            Open résumé (PDF)
+          </ButtonLink>
+        </p>
       </Section>
 
       {education.length > 0 ? (
@@ -37,9 +44,6 @@ export function Experience() {
       ) : null}
 
       <Section id="strengths" title="What carries over">
-        <p className="section__intro">
-          These are connections I can support with the work above, not a wish list.
-        </p>
         <StrengthList items={strengths} />
       </Section>
     </div>

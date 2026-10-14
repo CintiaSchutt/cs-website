@@ -28,8 +28,8 @@ Everything you will edit lives in `src/content/`:
 
 | To change | Edit |
 | --- | --- |
-| Add a project or lab write-up | `projects.ts` (copy an entry, put it at the top) |
-| Add a course, certification or topic | `learning.ts` (`status`: `completed`, `in-progress` or `planned`). Shows under "Studying" on Projects; entries of kind `Education` show on Experience |
+| Add a project, lab or what you are studying | `projects.ts` (copy an entry, put it at the top) |
+| Add your education | `learning.ts` (entries of kind `Education` show on Experience) |
 | Work history | `experience.ts` |
 | Strengths and the evidence behind each | `strengths.ts` |
 | Email, links, location, résumé, memberships (WiCyS) and their logos | `site.ts` |

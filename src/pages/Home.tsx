@@ -1,13 +1,6 @@
 import { ButtonLink } from '../components/ButtonLink';
-import { MembershipLink } from '../components/MembershipLink';
-import { learning } from '../content/learning';
-import { visible } from '../content/placeholders';
-import { memberships } from '../content/site';
-import { Link } from '../router';
 
 export function Home() {
-  const studying = visible(learning).filter((entry) => entry.status === 'in-progress');
-
   return (
     <div className="container page">
       <section className="hero" aria-labelledby="hero-title">
@@ -18,9 +11,9 @@ export function Home() {
             <em>Now I’m learning to secure it.</em>
           </h1>
           <p className="lede">
-            I work on Angular applications for healthcare, including sign-in with OAuth, Okta and
-            Azure AD B2C. Now I’m focusing on identity and access management: who gets in, and what
-            they can do once they’re inside.
+            I’m a software developer in healthcare, with hands-on OAuth 2.0 and OpenID Connect
+            experience. I’m now focusing on identity and access management, and I’m open to IAM
+            roles.
           </p>
           <p className="hero__actions">
             <ButtonLink to="/projects">See my work</ButtonLink>
@@ -28,28 +21,6 @@ export function Home() {
               Get in touch
             </ButtonLink>
           </p>
-          <ul className="hero__facts">
-            <li>
-              <span className="hero__dot" aria-hidden="true" />
-              Open to identity and access management roles
-            </li>
-            {studying.length > 0 ? (
-              <li>
-                Currently studying:{' '}
-                {studying.map((entry, index) => (
-                  <span key={entry.id}>
-                    {index > 0 ? ', ' : ''}
-                    <Link to={`/projects#${entry.id}`}>{entry.title}</Link>
-                  </span>
-                ))}
-              </li>
-            ) : null}
-            {memberships.map((membership) => (
-              <li key={membership.id}>
-                <MembershipLink membership={membership} />
-              </li>
-            ))}
-          </ul>
         </div>
 
         <div className="hero__art" aria-hidden="true">

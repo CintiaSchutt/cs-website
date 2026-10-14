@@ -429,8 +429,11 @@
 
   .membership__logo {
     display: block;
-    height: 1.75rem;
+    height: 6rem;
     width: auto;
+    padding: 0.4rem;
+    border-radius: var(--radius);
+    background: #fff; /* the badge is transparent inside the shield; keeps its text readable in dark theme */
   }
 
   /* ---- Placeholder reminders (development only) ---- */

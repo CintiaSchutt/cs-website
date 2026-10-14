@@ -6,7 +6,7 @@ export function MembershipLink({ membership }: { membership: Membership }) {
   return (
     <span className="membership">
       {membership.logo ? (
-        <img className="membership__logo" src={membership.logo} alt="" height="28" />
+        <img className="membership__logo" src={membership.logo} alt="WiCyS member badge" width="96" height="96" />
       ) : null}
       <span>
         Member of <ExternalLink href={membership.href}>{membership.name}</ExternalLink>

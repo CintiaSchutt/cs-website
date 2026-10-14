@@ -20,11 +20,13 @@ export function ExperienceEntry({ role }: { role: Role }) {
           <span className="entry__org">{role.organization}</span>
         </h3>
         {role.context ? <p className="entry__context">{role.context}</p> : null}
-        <ul className="bullets">
-          {role.highlights.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
+        {role.highlights.length > 0 ? (
+          <ul className="bullets">
+            {role.highlights.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        ) : null}
         {role.tools ? (
           <ul className="chip-list" aria-label={`Tools and technologies at ${role.organization}`}>
             {role.tools.map((tool) => (

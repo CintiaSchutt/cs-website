@@ -29,7 +29,7 @@ export const site = {
 
 /**
  * Communities you belong to. To show a logo, put the file in public/ (for example
- * public/wicys-logo.svg), set `logo: '/wicys-logo.svg'`, and check the organization's
+ * public/wicys-badge.webp), set `logo: '/wicys-badge.webp'`, and check the organization's
  * logo-usage guidelines first.
  */
 export const memberships: Membership[] = [
@@ -37,6 +37,6 @@ export const memberships: Membership[] = [
     id: 'wicys',
     name: 'Women in CyberSecurity (WiCyS)',
     href: 'https://www.wicys.org',
-    logo: undefined,
+    logo: '/wicys-badge.webp',
   },
 ];

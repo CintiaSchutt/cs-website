@@ -16,13 +16,12 @@ const timeline: TimelineItem[] = [
   {
     when: '2010 – 2011',
     title: 'Inside Sales Representative, Dell Computers',
-    detail: 'Client-facing sales in Brazil. Strengthened my ability to understand client pain points.',
+    detail: 'Client-facing sales in Brazil.',
   },
   {
     when: '2012 – 2016',
     title: 'Customer Service Representative, Banco do Brasil',
-    detail:
-      'Guided clients through accounts and products, and evaluated loan and credit conditions through internal systems.',
+    detail: 'Client-facing work in a regulated financial institution.',
   },
   {
     when: '2017 – 2019',
@@ -32,12 +31,12 @@ const timeline: TimelineItem[] = [
   {
     when: '2019 – present',
     title: 'Software Developer, QHR Technologies',
-    detail: 'Angular applications for healthcare, with authentication through Okta and Azure AD B2C.',
+    detail: 'Secure SaaS for healthcare, including OAuth 2.0 and OpenID Connect.',
   },
   {
     when: 'Now',
     title: 'Studying identity and access',
-    detail: 'WebAuthn, Kubernetes and Spring Boot, with identity and access management as the focus.',
+    detail: 'Identity and access management, with WebAuthn, Kubernetes and Spring Boot.',
   },
 ];
 
@@ -46,7 +45,7 @@ export function About() {
     <div className="container page">
       <PageHeader
         title="How I got here, and where I’m heading."
-        lede="My path so far: sales and banking, a software certificate at BCIT, and production web applications in healthcare since 2019."
+        lede="Sales, banking, a software certificate, and healthcare software since 2019."
       />
 
       <Section id="path" title="My path">
@@ -63,24 +62,13 @@ export function About() {
 
       <Section id="why" title="Why identity and access">
         <p>
-          Alongside my front-end work I’ve been widening my view of how systems fit together:
-          learning backend development with Spring Boot, exploring Kubernetes for cloud
-          environments, and studying how technologies like WebAuthn help strengthen application
-          security.
-        </p>
-        <p>
-          Identity and access management is where that curiosity is pointing. It overlaps with what
-          I already know: the authentication flows I’ve worked with in Okta and Azure AD B2C, and
-          years of paying attention to what people need from the systems they use.
+          Authentication is the part of my work I keep coming back to. Identity and access
+          management is where that curiosity points: who gets in, and what they can do once they do.
         </p>
         <Placeholder>
           Add one or two sentences in your own words about what first drew you to identity and
           access management or security. Edit <code>src/pages/About.tsx</code>.
         </Placeholder>
-        <p>
-          What motivates me most is creating software that solves real problems and being part of
-          teams that share knowledge, collaborate and keep pushing each other forward.
-        </p>
       </Section>
 
       <Section id="community" title="Community">
@@ -96,9 +84,6 @@ export function About() {
       </Section>
 
       <Section id="resume" title="Résumé">
-        <p>
-          The full detail is on my résumé.
-        </p>
         <p>
           <ButtonLink href={site.resume.href} variant="secondary">
             Open résumé (PDF)

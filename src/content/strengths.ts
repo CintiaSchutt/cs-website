@@ -9,48 +9,37 @@ export const strengths: Strength[] = [
   {
     id: 'authentication',
     title: 'Hands-on with authentication',
-    summary:
-      'I’ve integrated OAuth-based authentication and worked with Okta and Azure AD B2C, and I’m studying how WebAuthn strengthens application security.',
+    summary: 'OAuth 2.0, OpenID Connect and secure APIs at work; WebAuthn in my own study.',
     evidence: [
-      { label: 'Software Developer, QHR Technologies', to: '/experience#qhr' },
-      { label: 'WebAuthn study', to: '/projects#webauthn' },
+      { label: 'QHR Technologies', to: '/experience#qhr' },
+      { label: 'Projects', to: '/projects' },
     ],
   },
   {
-    id: 'detail',
-    title: 'Attention to detail',
-    summary:
-      'Building WCAG-compliant components, reviewing teammates’ code and resolving defects all depend on noticing the small things.',
-    evidence: [{ label: 'Software Developer, QHR Technologies', to: '/experience#qhr' }],
+    id: 'regulated',
+    title: 'Regulated, sensitive environments',
+    summary: 'Healthcare software today, a financial institution before that.',
+    evidence: [
+      { label: 'QHR Technologies', to: '/experience#qhr' },
+      { label: 'Banco do Brasil', to: '/experience#banco-do-brasil' },
+    ],
   },
   {
     id: 'communication',
-    title: 'Clear communication with different audiences',
-    summary:
-      'Years of client-facing work in sales and banking taught me to explain things plainly and build trust. Today I work alongside designers, backend engineers and product managers.',
+    title: 'Clear communication',
+    summary: 'Years of client-facing work, now with engineers, designers and product teams.',
     evidence: [
-      { label: 'Customer Service Representative, Banco do Brasil', to: '/experience#banco-do-brasil' },
-      { label: 'Inside Sales Representative, Dell Computers', to: '/experience#dell' },
-      { label: 'Software Developer, QHR Technologies', to: '/experience#qhr' },
-    ],
-  },
-  {
-    id: 'analysis',
-    title: 'Analytical judgment',
-    summary:
-      'At Banco do Brasil I handled a wide range of financial inquiries and evaluated loan and credit conditions through internal systems, which is where my analytical habits started.',
-    evidence: [
-      { label: 'Customer Service Representative, Banco do Brasil', to: '/experience#banco-do-brasil' },
+      { label: 'Dell Computers', to: '/experience#dell' },
+      { label: 'QHR Technologies', to: '/experience#qhr' },
     ],
   },
   {
     id: 'learning',
-    title: 'Learning new stacks on purpose',
-    summary:
-      'I retrained in software development at BCIT and graduated with distinction. I work with newer tools such as Nx and the NgRx Signal Store, and I keep studying Spring Boot, Kubernetes and WebAuthn.',
+    title: 'Learning on purpose',
+    summary: 'Retrained at BCIT with distinction, and still studying Spring Boot, Kubernetes and WebAuthn.',
     evidence: [
-      { label: 'BCIT certificate', to: '/experience#bcit' },
-      { label: 'Current study', to: '/projects#studying' },
+      { label: 'BCIT', to: '/experience#bcit' },
+      { label: 'Projects', to: '/projects' },
     ],
   },
 ];
