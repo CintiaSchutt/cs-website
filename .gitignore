@@ -19,3 +19,6 @@ Thumbs.db
 
 # Test output
 coverage/
+
+# Vite local cache
+.vite/
