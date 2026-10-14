@@ -1,0 +1,51 @@
+{
+  "site": {
+    "name": "Cintia Schutt",
+    "url": "https://cintiaschutt.com",
+    "locale": "en_CA"
+  },
+  "pages": [
+    {
+      "path": "/",
+      "nav": "Home",
+      "title": "Cintia Schutt — Software developer moving into cybersecurity",
+      "description": "Cintia Schutt is a software developer in Calgary moving into cybersecurity, with a focus on identity and access management. Experience, projects and learning."
+    },
+    {
+      "path": "/about",
+      "nav": "About",
+      "title": "About — Cintia Schutt",
+      "description": "How Cintia Schutt went from sales and banking to software development, and why she is turning toward identity and access management."
+    },
+    {
+      "path": "/experience",
+      "nav": "Experience",
+      "title": "Experience — Cintia Schutt",
+      "description": "Work history in healthcare software, banking and sales, and the strengths that carry over into cybersecurity, each linked to its evidence."
+    },
+    {
+      "path": "/projects",
+      "nav": "Projects",
+      "title": "Projects — Cintia Schutt",
+      "description": "Security labs, builds and write-ups, each with its goal, tools, what was done and what was learned."
+    },
+    {
+      "path": "/learning",
+      "nav": "Learning",
+      "title": "Learning — Cintia Schutt",
+      "description": "Courses, certifications and topics Cintia Schutt has completed or is working through, clearly marked by status."
+    },
+    {
+      "path": "/contact",
+      "nav": "Contact",
+      "title": "Contact — Cintia Schutt",
+      "description": "Get in touch with Cintia Schutt by email, LinkedIn or GitHub, and download her résumé."
+    }
+  ],
+  "notFound": {
+    "path": "/404",
+    "nav": "Not found",
+    "title": "Page not found — Cintia Schutt",
+    "description": "This page does not exist."
+  }
+}

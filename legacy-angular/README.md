@@ -1,3 +1,13 @@
+# Archived: Angular version of cintiaschutt.com
+
+This folder holds the original Angular 21 site, kept exactly as it was before
+the React rebuild in the repository root. It is not built or deployed by the
+GitHub Actions workflow. Nothing here needs to be maintained.
+
+The previous README follows.
+
+---
+
 # cintiaschutt.com
 
 Welcome to the source code for my personal website – [cintiaschutt.com](https://cintiaschutt.com)!  
