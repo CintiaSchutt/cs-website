@@ -1,4 +1,3 @@
-import { ButtonLink } from '../components/ButtonLink';
 import { ExperienceEntry } from '../components/ExperienceEntry';
 import { LearningItem } from '../components/LearningItem';
 import { PageHeader } from '../components/PageHeader';
@@ -17,7 +16,7 @@ export function Experience() {
     <div className="container page">
       <PageHeader
         title="Healthcare software, banking and sales."
-        lede="The short version. The full detail is on my résumé."
+        lede="The short version."
       />
 
       <Section id="history" title="Work history">
@@ -27,9 +26,7 @@ export function Experience() {
           ))}
         </div>
         <p>
-          <ButtonLink href={site.resume.href} variant="secondary">
-            Open résumé (PDF)
-          </ButtonLink>
+          Résumé available on request: <a href={`mailto:${site.email}?subject=Résumé request`}>email me</a>.
         </p>
       </Section>
 

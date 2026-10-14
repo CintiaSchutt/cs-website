@@ -32,12 +32,12 @@ Everything you will edit lives in `src/content/`:
 | Add your education | `learning.ts` (entries of kind `Education` show on Experience) |
 | Work history | `experience.ts` |
 | Strengths and the evidence behind each | `strengths.ts` |
-| Email, links, location, résumé, memberships (WiCyS) and their logos | `site.ts` |
+| Email, links, location, memberships (WiCyS) and their logos | `site.ts` |
 | Page titles and descriptions | `pages.json` |
 | Career timeline and "why identity and access" | `src/pages/About.tsx` |
 
 Entries marked `placeholder: true` show only in `npm run dev`, never on the published site.
-Only mark learning `completed` when it is. To show the WiCyS logo, put the file in `public/` and set its `logo` path in `site.ts` (check WiCyS's logo-usage guidelines first). Replace `public/cintia_schutt_resume.pdf` to update the résumé.
+Only mark learning `completed` when it is. To show the WiCyS logo, put the file in `public/` and set its `logo` path in `site.ts` (check WiCyS's logo-usage guidelines first). The résumé is deliberately not published on the site (it is sent by email on request).
 
 ## Design
 
@@ -90,5 +90,5 @@ src/components/ header, logo, theme toggle, project card, experience entry, and 
 src/styles/     tokens (colours, type, space), base, layout, components
 src/router.tsx  a small History API router that manages focus for keyboard and screen-reader users
 scripts/        postbuild.mjs (per-page HTML, sitemap, CSP) and check-contrast.mjs
-public/         files copied as they are: favicon, résumé, illustration, security.txt
+public/         files copied as they are: favicon, illustration, security.txt
 ```

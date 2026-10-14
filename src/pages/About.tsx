@@ -1,9 +1,8 @@
-import { ButtonLink } from '../components/ButtonLink';
 import { MembershipLink } from '../components/MembershipLink';
 import { PageHeader } from '../components/PageHeader';
 import { Placeholder } from '../components/Placeholder';
 import { Section } from '../components/Section';
-import { memberships, site } from '../content/site';
+import { memberships } from '../content/site';
 
 interface TimelineItem {
   when: string;
@@ -81,14 +80,6 @@ export function About() {
           Add a sentence on what being a member means to you or what you take part in. Edit{' '}
           <code>src/pages/About.tsx</code>.
         </Placeholder>
-      </Section>
-
-      <Section id="resume" title="Résumé">
-        <p>
-          <ButtonLink href={site.resume.href} variant="secondary">
-            Open résumé (PDF)
-          </ButtonLink>
-        </p>
       </Section>
     </div>
   );

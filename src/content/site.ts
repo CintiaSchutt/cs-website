@@ -21,10 +21,6 @@ export const site = {
     href: 'https://www.linkedin.com/in/cintia-schutt/',
   },
   sourceRepo: 'https://github.com/CintiaSchutt/cs-website',
-  resume: {
-    href: '/cintia_schutt_resume.pdf',
-    label: 'Résumé (PDF)',
-  },
 } as const;
 
 /**

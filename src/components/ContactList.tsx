@@ -38,7 +38,7 @@ export function ContactList() {
       <div>
         <dt>Résumé</dt>
         <dd>
-          <ExternalLink href={site.resume.href}>{site.resume.label}</ExternalLink>
+          <a href={`mailto:${site.email}?subject=Résumé request`}>Available on request, by email</a>
         </dd>
       </div>
     </dl>
