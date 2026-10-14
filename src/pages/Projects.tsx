@@ -12,8 +12,6 @@ export function Projects() {
   return (
     <div className="container page">
       <PageHeader
-        index="04"
-        label="Projects"
         title="What I’m building, and what I’m learning from it."
         lede="Each entry says what I set out to do, which tools and methods I used, what I did, and what I took from it."
       />

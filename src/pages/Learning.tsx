@@ -17,8 +17,6 @@ export function Learning() {
   return (
     <div className="container page">
       <PageHeader
-        index="05"
-        label="Learning"
         title="What I’ve finished, and what I’m working through."
         lede="Every item is marked in words as completed, in progress or planned, so you can tell them apart."
       />

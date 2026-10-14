@@ -44,8 +44,6 @@ export function About() {
   return (
     <div className="container page">
       <PageHeader
-        index="02"
-        label="About"
         title="How I got here, and where I’m heading."
         lede="My path so far: sales and banking, a software certificate at BCIT, and production web applications in healthcare since 2019."
       />

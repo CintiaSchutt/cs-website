@@ -3,7 +3,7 @@ import { Link } from '../router';
 
 interface Props {
   children: ReactNode;
-  variant?: 'primary' | 'secondary';
+  variant?: 'primary' | 'secondary' | 'link';
   /** Internal page, e.g. "/projects". */
   to?: string;
   /** Any other URL, e.g. "mailto:…" or a file download. */

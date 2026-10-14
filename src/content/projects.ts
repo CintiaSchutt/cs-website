@@ -36,12 +36,12 @@ export const projects: Project[] = [
     goal: 'Replace a placeholder-heavy Angular site with a portfolio that tells the story of my move from software development into cybersecurity, backed by evidence.',
     tools: ['React', 'TypeScript', 'Vite', 'CSS', 'GitHub Actions', 'GitHub Pages'],
     whatIDid: [
-      'Rebuilt the site in React with semantic HTML, keyboard-friendly navigation, visible focus states and support for reduced motion.',
-      'Kept the page free of third-party scripts, analytics and externally hosted fonts, and added a strict Content-Security-Policy that only allows the site’s own files.',
+      'Rebuilt the site in React with semantic HTML, keyboard-friendly navigation, visible focus states, a light and dark theme that follows the system setting, and support for reduced motion.',
+      'Kept the page free of third-party scripts, analytics and trackers. Its Content-Security-Policy allows scripts only from the site itself, and the only outside hosts it permits are the two that serve the fonts.',
       'Checked colour contrast for both the light and dark themes with a script in the repository, and kept the original Angular project in the repository history.',
     ],
     whatILearned:
-      'A static site can have a very small attack surface if you refuse third-party code by default: with no external scripts, fonts or trackers, a strict Content-Security-Policy is easy to write and easy to trust.',
+      'A static site can have a very small attack surface if you refuse third-party code by default. With no external scripts or trackers, a strict Content-Security-Policy is easy to write and easy to trust, and every outside host you do allow, such as a font service, is a deliberate trade-off.',
     links: [{ label: 'Source code on GitHub', href: 'https://github.com/CintiaSchutt/cs-website' }],
   },
 ];

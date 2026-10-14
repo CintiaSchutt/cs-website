@@ -12,10 +12,13 @@
  *
  * and adds a strict Content-Security-Policy <meta> tag to every page. GitHub
  * Pages cannot send HTTP security headers, so the meta tag is the available
- * mechanism. The policy allows only this site's own files: no third-party
- * scripts, styles, fonts or images. The tag is added here rather than in
+ * mechanism. The policy allows this site's own files for scripts, styles and
+ * images, and no third-party scripts. The tag is added here rather than in
  * index.html because Vite's dev server needs inline scripts that the policy
  * would block.
+ *
+ * The only third-party hosts allowed are Google Fonts' two (stylesheet and font
+ * files). Self-hosting the fonts lets you delete both and tighten the policy.
  *
  * Usage: node scripts/postbuild.mjs [distDir]   (distDir defaults to ./dist)
  */
@@ -36,13 +39,14 @@ const END = '<!--page-meta:end-->';
 const CSP = [
   "default-src 'self'",
   "script-src 'self'",
-  "style-src 'self'",
+  "style-src 'self' https://fonts.googleapis.com",
   "img-src 'self' data:",
-  "font-src 'self'",
+  "font-src https://fonts.gstatic.com",
   "connect-src 'self'",
   "object-src 'none'",
   "base-uri 'self'",
   "form-action 'self'",
+  'upgrade-insecure-requests',
 ].join('; ');
 
 const escapeHtml = (value) =>

@@ -1,10 +1,12 @@
 /**
  * Checks the colour pairings in src/styles/tokens.css against WCAG 2.2 AA.
  *
- * It reads the light palette (the first `:root` block) and the dark palette
- * (the `:root` block inside the prefers-color-scheme media query) and
- * computes the contrast ratio for every pairing the site actually uses.
- * Exits with a non-zero status if any pairing falls short.
+ * tokens.css defines three palettes: light (the base `:root`), dark for visitors
+ * whose system asks for it (`:root:not([data-theme])` inside the
+ * prefers-color-scheme media query) and dark for visitors who chose it
+ * (`:root[data-theme='dark']`). This script reads all three, fails if the two
+ * dark palettes differ, and computes the contrast ratio for every pairing the
+ * site uses. Exits with a non-zero status if anything falls short.
  *
  * Usage: npm run check:contrast
  */
@@ -15,24 +17,45 @@ import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const css = await readFile(path.join(root, 'src/styles/tokens.css'), 'utf8');
 
-const blocks = [...css.matchAll(/:root\s*\{([^}]*)\}/g)].map((match) => match[1]);
-if (blocks.length < 2) {
-  throw new Error('Expected a light and a dark :root block in tokens.css');
+function blockAfter(selector) {
+  const start = css.indexOf(selector);
+  if (start === -1) throw new Error(`Could not find "${selector}" in tokens.css`);
+  const open = css.indexOf('{', start);
+  const close = css.indexOf('}', open);
+  return css.slice(open + 1, close);
 }
 
 function parsePalette(block) {
   const palette = {};
   for (const match of block.matchAll(/--color-([\w-]+):\s*(#[0-9a-fA-F]{6})\s*;/g)) {
-    palette[match[1]] = match[2];
+    palette[match[1]] = match[2].toLowerCase();
   }
   return palette;
 }
 
-const palettes = { light: parsePalette(blocks[0]), dark: parsePalette(blocks[1]) };
-// The dark block only overrides some tokens in principle; here it redefines all of them.
-for (const name of Object.keys(palettes.light)) {
-  if (!(name in palettes.dark)) throw new Error(`Dark palette is missing --color-${name}`);
+const light = parsePalette(blockAfter(':root {'));
+const darkSystem = parsePalette(blockAfter(':root:not([data-theme])'));
+const darkChosen = parsePalette(blockAfter(":root[data-theme='dark']"));
+
+let failures = 0;
+
+// The two dark blocks must stay identical, otherwise the theme would depend on how it was reached.
+for (const name of new Set([...Object.keys(darkSystem), ...Object.keys(darkChosen)])) {
+  if (darkSystem[name] !== darkChosen[name]) {
+    failures += 1;
+    console.error(
+      `MISMATCH  --color-${name}: system dark is ${darkSystem[name]}, chosen dark is ${darkChosen[name]}`,
+    );
+  }
 }
+for (const name of Object.keys(light)) {
+  if (!(name in darkChosen)) {
+    failures += 1;
+    console.error(`MISSING   dark palette has no --color-${name}`);
+  }
+}
+
+const palettes = { light, dark: darkChosen };
 
 function luminance(hex) {
   const channels = [1, 3, 5].map((index) => {
@@ -43,8 +66,8 @@ function luminance(hex) {
 }
 
 function ratio(a, b) {
-  const [light, dark] = [luminance(a), luminance(b)].sort((x, y) => y - x);
-  return (light + 0.05) / (dark + 0.05);
+  const [lighter, darker] = [luminance(a), luminance(b)].sort((x, y) => y - x);
+  return (lighter + 0.05) / (darker + 0.05);
 }
 
 // [foreground, background, minimum ratio, where it is used]
@@ -52,18 +75,17 @@ const TEXT = 4.5; // WCAG 1.4.3, normal text
 const UI = 3; // WCAG 1.4.11 (interface components) and 1.4.3 (large text)
 const pairs = [
   ['ink', 'bg', TEXT, 'body text'],
-  ['ink', 'surface', TEXT, 'text on cards'],
+  ['ink', 'surface', TEXT, 'text on cards and the illustration disc'],
   ['ink-muted', 'bg', TEXT, 'secondary text'],
   ['ink-muted', 'surface', TEXT, 'secondary text on cards'],
-  ['accent', 'bg', TEXT, 'links, headings accent, secondary button'],
+  ['accent', 'bg', TEXT, 'links, accent words in headings, nav underline'],
   ['accent', 'surface', TEXT, 'links on cards'],
   ['on-accent', 'accent', TEXT, 'primary button, skip link'],
   ['focus', 'bg', UI, 'focus ring'],
   ['focus', 'surface', UI, 'focus ring on cards'],
-  ['grape', 'bg', UI, 'large decorative section number (24px+)'],
+  ['grape', 'bg', UI, 'decorative marks only (no text uses it)'],
 ];
 
-let failures = 0;
 for (const [theme, palette] of Object.entries(palettes)) {
   console.log(`\n${theme} theme`);
   for (const [foreground, background, minimum, usage] of pairs) {
@@ -78,7 +100,7 @@ for (const [theme, palette] of Object.entries(palettes)) {
 
 console.log('\nDecorative borders and rules (--color-rule) are not text or controls and are not checked.');
 if (failures > 0) {
-  console.error(`\n${failures} pairing(s) below the required ratio.`);
+  console.error(`\n${failures} problem(s) found.`);
   process.exit(1);
 }
-console.log('\nAll pairings meet WCAG AA.');
+console.log('\nAll pairings meet WCAG AA and both dark palettes match.');

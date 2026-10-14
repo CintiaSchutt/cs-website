@@ -2,65 +2,36 @@
   /* ---- Type helpers ---- */
 
   .eyebrow {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
     margin-bottom: var(--space-3);
     color: var(--color-ink-muted);
     font-size: var(--step--1);
-    font-weight: 600;
-    letter-spacing: 0.12em;
+    font-weight: 500;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-  }
-
-  .eyebrow::before {
-    content: '';
-    width: 2.5rem;
-    height: 2px;
-    background: var(--color-accent);
   }
 
   .lede {
     max-width: var(--measure);
     font-size: var(--step-1);
-    line-height: 1.5;
-  }
-
-  .page-header__label {
-    display: flex;
-    align-items: baseline;
-    gap: 0.75rem;
-    margin-bottom: var(--space-2);
+    line-height: 1.55;
     color: var(--color-ink-muted);
-    font-size: var(--step--1);
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-  }
-
-  .page-header__index {
-    color: var(--color-grape);
-    font-family: var(--font-display);
-    font-size: var(--step-2);
-    font-weight: 500;
-    letter-spacing: 0;
   }
 
   .section__more {
     font-weight: 600;
   }
 
-  /* ---- Buttons ---- */
+  /* ---- Buttons and text links ---- */
 
   .button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     min-height: 2.75rem;
-    padding: 0.6rem 1.25rem;
-    border: 2px solid var(--color-accent);
-    border-radius: var(--radius);
-    font-weight: 600;
+    padding: 0.6rem 1.6rem;
+    border: 1px solid var(--color-accent);
+    border-radius: 999px;
+    font-weight: 500;
     text-decoration: none;
   }
 
@@ -74,14 +45,30 @@
     color: var(--color-accent);
   }
 
+  .button--link {
+    min-height: 2.75rem;
+    padding: 0;
+    border: 0;
+    border-bottom: 1px solid var(--color-ink-muted);
+    border-radius: 0;
+    background: transparent;
+    color: var(--color-ink);
+  }
+
   .button:hover {
     text-decoration: underline;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 0.25em;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.3em;
   }
 
   .button--secondary:hover {
     background: var(--color-surface);
+  }
+
+  .button--link:hover {
+    border-bottom-color: var(--color-accent);
+    color: var(--color-accent);
+    text-decoration: none;
   }
 
   /* ---- Lists ---- */
@@ -253,10 +240,13 @@
   }
 
   .project {
-    padding: var(--space-3);
-    border: 1px solid var(--color-rule);
-    border-radius: var(--radius);
-    background: var(--color-surface);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-rule);
+  }
+
+  .project:first-child {
+    padding-top: 0;
+    border-top: 0;
   }
 
   .project__status {
@@ -355,40 +345,6 @@
     margin-top: 0.5rem;
   }
 
-  /* ---- Now card (Home) ---- */
-
-  .now-card {
-    padding: var(--space-3);
-    border: 1px solid var(--color-rule);
-    border-radius: var(--radius);
-    background: var(--color-surface);
-  }
-
-  .now-card h2 {
-    margin-bottom: var(--space-2);
-    font-size: var(--step-1);
-  }
-
-  .now-card ul {
-    list-style: none;
-    display: grid;
-    gap: var(--space-2);
-  }
-
-  .now-card li {
-    display: grid;
-    gap: 0.15rem;
-  }
-
-  .now-card li .status {
-    color: var(--color-ink-muted);
-  }
-
-  .now-card p {
-    margin-top: var(--space-2);
-    font-weight: 600;
-  }
-
   /* ---- Timeline (About) ---- */
 
   .timeline {
@@ -477,13 +433,8 @@
 
   @media (prefers-reduced-motion: no-preference) {
     .page-header,
-    .hero__copy,
-    .now-card {
+    .hero__copy {
       animation: rise 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
-    }
-
-    .now-card {
-      animation-delay: 0.12s;
     }
 
     @keyframes rise {

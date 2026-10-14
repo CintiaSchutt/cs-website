@@ -9,8 +9,6 @@ export function Experience() {
   return (
     <div className="container page">
       <PageHeader
-        index="03"
-        label="Experience"
         title="Healthcare software, banking and sales."
         lede="Three roles, newest first, followed by the strengths that carry over into security work and where each one is backed up."
       />

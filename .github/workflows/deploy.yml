@@ -10,6 +10,10 @@ on:
     branches:
       - main
 
+# Least privilege: the job only needs to read the repository. Deployment uses the GH_TOKEN secret.
+permissions:
+  contents: read
+
 # Define the jobs to be run
 jobs:
   build-and-deploy:

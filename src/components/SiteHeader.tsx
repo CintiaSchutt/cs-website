@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { pages } from '../content/pages';
 import { Link, NavLink, useRouter } from '../router';
+import { Logo } from './Logo';
+import { ThemeToggle } from './ThemeToggle';
 
 export function SiteHeader() {
   const { path } = useRouter();
@@ -25,12 +27,13 @@ export function SiteHeader() {
     return () => document.removeEventListener('keydown', onKeyDown);
   }, [open]);
 
+  // The DOM order (logo, menu button, nav, theme button) is deliberate: it keeps keyboard
+  // order in step with what the menu reveals. layout.css lines them up visually.
   return (
     <header className="site-header">
       <div className="container site-header__inner">
         <Link to="/" className="brand" aria-label="Cintia Schutt, home">
-          <img src="/favicon.svg" alt="" width="32" height="32" />
-          <span>Cintia Schutt</span>
+          <Logo />
         </Link>
 
         <button
@@ -53,6 +56,8 @@ export function SiteHeader() {
             ))}
           </ul>
         </nav>
+
+        <ThemeToggle />
       </div>
     </header>
   );

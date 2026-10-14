@@ -8,8 +8,6 @@ export function Contact() {
   return (
     <div className="container page">
       <PageHeader
-        index="06"
-        label="Contact"
         title="Let’s talk."
         lede="I’d like to hear from recruiters, hiring managers and people working in identity and access management or application security. Email is the best way to reach me."
       />

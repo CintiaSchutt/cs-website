@@ -4,10 +4,29 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light dark" />
-    <meta name="theme-color" content="#fbf6f0" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#181119" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f8eee7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#202020" media="(prefers-color-scheme: dark)" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <!--
+      Applies a saved light/dark choice before first paint (no flash). It is an external
+      file because the Content-Security-Policy only allows scripts from this site.
+    -->
+    <script src="/theme-init.js"></script>
+
+    <!--
+      Instrument Serif and Instrument Sans from Google Fonts: the only third-party
+      requests the site makes, and the only ones its Content-Security-Policy allows
+      (see scripts/postbuild.mjs). To stop sending visitors' requests to Google,
+      self-host the two families: see README.md, "Fonts".
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&family=Instrument+Serif:ital@0;1&display=swap"
+    />
 
     <!--
       Page-specific tags live between these markers. scripts/postbuild.mjs
