@@ -1,3 +1,5 @@
+import type { Membership } from './types';
+
 /**
  * Contact details and links used across the site.
  *
@@ -23,7 +25,18 @@ export const site = {
     href: '/cintia_schutt_resume.pdf',
     label: 'Résumé (PDF)',
   },
-  /** Wording carried over from the previous About page. */
-  workAuthorization:
-    'I’m a Canadian citizen eligible for a TN visa, so I can work with teams across the U.S. and Canada, remotely or on site.',
 } as const;
+
+/**
+ * Communities you belong to. To show a logo, put the file in public/ (for example
+ * public/wicys-logo.svg), set `logo: '/wicys-logo.svg'`, and check the organization's
+ * logo-usage guidelines first.
+ */
+export const memberships: Membership[] = [
+  {
+    id: 'wicys',
+    name: 'Women in CyberSecurity (WiCyS)',
+    href: 'https://www.wicys.org',
+    logo: undefined,
+  },
+];

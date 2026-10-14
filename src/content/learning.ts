@@ -1,7 +1,11 @@
 import type { LearningEntry } from './types';
 
 /**
- * Courses, certifications and topics.
+ * Courses, certifications, topics and education.
+ *
+ * Where each shows: entries of kind 'Education' appear on the Experience page;
+ * everything else appears under "Studying" on the Projects page (and in-progress
+ * ones are listed on Home). Build labs and projects themselves in projects.ts.
  *
  * To add an entry, copy one of the objects below and change it.
  * - `status` is 'completed', 'in-progress' or 'planned'. Be strict: only mark

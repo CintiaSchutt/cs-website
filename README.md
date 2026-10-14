@@ -29,15 +29,15 @@ Everything you will edit lives in `src/content/`:
 | To change | Edit |
 | --- | --- |
 | Add a project or lab write-up | `projects.ts` (copy an entry, put it at the top) |
-| Add a course, certification or topic | `learning.ts` (`status`: `completed`, `in-progress` or `planned`) |
+| Add a course, certification or topic | `learning.ts` (`status`: `completed`, `in-progress` or `planned`). Shows under "Studying" on Projects; entries of kind `Education` show on Experience |
 | Work history | `experience.ts` |
 | Strengths and the evidence behind each | `strengths.ts` |
-| Email, links, location, résumé | `site.ts` |
+| Email, links, location, résumé, memberships (WiCyS) and their logos | `site.ts` |
 | Page titles and descriptions | `pages.json` |
 | Career timeline and "why identity and access" | `src/pages/About.tsx` |
 
 Entries marked `placeholder: true` show only in `npm run dev`, never on the published site.
-Only mark learning `completed` when it is. Replace `public/cintia_schutt_resume.pdf` to update the résumé.
+Only mark learning `completed` when it is. To show the WiCyS logo, put the file in `public/` and set its `logo` path in `site.ts` (check WiCyS's logo-usage guidelines first). Replace `public/cintia_schutt_resume.pdf` to update the résumé.
 
 ## Design
 
@@ -84,7 +84,7 @@ To stop visitors' browsers contacting Google and tighten the policy further:
 ## Project layout
 
 ```
-src/content/    your words: projects, learning, experience, strengths, site details
+src/content/    your words: projects, learning and education, experience, strengths, site details
 src/pages/      one file per page
 src/components/ header, logo, theme toggle, project card, experience entry, and so on
 src/styles/     tokens (colours, type, space), base, layout, components

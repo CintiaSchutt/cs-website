@@ -63,3 +63,13 @@ export interface Project {
   /** Placeholders show in `npm run dev` only (see placeholders.ts). */
   placeholder?: boolean;
 }
+
+/** A professional community you belong to, shown on Home and About. */
+export interface Membership {
+  id: string;
+  /** Full name, used in the link text. */
+  name: string;
+  href: string;
+  /** Path to a logo in public/, e.g. "/wicys-logo.svg". Leave undefined to show the name only. */
+  logo?: string;
+}

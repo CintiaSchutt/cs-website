@@ -13,7 +13,7 @@ export const strengths: Strength[] = [
       'I’ve integrated OAuth-based authentication and worked with Okta and Azure AD B2C, and I’m studying how WebAuthn strengthens application security.',
     evidence: [
       { label: 'Software Developer, QHR Technologies', to: '/experience#qhr' },
-      { label: 'WebAuthn study', to: '/learning#webauthn' },
+      { label: 'WebAuthn study', to: '/projects#webauthn' },
     ],
   },
   {
@@ -49,8 +49,8 @@ export const strengths: Strength[] = [
     summary:
       'I retrained in software development at BCIT and graduated with distinction. I work with newer tools such as Nx and the NgRx Signal Store, and I keep studying Spring Boot, Kubernetes and WebAuthn.',
     evidence: [
-      { label: 'BCIT certificate', to: '/learning#bcit' },
-      { label: 'Current study', to: '/learning' },
+      { label: 'BCIT certificate', to: '/experience#bcit' },
+      { label: 'Current study', to: '/projects#studying' },
     ],
   },
 ];

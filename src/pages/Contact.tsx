@@ -18,10 +18,6 @@ export function Contact() {
         </p>
         <ContactList />
       </Section>
-
-      <Section id="authorization" title="Working with teams">
-        <p>{site.workAuthorization}</p>
-      </Section>
     </div>
   );
 }

@@ -1,8 +1,9 @@
 import { ButtonLink } from '../components/ButtonLink';
+import { MembershipLink } from '../components/MembershipLink';
 import { PageHeader } from '../components/PageHeader';
 import { Placeholder } from '../components/Placeholder';
 import { Section } from '../components/Section';
-import { site } from '../content/site';
+import { memberships, site } from '../content/site';
 
 interface TimelineItem {
   when: string;
@@ -82,9 +83,21 @@ export function About() {
         </p>
       </Section>
 
+      <Section id="community" title="Community">
+        {memberships.map((membership) => (
+          <p key={membership.id}>
+            <MembershipLink membership={membership} />
+          </p>
+        ))}
+        <Placeholder>
+          Add a sentence on what being a member means to you or what you take part in. Edit{' '}
+          <code>src/pages/About.tsx</code>.
+        </Placeholder>
+      </Section>
+
       <Section id="resume" title="Résumé">
         <p>
-          The full detail is on my résumé. {site.workAuthorization}
+          The full detail is on my résumé.
         </p>
         <p>
           <ButtonLink href={site.resume.href} variant="secondary">

@@ -11,6 +11,10 @@
     border: 0;
   }
 
+  .nowrap {
+    white-space: nowrap;
+  }
+
   .skip-link {
     position: absolute;
     left: var(--gutter);

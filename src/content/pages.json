@@ -8,8 +8,8 @@
     {
       "path": "/",
       "nav": "Home",
-      "title": "Cintia Schutt — Software developer moving into cybersecurity",
-      "description": "Cintia Schutt is a software developer in Calgary moving into cybersecurity, with a focus on identity and access management. Experience, projects and learning."
+      "title": "Cintia Schutt | Software developer moving into IAM",
+      "description": "Software developer in Calgary with hands-on authentication experience (OAuth, Okta, Azure AD B2C), moving into identity and access management. Projects, labs and experience."
     },
     {
       "path": "/about",
@@ -21,19 +21,13 @@
       "path": "/experience",
       "nav": "Experience",
       "title": "Experience — Cintia Schutt",
-      "description": "Work history in healthcare software, banking and sales, and the strengths that carry over into cybersecurity, each linked to its evidence."
+      "description": "Work history in healthcare software, banking and sales, education, and the strengths that carry over into cybersecurity, each linked to its evidence."
     },
     {
       "path": "/projects",
       "nav": "Projects",
       "title": "Projects — Cintia Schutt",
-      "description": "Security labs, builds and write-ups, each with its goal, tools, what was done and what was learned."
-    },
-    {
-      "path": "/learning",
-      "nav": "Learning",
-      "title": "Learning — Cintia Schutt",
-      "description": "Courses, certifications and topics Cintia Schutt has completed or is working through, clearly marked by status."
+      "description": "Security labs, builds and write-ups, each with its goal, tools, what was done and what was learned, plus what Cintia Schutt is currently studying."
     },
     {
       "path": "/contact",
