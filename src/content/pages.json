@@ -30,6 +30,12 @@
       "description": "Security labs, builds and write-ups."
     },
     {
+      "path": "/notes",
+      "nav": "Notes",
+      "title": "Notes — Cintia Schutt",
+      "description": "Study notes on identity and access management: short summaries in my own words."
+    },
+    {
       "path": "/contact",
       "nav": "Contact",
       "title": "Contact — Cintia Schutt",

@@ -8,7 +8,8 @@
  * description and canonical URL. It also writes:
  *
  *   - 404.html      the same app shell, so unknown URLs show the "not found" page
- *   - sitemap.xml   every route in src/content/pages.json
+ *   - notes/<slug>/index.html   one page per study note in src/content/notes/
+ *   - sitemap.xml   every route in src/content/pages.json, plus each note
  *
  * and adds a strict Content-Security-Policy <meta> tag to every page. GitHub
  * Pages cannot send HTTP security headers, so the meta tag is the available
@@ -22,7 +23,7 @@
  *
  * Usage: node scripts/postbuild.mjs [distDir]   (distDir defaults to ./dist)
  */
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -32,6 +33,22 @@ const dist = path.resolve(process.argv[2] ?? path.join(root, 'dist'));
 const { site, pages, notFound } = JSON.parse(
   await readFile(path.join(root, 'src/content/pages.json'), 'utf8'),
 );
+
+// Study notes: title and summary come from each Markdown file's --- header.
+const notesDir = path.join(root, 'src/content/notes');
+const notePages = [];
+for (const file of (await readdir(notesDir).catch(() => [])).filter((name) => name.endsWith('.md')).sort()) {
+  const source = await readFile(path.join(notesDir, file), 'utf8');
+  const header = /^---\r?\n([\s\S]*?)\r?\n---/.exec(source)?.[1] ?? '';
+  const field = (name) => new RegExp(`^${name}:\\s*(.*)$`, 'm').exec(header)?.[1].trim();
+  const slug = file.replace(/\.md$/, '');
+  const title = field('title') ?? slug;
+  notePages.push({
+    path: `/notes/${slug}`,
+    title: `${title} — Notes — ${site.name}`,
+    description: field('summary') ?? '',
+  });
+}
 
 const START = '<!--page-meta:start-->';
 const END = '<!--page-meta:end-->';
@@ -113,13 +130,13 @@ async function writePage(relativePath, html) {
 
 console.log(`Post-processing ${path.relative(root, dist) || '.'}`);
 
-for (const page of pages) {
+for (const page of [...pages, ...notePages]) {
   const file = page.path === '/' ? 'index.html' : path.join(page.path.slice(1), 'index.html');
   await writePage(file, render(page, { indexable: true }));
 }
 await writePage('404.html', render(notFound, { indexable: false }));
 
-const urls = pages
+const urls = [...pages, ...notePages]
   .map((page) => `  <url><loc>${canonicalFor(page.path)}</loc></url>`)
   .join('\n');
 await writePage(

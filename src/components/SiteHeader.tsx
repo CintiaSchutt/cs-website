@@ -51,7 +51,9 @@ export function SiteHeader() {
           <ul>
             {pages.map((page) => (
               <li key={page.path}>
-                <NavLink to={page.path}>{page.nav}</NavLink>
+                <NavLink to={page.path} section>
+                  {page.nav}
+                </NavLink>
               </li>
             ))}
           </ul>
