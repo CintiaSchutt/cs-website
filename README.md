@@ -18,8 +18,9 @@ npm run preview    # serve the production build locally
 ```
 
 Pushing to `main` runs `.github/workflows/deploy.yml`, which checks, builds and publishes
-`dist/` to the `gh-pages` branch (GitHub Pages, custom domain in `public/CNAME`). The workflow
-needs a `GH_TOKEN` secret in the repository settings.
+`dist/` with GitHub's official Pages actions (Settings → Pages → Source: GitHub Actions). It uses a
+short-lived token GitHub issues for each run, so no secret is stored. The custom domain is set in
+Settings → Pages.
 
 ## Update the content
 
