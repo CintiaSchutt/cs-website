@@ -15,8 +15,8 @@ export function Experience() {
   return (
     <div className="container page">
       <PageHeader
-        title="Healthcare software, banking and sales."
-        lede="The short version."
+        title="Healthcare software now, banking and sales before."
+        lede="Three roles and a certificate, and what I carry from them into identity and access work."
       />
 
       <Section id="history" title="Work history">
@@ -26,7 +26,7 @@ export function Experience() {
           ))}
         </div>
         <p>
-          Résumé available on request: <a href={`mailto:${site.email}?subject=Résumé request`}>email me</a>.
+          Résumé available on request: <a href={`mailto:${site.email}?subject=${encodeURIComponent('Résumé request')}`}>email me</a>.
         </p>
       </Section>
 

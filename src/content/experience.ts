@@ -14,6 +14,7 @@ export const roles: Role[] = [
     end: null,
     context: 'Enterprise healthcare SaaS used by millions of people, handling sensitive health information.',
     highlights: [
+      'Worked on replacing our internal identity provider with Azure AD B2C for millions of users, including a temporary fallback to the old login.',
       'Work with OAuth 2.0 and OpenID Connect authentication and design secure REST APIs.',
       'Investigate and resolve production issues with cross-functional teams.',
       'Support CI/CD with GitHub Actions, Docker and Azure Kubernetes Service.',

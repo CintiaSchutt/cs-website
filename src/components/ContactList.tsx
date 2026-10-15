@@ -23,14 +23,6 @@ export function ContactList() {
           <ExternalLink href={site.github.href}>{site.github.label}</ExternalLink>
         </dd>
       </div>
-      {site.phone ? (
-        <div>
-          <dt>Phone</dt>
-          <dd>
-            <a href={`tel:${site.phone.replace(/[^+\d]/g, '')}`}>{site.phone}</a>
-          </dd>
-        </div>
-      ) : null}
       <div>
         <dt>Location</dt>
         <dd>{site.location}</dd>
@@ -38,7 +30,7 @@ export function ContactList() {
       <div>
         <dt>Résumé</dt>
         <dd>
-          <a href={`mailto:${site.email}?subject=Résumé request`}>Available on request, by email</a>
+          <a href={`mailto:${site.email}?subject=${encodeURIComponent('Résumé request')}`}>Available on request, by email</a>
         </dd>
       </div>
     </dl>

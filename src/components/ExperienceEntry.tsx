@@ -16,7 +16,7 @@ export function ExperienceEntry({ role }: { role: Role }) {
       </div>
       <div className="entry__body">
         <h3 id={headingId}>
-          {role.title}
+          {role.title}{' '}
           <span className="entry__org">{role.organization}</span>
         </h3>
         {role.context ? <p className="entry__context">{role.context}</p> : null}

@@ -3,7 +3,7 @@ import { ExternalLink } from '../components/ExternalLink';
 import { ProjectCard } from '../components/ProjectCard';
 import { Section } from '../components/Section';
 import { visible } from '../content/placeholders';
-import { projects } from '../content/projects';
+import { comingSoon, projects } from '../content/projects';
 import { site } from '../content/site';
 
 export function Projects() {
@@ -11,10 +11,7 @@ export function Projects() {
 
   return (
     <div className="container page">
-      <PageHeader
-        title="What I’m building, and what I’m learning from it."
-        lede="Labs, builds and write-ups. Each entry says what I set out to do, which tools and methods I used, what I did, and what I took from it."
-      />
+      <PageHeader title="What I’m building, and what I’m learning from it." />
 
       <Section id="work" title="Work">
         <div className="projects">
@@ -24,11 +21,17 @@ export function Projects() {
         </div>
       </Section>
 
-      <Section id="more" title="More to come">
+      <Section id="coming-soon" title="Coming soon">
+        <p>Identity and access management labs I’m working on next. Write-ups will appear here as I finish them.</p>
+        <ul className="bullets">
+          {comingSoon.map((project) => (
+            <li key={project.title}>
+              <strong>{project.title}</strong>: {project.summary}
+            </li>
+          ))}
+        </ul>
         <p>
-          Lab write-ups and security projects will be added here as I complete them. The rest of my
-          code is on{' '}
-          <ExternalLink href={site.github.href}>GitHub</ExternalLink>.
+          The rest of my code is on <ExternalLink href={site.github.href}>GitHub</ExternalLink>.
         </p>
       </Section>
     </div>

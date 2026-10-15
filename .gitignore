@@ -22,3 +22,6 @@ coverage/
 
 # Vite local cache
 .vite/
+
+# Private planning notes (not published; keep a backup elsewhere)
+docs/

@@ -36,7 +36,7 @@ jobs:
         run: |
           if [ -f package-lock.json ]; then npm ci; else npm install; fi
 
-      # Step 4: Type-check and verify colour contrast
+      # Step 4: Type-check
       - name: Check
         run: npm run check
 

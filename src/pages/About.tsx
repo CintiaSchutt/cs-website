@@ -1,6 +1,5 @@
 import { MembershipLink } from '../components/MembershipLink';
 import { PageHeader } from '../components/PageHeader';
-import { Placeholder } from '../components/Placeholder';
 import { Section } from '../components/Section';
 import { memberships } from '../content/site';
 
@@ -10,32 +9,33 @@ interface TimelineItem {
   detail: string;
 }
 
-/** The career in five lines. Every item comes from the résumé or the previous site. */
+/** The career in five lines. Every item comes from your résumés or your own account of your path. */
 const timeline: TimelineItem[] = [
   {
     when: '2010 – 2011',
     title: 'Inside Sales Representative, Dell Computers',
-    detail: 'Client-facing sales in Brazil.',
+    detail: 'Recognized as a Top Performer in Customer Experience.',
   },
   {
     when: '2012 – 2016',
     title: 'Customer Service Representative, Banco do Brasil',
-    detail: 'Client-facing work in a regulated financial institution.',
+    detail: 'Joined through a national-level exam. Client work in a highly regulated bank.',
   },
   {
     when: '2017 – 2019',
     title: 'Certificate in Computer Systems, BCIT',
-    detail: 'Software development, cloud computing and Agile. Graduated with Distinction.',
+    detail: 'Software development in a new country and a second language. Graduated with Distinction and the Dean’s Award.',
   },
   {
     when: '2019 – present',
     title: 'Software Developer, QHR Technologies',
-    detail: 'Secure SaaS for healthcare, including OAuth 2.0 and OpenID Connect.',
+    detail:
+      'Started as a junior developer and grew into an intermediate one, on a healthcare platform used by millions. Angular first, with some Java services, pipelines and migrations.',
   },
   {
     when: 'Now',
-    title: 'Studying identity and access',
-    detail: 'Identity and access management, with WebAuthn, Kubernetes and Spring Boot.',
+    title: 'Moving into identity and access',
+    detail: 'Studying identity and access management and planning hands-on labs.',
   },
 ];
 
@@ -61,13 +61,10 @@ export function About() {
 
       <Section id="why" title="Why identity and access">
         <p>
-          Authentication is the part of my work I keep coming back to. Identity and access
-          management is where that curiosity points: who gets in, and what they can do once they do.
+          At work, sign-in is how millions of people reach sensitive health information, and the
+          hard problems are rarely the happy path. Identity and access management is where I want to
+          work on them: who gets in, and what they can do once they’re inside.
         </p>
-        <Placeholder>
-          Add one or two sentences in your own words about what first drew you to identity and
-          access management or security. Edit <code>src/pages/About.tsx</code>.
-        </Placeholder>
       </Section>
 
       <Section id="community" title="Community">
@@ -76,10 +73,6 @@ export function About() {
             <MembershipLink membership={membership} />
           </p>
         ))}
-        <Placeholder>
-          Add a sentence on what being a member means to you or what you take part in. Edit{' '}
-          <code>src/pages/About.tsx</code>.
-        </Placeholder>
       </Section>
     </div>
   );

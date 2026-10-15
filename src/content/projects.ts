@@ -1,47 +1,59 @@
-import type { Project } from './types';
+import type { Project, UpcomingProject } from './types';
 
 /**
  * Projects, labs and write-ups, newest first.
  *
- * To add one, copy an object below, change every field and put it at the top
- * of the list. The Projects page and the Home page update automatically.
- * Each entry answers four questions: the goal, the tools or methods, what you
- * did, and what you learned. Keep it honest and specific; a small lab that is
- * clearly described beats a large claim that is vague.
- *
- * Entries marked `placeholder: true` show in `npm run dev` only. Fill in the
- * bracketed text and delete the flag to publish.
+ * When you start a project from `comingSoon` below, remove it from that list
+ * and add a full entry here. The template and the steps are in
+ * docs/README.md, under "Publishing a project on the site".
  */
 export const projects: Project[] = [
   {
-    slug: 'placeholder-lab',
-    placeholder: true,
-    title: '[Lab or project title]',
-    summary: '[One sentence: what this is and why it matters.]',
-    status: 'in-progress',
-    period: '[Month Year]',
-    goal: '[What were you trying to figure out or build?]',
-    tools: ['[Tool or platform]', '[Method or standard]'],
-    whatIDid: ['[A concrete step you took]', '[Another concrete step]'],
-    whatILearned: '[What you now understand, or would do differently.]',
-    links: [{ label: '[Write-up or repository]', href: 'https://github.com/CintiaSchutt' }],
-  },
-  {
     slug: 'this-website',
     title: 'This website',
-    summary:
-      'A rebuild of my personal site as a React portfolio, designed to be accessible, quick to load and to leave very little to attack.',
-    status: 'completed',
+    summary: 'My personal site, rebuilt in React to be simple, accessible and secure.',
+    status: 'in-progress',
     period: '2026',
-    goal: 'Replace a placeholder-heavy Angular site with a portfolio that tells the story of my move from software development into cybersecurity, backed by evidence.',
-    tools: ['React', 'TypeScript', 'Vite', 'CSS', 'GitHub Actions', 'GitHub Pages'],
+    goal: 'Replace my old Angular site with a portfolio that shows my move into cybersecurity.',
+    tools: ['React', 'TypeScript', 'Vite', 'Content-Security-Policy', 'GitHub Actions', 'GitHub Pages'],
     whatIDid: [
-      'Rebuilt the site in React with semantic HTML, keyboard-friendly navigation, visible focus states, a light and dark theme that follows the system setting, and support for reduced motion.',
-      'Kept the page free of third-party scripts, analytics and trackers. Its Content-Security-Policy allows scripts only from the site itself, and the only outside hosts it permits are the two that serve the fonts.',
-      'Checked colour contrast for both the light and dark themes with a script in the repository, and kept the original Angular project in the repository history.',
+      'Built it to be keyboard-friendly, with light and dark themes.',
+      'Added a strict Content-Security-Policy and left out trackers and third-party scripts.',
+      'Set up automatic checks and deployment with GitHub Actions.',
     ],
     whatILearned:
-      'A static site can have a very small attack surface if you refuse third-party code by default. With no external scripts or trackers, a strict Content-Security-Policy is easy to write and easy to trust, and every outside host you do allow, such as a font service, is a deliberate trade-off.',
+      'Security choices shape design choices. GitHub Pages cannot send every security header, so moving to a host that can is my next step.',
     links: [{ label: 'Source code on GitHub', href: 'https://github.com/CintiaSchutt/cs-website' }],
+  },
+];
+
+/**
+ * Projects not started yet, in the order you plan to build them. Shown under
+ * "Coming soon" on the Projects page. The plan for each is in docs/projects/.
+ */
+export const comingSoon: UpcomingProject[] = [
+  {
+    title: 'Single sign-on with OpenID Connect',
+    summary: 'Signing users in to a small app and API through an identity provider.',
+  },
+  {
+    title: 'Joiner, mover, leaver automation',
+    summary: 'Creating, updating and disabling accounts automatically from an HR file.',
+  },
+  {
+    title: 'Role-based access and access reviews',
+    summary: 'A small role model and a script that flags excess or unused access.',
+  },
+  {
+    title: 'SAML next to OIDC',
+    summary: 'The same app connected both ways, and what is actually different.',
+  },
+  {
+    title: 'Passkeys in Spring Boot',
+    summary: 'Passwordless sign-in with WebAuthn.',
+  },
+  {
+    title: 'Identity configuration as code',
+    summary: 'Identity provider settings managed with Terraform and a CI pipeline.',
   },
 ];

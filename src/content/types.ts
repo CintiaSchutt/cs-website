@@ -6,13 +6,6 @@ export interface ExternalLinkData {
   href: string;
 }
 
-/** A pointer from a claim to the thing that backs it up. Use `to` for pages on this site. */
-export interface EvidenceLink {
-  label: string;
-  to?: string;
-  href?: string;
-}
-
 export interface Role {
   id: string;
   title: string;
@@ -31,7 +24,6 @@ export interface Strength {
   id: string;
   title: string;
   summary: string;
-  evidence: EvidenceLink[];
 }
 
 export type LearningKind = 'Education' | 'Certification' | 'Course' | 'Topic' | 'Lab';
@@ -64,9 +56,18 @@ export interface Project {
   placeholder?: boolean;
 }
 
+/** A project not started yet, listed under "Coming soon" on the Projects page. */
+export interface UpcomingProject {
+  title: string;
+  /** One short sentence. */
+  summary: string;
+}
+
 /** A professional community you belong to, shown on Home and About. */
 export interface Membership {
   id: string;
+  /** Short description shown after the name, for example "a community for …". */
+  description?: string;
   /** Full name, used in the link text. */
   name: string;
   href: string;

@@ -123,47 +123,6 @@
     background: linear-gradient(90deg, currentColor 50%, transparent 50%);
   }
 
-  /* ---- Evidence tags: the signature detail ---- */
-
-  .evidence {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 0.35rem 0.9rem;
-    margin-top: var(--space-2);
-    font-size: var(--step--1);
-  }
-
-  .evidence__label {
-    color: var(--color-ink-muted);
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-  }
-
-  .evidence ul {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.35rem 1rem;
-  }
-
-  .evidence a {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    min-height: 1.75rem;
-  }
-
-  .evidence a::before {
-    content: '';
-    width: 0.45rem;
-    height: 0.45rem;
-    background: var(--color-accent);
-    transform: rotate(45deg);
-    flex: none;
-  }
-
   /* ---- Strengths ---- */
 
   .strengths {

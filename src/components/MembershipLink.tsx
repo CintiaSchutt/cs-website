@@ -9,7 +9,8 @@ export function MembershipLink({ membership }: { membership: Membership }) {
         <img className="membership__logo" src={membership.logo} alt="WiCyS member badge" width="96" height="96" />
       ) : null}
       <span>
-        Member of <ExternalLink href={membership.href}>{membership.name}</ExternalLink>
+        I’m a member of <ExternalLink href={membership.href}>{membership.name}</ExternalLink>
+        {membership.description ? `, ${membership.description}.` : '.'}
       </span>
     </span>
   );

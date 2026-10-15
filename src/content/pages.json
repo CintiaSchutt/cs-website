@@ -21,13 +21,13 @@
       "path": "/experience",
       "nav": "Experience",
       "title": "Experience — Cintia Schutt",
-      "description": "Work history in healthcare software, banking and sales, education, and the strengths that carry over into cybersecurity, each linked to its evidence."
+      "description": "Work history in healthcare software, banking and sales, education, and the strengths that carry over into cybersecurity."
     },
     {
       "path": "/projects",
       "nav": "Projects",
       "title": "Projects — Cintia Schutt",
-      "description": "Security labs, builds and write-ups, each with its goal, tools, what was done and what was learned, plus what Cintia Schutt is currently studying."
+      "description": "Security labs, builds and write-ups."
     },
     {
       "path": "/contact",

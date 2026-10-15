@@ -13,7 +13,7 @@ Requires Node 20.19 or newer.
 ```bash
 npm install        # once
 npm run dev        # local site at http://localhost:5173, with placeholder reminders shown
-npm run check      # type-check and colour-contrast test (both themes)
+npm run check      # type-check
 npm run build      # production build into dist/ (also writes per-page HTML, sitemap, CSP)
 npm run preview    # serve the production build locally
 ```
@@ -28,10 +28,10 @@ Everything you will edit lives in `src/content/`:
 
 | To change | Edit |
 | --- | --- |
-| Add a project, lab or what you are studying | `projects.ts` (copy an entry, put it at the top) |
+| Add a project, lab or what you are studying | `projects.ts` (steps in docs/README.md, "Publishing a project on the site") |
 | Add your education | `learning.ts` (entries of kind `Education` show on Experience) |
 | Work history | `experience.ts` |
-| Strengths and the evidence behind each | `strengths.ts` |
+| Strengths that carry over | `strengths.ts` |
 | Email, links, location, memberships (WiCyS) and their logos | `site.ts` |
 | Page titles and descriptions | `pages.json` |
 | Career timeline and "why identity and access" | `src/pages/About.tsx` |
@@ -39,12 +39,16 @@ Everything you will edit lives in `src/content/`:
 Entries marked `placeholder: true` show only in `npm run dev`, never on the published site.
 Only mark learning `completed` when it is. To show the WiCyS logo, put the file in `public/` and set its `logo` path in `site.ts` (check WiCyS's logo-usage guidelines first). The résumé is deliberately not published on the site (it is sent by email on request).
 
+## Plans and notes
+
+`docs/` holds the career roadmap, job-market notes, certification notes and six project playbooks. It is not part of the published site, but the repository is public, so keep secrets out of it.
+
 ## Design
 
 - **Themes:** light (warm paper, eggplant accent) and dark (the original near-black page, sand
   accent). The site follows the visitor's system setting; the button in the header overrides it
   and the choice is remembered in the browser. Colours are tokens in `src/styles/tokens.css`;
-  run `npm run check:contrast` after changing any.
+  change a dark colour in both dark blocks and check the result by eye.
 - **Logo:** `src/components/Logo.tsx` (theme-aware) and `public/favicon.svg`. Both are a clean
   redraw of the original CS mark. If you have the original vector file, swap it in.
 - **Illustration:** `public/illustration.webp`, shown large on Home and faintly behind other pages.
@@ -89,6 +93,6 @@ src/pages/      one file per page
 src/components/ header, logo, theme toggle, project card, experience entry, and so on
 src/styles/     tokens (colours, type, space), base, layout, components
 src/router.tsx  a small History API router that manages focus for keyboard and screen-reader users
-scripts/        postbuild.mjs (per-page HTML, sitemap, CSP) and check-contrast.mjs
+scripts/        postbuild.mjs (per-page HTML, sitemap, CSP)
 public/         files copied as they are: favicon, illustration, security.txt
 ```

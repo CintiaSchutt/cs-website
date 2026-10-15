@@ -10,7 +10,6 @@ import type { Membership } from './types';
 export const site = {
   name: 'Cintia Schutt',
   email: 'cintiaschutt@gmail.com',
-  phone: null as string | null,
   location: 'Calgary, Alberta, Canada',
   github: {
     label: 'github.com/CintiaSchutt',
@@ -33,6 +32,7 @@ export const memberships: Membership[] = [
     id: 'wicys',
     name: 'Women in CyberSecurity (WiCyS)',
     href: 'https://www.wicys.org',
+    description: 'a community for women working and learning in cybersecurity',
     logo: '/wicys-badge.webp',
   },
 ];

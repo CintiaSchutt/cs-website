@@ -13,9 +13,8 @@
  *
  * The palette therefore appears twice in the dark theme: once for "system says
  * dark and no choice saved", once for "visitor chose dark". Keep the two dark
- * blocks identical. `npm run check:contrast` reads all three blocks and fails if
- * a pairing drops below WCAG AA or if the two dark blocks differ. If you change
- * a colour, run it.
+ * blocks identical. If you change a colour, change it in both and look at the
+ * result in light and dark to make sure the text is still easy to read.
  */
 @layer tokens {
   :root {
