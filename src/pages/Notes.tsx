@@ -55,7 +55,7 @@ export function NotesIndex() {
     <NotesShell>
       <PageHeader
         title="Notes"
-        lede="My study notes on identity and access management, in the order I’m learning it. Topics in grey are still to come."
+        lede="My study notes on identity and access management, in the order I’m learning it."
       />
       <ol className="roadmap">
         {roadmap.map((area, index) => (

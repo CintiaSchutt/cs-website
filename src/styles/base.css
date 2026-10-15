@@ -1,6 +1,8 @@
 @layer base {
   html {
     background-color: var(--color-bg);
+    /* Always reserve the scrollbar's space, so short pages (Contact) don't shift sideways. */
+    scrollbar-gutter: stable;
   }
 
   body {
