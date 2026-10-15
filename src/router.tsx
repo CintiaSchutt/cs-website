@@ -130,9 +130,13 @@ export function Link({ to, onClick, children, ...rest }: LinkProps) {
   );
 }
 
-/** A <Link> that marks itself with aria-current="page" when it points at the current page. */
-export function NavLink({ to, ...rest }: LinkProps) {
+/**
+ * A <Link> that marks itself with aria-current="page" when it points at the current page.
+ * With `section`, it also stays current on sub-pages (the Notes menu item on /notes/oidc).
+ */
+export function NavLink({ to, section = false, ...rest }: LinkProps & { section?: boolean }) {
   const { path } = useRouter();
-  const isCurrent = normalizePath(to.split('#')[0] || '/') === path;
+  const target = normalizePath(to.split('#')[0] || '/');
+  const isCurrent = target === path || (section && target !== '/' && path.startsWith(`${target}/`));
   return <Link {...rest} to={to} aria-current={isCurrent ? 'page' : undefined} />;
 }
