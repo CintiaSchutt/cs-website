@@ -1,0 +1,45 @@
+{
+  "site": {
+    "name": "Cintia Schutt",
+    "url": "https://cintiaschutt.com",
+    "locale": "en_CA"
+  },
+  "pages": [
+    {
+      "path": "/",
+      "nav": "Home",
+      "title": "Cintia Schutt | Software developer moving into IAM",
+      "description": "Software developer in Calgary with hands-on OAuth 2.0 and OpenID Connect experience, moving into identity and access management. Projects, labs and experience."
+    },
+    {
+      "path": "/about",
+      "nav": "About",
+      "title": "About — Cintia Schutt",
+      "description": "How Cintia Schutt went from sales and banking to software development, and why she is turning toward identity and access management."
+    },
+    {
+      "path": "/experience",
+      "nav": "Experience",
+      "title": "Experience — Cintia Schutt",
+      "description": "Work history in healthcare software, banking and sales, education, and the strengths that carry over into cybersecurity."
+    },
+    {
+      "path": "/projects",
+      "nav": "Projects",
+      "title": "Projects — Cintia Schutt",
+      "description": "Security labs, builds and write-ups."
+    },
+    {
+      "path": "/contact",
+      "nav": "Contact",
+      "title": "Contact — Cintia Schutt",
+      "description": "Get in touch with Cintia Schutt by email, LinkedIn or GitHub."
+    }
+  ],
+  "notFound": {
+    "path": "/404",
+    "nav": "Not found",
+    "title": "Page not found — Cintia Schutt",
+    "description": "This page does not exist."
+  }
+}

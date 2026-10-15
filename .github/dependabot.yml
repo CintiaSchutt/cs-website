@@ -1,0 +1,12 @@
+# Keeps dependencies and GitHub Actions up to date by opening pull requests.
+# Review and merge them; the workflow type-checks and builds each one first.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly

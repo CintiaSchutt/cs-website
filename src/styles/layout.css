@@ -1,0 +1,348 @@
+@layer layout {
+  .container {
+    width: 100%;
+    max-width: calc(var(--container) + var(--gutter) * 2);
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+  }
+
+  .page {
+    padding-bottom: var(--space-5);
+  }
+
+  /* ---- Ambient illustration on inner pages: faint, fixed, never behind small screens ---- */
+
+  .ghost {
+    display: none;
+  }
+
+  @media (min-width: 60rem) {
+    .ghost {
+      display: block;
+      position: fixed;
+      right: -5rem;
+      bottom: -6rem;
+      z-index: 0;
+      width: 28rem;
+      height: auto;
+      opacity: var(--ghost-opacity);
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .site-header,
+    main,
+    .site-footer {
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  /* ---- Header ---- */
+
+  .site-header__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-1) var(--space-2);
+    padding-block: var(--space-3) var(--space-2);
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+    color: var(--color-ink);
+    text-decoration: none;
+  }
+
+  .brand:hover {
+    color: var(--color-accent);
+  }
+
+  .logo {
+    display: block;
+  }
+
+  .logo__front {
+    fill: var(--color-bg);
+  }
+
+  /*
+   * DOM order is brand, menu button, nav, theme button, so keyboard order follows
+   * what is revealed. On small screens `order` lines the buttons up beside the
+   * logo with the open menu underneath; from 52rem the nav sits inline.
+   */
+  .nav-toggle {
+    order: 1;
+    margin-left: auto;
+  }
+
+  .theme-toggle {
+    order: 2;
+  }
+
+  .nav-toggle,
+  .theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius);
+    background: transparent;
+    color: var(--color-ink);
+    font: inherit;
+    font-size: var(--step--1);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  .theme-toggle {
+    padding: 0.5rem;
+    border-color: transparent;
+    border-radius: 50%;
+  }
+
+  .nav-toggle:hover,
+  .theme-toggle:hover {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+  }
+
+  .theme-toggle svg {
+    display: block;
+  }
+
+  .site-nav {
+    display: none;
+    flex-basis: 100%;
+    order: 3;
+  }
+
+  .site-nav[data-open='true'] {
+    display: block;
+  }
+
+  .site-nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .site-nav a {
+    display: flex;
+    align-items: center;
+    min-height: 2.75rem;
+    padding: 0.35rem 0;
+    color: var(--color-ink-muted);
+    font-size: var(--step--1);
+    letter-spacing: 0.14em;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .site-nav a:hover {
+    color: var(--color-ink);
+  }
+
+  .site-nav a[aria-current='page'] {
+    color: var(--color-ink);
+    text-decoration: underline;
+    text-decoration-color: var(--color-accent);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.55em;
+  }
+
+  @media (min-width: 52rem) {
+    .nav-toggle {
+      display: none;
+    }
+
+    .site-header__inner {
+      flex-wrap: nowrap;
+    }
+
+    .site-nav {
+      display: block;
+      flex-basis: auto;
+      order: 0;
+      margin-left: auto;
+    }
+
+    .theme-toggle {
+      order: 0;
+    }
+
+    .site-nav ul {
+      flex-direction: row;
+      gap: 2rem;
+    }
+  }
+
+  /* ---- Footer ---- */
+
+  .site-footer {
+    color: var(--color-ink-muted);
+    font-size: var(--step--1);
+  }
+
+  .site-footer__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-1) var(--space-3);
+    padding-block: var(--space-4) var(--space-3);
+  }
+
+  .site-footer a {
+    color: var(--color-ink-muted);
+  }
+
+  .site-footer a:hover {
+    color: var(--color-ink);
+  }
+
+  .site-footer__links {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 var(--space-3);
+  }
+
+  .site-footer__links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+  }
+
+  /* ---- Page header ---- */
+
+  .page-header {
+    padding-block: var(--space-5) var(--space-4);
+    max-width: 52rem;
+  }
+
+  .page-header h1 {
+    font-size: var(--step-3);
+    letter-spacing: -0.02em;
+  }
+
+  .page-header .lede {
+    margin-top: var(--space-3);
+  }
+
+  /* ---- Sections: small label left, content right on wide screens ---- */
+
+  .section {
+    display: grid;
+    gap: var(--space-2) var(--space-4);
+    padding-block: var(--space-4);
+    border-top: 1px solid var(--color-rule);
+  }
+
+  .section__title {
+    color: var(--color-ink-muted);
+    font-family: var(--font-body);
+    font-size: var(--step--1);
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .section__body > * + * {
+    margin-top: var(--space-3);
+  }
+
+  .section__intro {
+    max-width: var(--measure);
+    color: var(--color-ink-muted);
+  }
+
+  @media (min-width: 52rem) {
+    .section {
+      grid-template-columns: minmax(9rem, 12rem) minmax(0, 1fr);
+    }
+
+    .section__title {
+      padding-top: 0.55rem;
+    }
+  }
+
+  /* ---- Home hero ---- */
+
+  .hero {
+    display: grid;
+    gap: var(--space-4);
+    padding-block: var(--space-4) var(--space-5);
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 1.4rem + 3.8vw, 4.5rem);
+    letter-spacing: -0.025em;
+    line-height: 1.02;
+  }
+
+  .hero h1 em {
+    display: block;
+    margin-top: 0.15em;
+    color: var(--color-accent);
+  }
+
+  .hero .lede {
+    margin-top: var(--space-3);
+    color: var(--color-ink-muted);
+  }
+
+  .hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1) var(--space-4);
+    margin-top: var(--space-4);
+  }
+
+  .hero__art {
+    position: relative;
+    width: min(100%, 22rem);
+    margin-inline: auto;
+    aspect-ratio: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .hero__disc {
+    position: absolute;
+    inset: 8% 4% 4% 8%;
+    border-radius: 50%;
+    background: var(--illustration-disc);
+  }
+
+  .hero__art img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: var(--illustration-opacity);
+  }
+
+  @media (min-width: 60rem) {
+    .hero {
+      grid-template-columns: minmax(0, 1.25fr) minmax(18rem, 1fr);
+      align-items: center;
+      min-height: min(40rem, calc(100vh - 11rem));
+    }
+
+    .hero__art {
+      width: 100%;
+      max-width: 36rem;
+      margin-inline: 0 0;
+      justify-self: end;
+    }
+  }
+}

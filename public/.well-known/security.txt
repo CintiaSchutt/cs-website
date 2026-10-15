@@ -1,0 +1,4 @@
+Contact: mailto:cintiaschutt@gmail.com
+Expires: 2027-10-14T00:00:00.000Z
+Preferred-Languages: en, pt
+Canonical: https://cintiaschutt.com/.well-known/security.txt

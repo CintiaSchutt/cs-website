@@ -10,41 +10,46 @@ on:
     branches:
       - main
 
+# Least privilege: the job only needs to read the repository. Deployment uses the GH_TOKEN secret.
+permissions:
+  contents: read
+
 # Define the jobs to be run
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-        # Step 1: Check out the code from your repository
+      # Step 1: Check out the code from your repository
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-        # Step 2: Set up Node.js
+      # Step 2: Set up Node.js (Vite 7 needs Node 20.19+ or 22.12+)
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
-        # Step 3: Install dependencies
+      # Step 3: Install dependencies. `npm ci` needs a committed package-lock.json;
+      # until you have committed one, fall back to `npm install`.
       - name: Install dependencies
         run: |
-          npm ci
-          npm install -g @angular/cli
-        #   npm install -g @scullyio/init
+          if [ -f package-lock.json ]; then npm ci; else npm install; fi
 
-        # Step 4: Build the Angular app
+      # Step 4: Type-check
+      - name: Check
+        run: npm run check
+
+      # Step 5: Build the React app (runs vite build, then scripts/postbuild.mjs)
       - name: Build
-        run: |
-          npm run build
-        #   npm run scully
+        run: npm run build
 
-        # Step 5: Deploy to GitHub Pages
+      # Step 6: Deploy to GitHub Pages
       - name: Deploy to GitHub pages
         if: github.ref == 'refs/heads/main'  # Only deploy on main branch
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
           branch: gh-pages
-          folder: dist/cs-website/browser
+          folder: dist
           clean: true
           token: ${{ secrets.GH_TOKEN }}
