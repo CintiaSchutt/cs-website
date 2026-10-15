@@ -22,26 +22,6 @@ Pushing to `main` runs `.github/workflows/deploy.yml`, which checks, builds and 
 short-lived token GitHub issues for each run, so no secret is stored. The custom domain is set in
 Settings → Pages.
 
-## Update the content
-
-Everything you will edit lives in `src/content/`:
-
-| To change | Edit |
-| --- | --- |
-| Add a project, lab or what you are studying | `projects.ts` (steps in docs/README.md, "Publishing a project on the site") |
-| Add your education | `learning.ts` (entries of kind `Education` show on Experience) |
-| Work history | `experience.ts` |
-| Strengths that carry over | `strengths.ts` |
-| Email, links, location, memberships (WiCyS) and their logos | `site.ts` |
-| Page titles and descriptions | `pages.json` |
-| Career timeline and "why identity and access" | `src/pages/About.tsx` |
-
-Only mark learning `completed` when it is. To show the WiCyS logo, put the file in `public/` and set its `logo` path in `site.ts` (check WiCyS's logo-usage guidelines first). The résumé is deliberately not published on the site (it is sent by email on request).
-
-## Plans and notes
-
-`docs/` holds the career roadmap, job-market notes, certification notes and six project playbooks. It is not part of the published site and is git-ignored, so it stays on your computer. Keep a private backup.
-
 ## Design
 
 - **Themes:** light (warm paper, eggplant accent) and dark (the original near-black page, sand
