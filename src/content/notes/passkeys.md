@@ -1,6 +1,5 @@
 ---
 title: Passkeys and WebAuthn
-category: Authentication
 summary: Phishing-resistant sign-in with public-key cryptography instead of passwords.
 updated: 2026-10-15
 ---

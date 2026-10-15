@@ -1,6 +1,5 @@
 ---
 title: OpenID Connect
-category: Identity protocols
 summary: An identity layer on top of OAuth 2.0 that tells the app who signed in.
 updated: 2026-10-15
 ---

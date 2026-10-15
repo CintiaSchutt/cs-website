@@ -1,6 +1,5 @@
 ---
 title: RBAC and ABAC
-category: Access control
 summary: Two ways to decide who can do what, by role or by attributes.
 updated: 2026-10-15
 ---

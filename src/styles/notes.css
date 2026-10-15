@@ -1,5 +1,4 @@
-/* Notes section: a docs-style layout with topics on the left, the note in the middle
-   and "On this page" on the right (wide screens only). */
+/* Notes section: a docs-style layout with topics on the left and the note on the right. */
 @layer components {
   .notes {
     display: grid;
@@ -36,14 +35,12 @@
     display: none;
   }
 
-  .notes-nav ul,
-  .notes__toc ul {
+  .notes-nav ul {
     list-style: none;
     padding: 0;
   }
 
-  .notes-nav a,
-  .notes__toc a {
+  .notes-nav a {
     display: block;
     padding: 0.3rem 0.75rem;
     border-left: 2px solid transparent;
@@ -51,8 +48,7 @@
     text-decoration: none;
   }
 
-  .notes-nav a:hover,
-  .notes__toc a:hover {
+  .notes-nav a:hover {
     color: var(--color-ink);
     border-left-color: var(--color-rule);
   }
@@ -81,42 +77,65 @@
     text-transform: uppercase;
   }
 
-  /* ---- Topic list on /notes ---- */
+  /* ---- Roadmap on /notes ---- */
 
-  .notes-group {
+  .roadmap {
+    list-style: none;
+    padding: 0;
+  }
+
+  .roadmap__area {
     padding-block: var(--space-3);
     border-top: 1px solid var(--color-rule);
   }
 
-  .notes-cards {
+  .roadmap__area h2 {
+    font-size: var(--step-2);
+  }
+
+  .roadmap__number {
+    color: var(--color-grape);
+    font-variant-numeric: lining-nums;
+  }
+
+  .roadmap__description {
+    margin-top: 0.25rem;
+    color: var(--color-ink-muted);
+  }
+
+  .roadmap__topics {
     list-style: none;
     padding: 0;
     margin-top: var(--space-2);
     display: grid;
-    gap: var(--space-2);
+    gap: 0.4rem var(--space-3);
   }
 
   @media (min-width: 40rem) {
-    .notes-cards {
-      grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    .roadmap__topics {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 
-  .notes-card {
-    padding: var(--space-2);
-    border: 1px solid var(--color-rule);
-    border-radius: var(--radius);
-    background: var(--color-bg);
+  .roadmap__topics li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.25rem 0.5rem;
   }
 
-  .notes-card h3 {
-    font-size: var(--step-1);
-  }
-
-  .notes-card p {
-    margin-top: 0.35rem;
+  .roadmap__topic--planned > span:first-child {
     color: var(--color-ink-muted);
-    font-size: var(--step--1);
+  }
+
+  .notes-tag {
+    padding: 0.05rem 0.45rem;
+    border: 1px solid var(--color-rule);
+    border-radius: 999px;
+    color: var(--color-ink-muted);
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
   }
 
   /* ---- A single note ---- */
@@ -130,15 +149,6 @@
     margin-top: var(--space-4);
     color: var(--color-ink-muted);
     font-size: var(--step--1);
-  }
-
-  .notes__toc {
-    display: none;
-    font-size: var(--step--1);
-  }
-
-  .notes__toc-sub a {
-    padding-left: 1.5rem;
   }
 
   /* Markdown content */
@@ -214,7 +224,7 @@
     scroll-margin-top: var(--space-3);
   }
 
-  /* ---- Wide screens: three columns ---- */
+  /* ---- Wide screens: two columns ---- */
 
   @media (min-width: 52rem) {
     .notes {
@@ -230,19 +240,6 @@
       display: block;
       position: sticky;
       top: var(--space-3);
-    }
-  }
-
-  @media (min-width: 72rem) {
-    .notes--with-toc {
-      grid-template-columns: 13rem minmax(0, 1fr) 12rem;
-    }
-
-    .notes__toc {
-      display: block;
-      position: sticky;
-      top: var(--space-3);
-      align-self: start;
     }
   }
 }

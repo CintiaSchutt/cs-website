@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import { PageHeader } from '../components/PageHeader';
-import { noteCategories, noteForSlug, type Note } from '../content/notes';
+import { noteCategories, noteForSlug } from '../content/notes';
+import { roadmap } from '../content/notes-roadmap';
 import { formatMonth } from '../lib/format';
 import { Link, NavLink } from '../router';
 import { NotFound } from './NotFound';
@@ -38,13 +39,12 @@ function NotesSidebar() {
   );
 }
 
-function NotesShell({ children, toc }: { children: ReactNode; toc?: ReactNode }) {
+function NotesShell({ children }: { children: ReactNode }) {
   return (
     <div className="container page">
-      <div className={`notes ${toc ? 'notes--with-toc' : ''}`}>
+      <div className="notes">
         <NotesSidebar />
         <div className="notes__main">{children}</div>
-        {toc}
       </div>
     </div>
   );
@@ -53,41 +53,39 @@ function NotesShell({ children, toc }: { children: ReactNode; toc?: ReactNode })
 export function NotesIndex() {
   return (
     <NotesShell>
-      <PageHeader title="Notes" lede="My study summaries on identity and access management, kept short and in my own words." />
-      {noteCategories.map((category) => (
-        <section key={category.name} className="notes-group" aria-labelledby={`cat-${category.name}`}>
-          <h2 id={`cat-${category.name}`} className="section__title">
-            {category.name}
-          </h2>
-          <ul className="notes-cards">
-            {category.notes.map((note) => (
-              <li key={note.slug} className="notes-card">
-                <h3>
-                  <Link to={`/notes/${note.slug}`}>{note.title}</Link>
-                </h3>
-                <p>{note.summary}</p>
-              </li>
-            ))}
-          </ul>
-        </section>
-      ))}
-    </NotesShell>
-  );
-}
-
-function OnThisPage({ note }: { note: Note }) {
-  if (note.headings.length < 2) return null;
-  return (
-    <nav className="notes__toc" aria-label="On this page">
-      <p className="notes-nav__category">On this page</p>
-      <ul>
-        {note.headings.map((heading) => (
-          <li key={heading.id} className={heading.level === 3 ? 'notes__toc-sub' : undefined}>
-            <a href={`#${heading.id}`}>{heading.text}</a>
+      <PageHeader
+        title="Notes"
+        lede="My study notes on identity and access management, in the order I’m learning it. Topics in grey are still to come."
+      />
+      <ol className="roadmap">
+        {roadmap.map((area, index) => (
+          <li key={area.id} className="roadmap__area">
+            <h2 id={`area-${area.id}`}>
+              <span className="roadmap__number">{index + 1}</span> {area.name}
+            </h2>
+            <p className="roadmap__description">{area.description}</p>
+            <ul className="roadmap__topics">
+              {area.topics.map((topic) => {
+                const note = noteForSlug(topic.slug);
+                return (
+                  <li key={topic.slug} className={note ? undefined : 'roadmap__topic--planned'}>
+                    {note ? (
+                      <Link to={`/notes/${topic.slug}`}>{topic.title}</Link>
+                    ) : (
+                      <span>
+                        {topic.title}
+                        <span className="visually-hidden"> (planned)</span>
+                      </span>
+                    )}
+                    {topic.vendor ? <span className="notes-tag">{topic.vendor}</span> : null}
+                  </li>
+                );
+              })}
+            </ul>
           </li>
         ))}
-      </ul>
-    </nav>
+      </ol>
+    </NotesShell>
   );
 }
 
@@ -96,7 +94,7 @@ export function NotePage({ slug }: { slug: string }) {
   if (!note) return <NotFound />;
 
   return (
-    <NotesShell toc={<OnThisPage note={note} />}>
+    <NotesShell>
       <p className="notes__breadcrumb">
         <Link to="/notes">Notes</Link> <span aria-hidden="true">/</span> {note.category}
       </p>

@@ -1,6 +1,5 @@
 ---
 title: OAuth 2.0
-category: Identity protocols
 summary: A framework that lets an app access an API on a user's behalf without seeing their password.
 updated: 2026-10-15
 ---

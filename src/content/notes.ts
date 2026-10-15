@@ -1,4 +1,5 @@
 import { Marked, type Tokens } from 'marked';
+import { roadmap } from './notes-roadmap';
 
 /**
  * Study notes, one Markdown file per topic in src/content/notes/.
@@ -7,38 +8,28 @@ import { Marked, type Tokens } from 'marked';
  *
  *   ---
  *   title: OpenID Connect
- *   category: Identity protocols
  *   summary: One sentence shown in the topic list.
  *   updated: 2026-10-15
  *   ---
  *
- * The file name becomes the address: oidc.md is /notes/oidc. Topics are
- * grouped by `category` in the sidebar, in the order of CATEGORY_ORDER below.
+ * The file name is the topic's slug in notes-roadmap.ts: oidc.md is /notes/oidc.
+ * The roadmap decides each note's area and order.
  */
-
-export interface NoteHeading {
-  id: string;
-  text: string;
-  level: 2 | 3;
-}
 
 export interface Note {
   slug: string;
   title: string;
+  /** The roadmap area's name, or "Other" for a note not in the roadmap. */
   category: string;
   summary: string;
   updated?: string;
   html: string;
-  headings: NoteHeading[];
 }
 
 export interface NoteCategory {
   name: string;
   notes: Note[];
 }
-
-/** Categories listed here come first, in this order; any others follow alphabetically. */
-const CATEGORY_ORDER = ['Identity protocols', 'Authentication', 'Access control'];
 
 const files = import.meta.glob('./notes/*.md', { query: '?raw', import: 'default', eager: true }) as Record<
   string,
@@ -64,8 +55,7 @@ const slugify = (text: string) =>
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-|-$/g, '');
 
-function render(body: string): { html: string; headings: NoteHeading[] } {
-  const headings: NoteHeading[] = [];
+function render(body: string): string {
   const used = new Set<string>();
   const marked = new Marked({
     renderer: {
@@ -76,40 +66,43 @@ function render(body: string): { html: string; headings: NoteHeading[] } {
         let id = slugify(inner) || 'section';
         while (used.has(id)) id += '-1';
         used.add(id);
-        if (level === 2 || level === 3) {
-          headings.push({ id, text: inner.replace(/<[^>]+>/g, ''), level });
-        }
         return `<h${level} id="${id}" tabindex="-1">${inner}</h${level}>\n`;
       },
     },
   });
-  return { html: marked.parse(body, { async: false }), headings };
+  return marked.parse(body, { async: false });
 }
 
-export const notes: Note[] = Object.entries(files)
-  .map(([file, source]) => {
+const areaForSlug = new Map(roadmap.flatMap((area) => area.topics.map((topic) => [topic.slug, area.name])));
+
+const notesBySlug = new Map<string, Note>(
+  Object.entries(files).map(([file, source]) => {
     const slug = file.replace(/^.*\/|\.md$/g, '');
     const { data, body } = parseFrontMatter(source);
-    return {
+    const note: Note = {
       slug,
       title: data.title ?? slug,
-      category: data.category ?? 'Other',
+      category: areaForSlug.get(slug) ?? 'Other',
       summary: data.summary ?? '',
       updated: data.updated,
-      ...render(body),
+      html: render(body),
     };
-  })
-  .sort((a, b) => a.title.localeCompare(b.title));
+    return [slug, note];
+  }),
+);
 
-export const noteCategories: NoteCategory[] = [...new Set(notes.map((note) => note.category))]
-  .sort((a, b) => {
-    const ia = CATEGORY_ORDER.indexOf(a);
-    const ib = CATEGORY_ORDER.indexOf(b);
-    if (ia !== -1 || ib !== -1) return (ia === -1 ? Infinity : ia) - (ib === -1 ? Infinity : ib);
-    return a.localeCompare(b);
-  })
-  .map((name) => ({ name, notes: notes.filter((note) => note.category === name) }));
+/** Published notes grouped by roadmap area, in roadmap order. Areas with no notes yet are left out. */
+export const noteCategories: NoteCategory[] = [
+  ...roadmap.map((area) => ({
+    name: area.name,
+    notes: area.topics.map((topic) => notesBySlug.get(topic.slug)).filter((note): note is Note => !!note),
+  })),
+  {
+    name: 'Other',
+    notes: [...notesBySlug.values()].filter((note) => note.category === 'Other'),
+  },
+].filter((category) => category.notes.length > 0);
 
 export function noteForSlug(slug: string): Note | undefined {
-  return notes.find((note) => note.slug === slug);
+  return notesBySlug.get(slug);
 }

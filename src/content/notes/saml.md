@@ -1,6 +1,5 @@
 ---
 title: SAML 2.0
-category: Identity protocols
 summary: An older XML-based standard for single sign-on, still common in enterprise apps.
 updated: 2026-10-15
 ---
