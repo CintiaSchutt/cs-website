@@ -64,15 +64,17 @@
   }
 
   .notes-nav__group + .notes-nav__group {
-    margin-top: var(--space-2);
+    margin-top: var(--space-3);
   }
 
+  /* Area headings use full ink and a heavier weight, so they read as headings
+     rather than as greyed-out (unwritten) topics. */
   .notes-nav__category {
     margin-bottom: 0.35rem;
     padding-left: 0.75rem;
-    color: var(--color-ink-muted);
+    color: var(--color-ink);
     font-size: var(--step--1);
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 0.14em;
     text-transform: uppercase;
   }
