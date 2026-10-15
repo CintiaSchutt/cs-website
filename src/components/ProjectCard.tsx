@@ -1,7 +1,6 @@
 import type { Project } from '../content/types';
 import { Link } from '../router';
 import { ExternalLink } from './ExternalLink';
-import { Placeholder } from './Placeholder';
 import { StatusBadge } from './StatusBadge';
 
 interface Props {
@@ -74,13 +73,6 @@ export function ProjectCard({ project, variant = 'full' }: Props) {
             </ul>
           ) : null}
         </>
-      ) : null}
-
-      {project.placeholder ? (
-        <Placeholder>
-          Copy this entry, replace every bracket with your own words, then delete{' '}
-          <code>placeholder: true</code> in <code>src/content/projects.ts</code> to publish it.
-        </Placeholder>
       ) : null}
     </article>
   );

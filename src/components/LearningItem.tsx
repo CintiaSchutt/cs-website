@@ -1,5 +1,4 @@
 import type { LearningEntry } from '../content/types';
-import { Placeholder } from './Placeholder';
 import { StatusBadge } from './StatusBadge';
 
 /** One course, certification or topic. The `id` is a link target (/projects#webauthn). */
@@ -16,12 +15,6 @@ export function LearningItem({ entry }: { entry: LearningEntry }) {
         <h3 id={headingId}>{entry.title}</h3>
         {entry.provider ? <p className="learning-item__provider">{entry.provider}</p> : null}
         {entry.note ? <p>{entry.note}</p> : null}
-        {entry.placeholder ? (
-          <Placeholder>
-            Replace the bracketed text, then delete <code>placeholder: true</code> in{' '}
-            <code>src/content/learning.ts</code> to publish it.
-          </Placeholder>
-        ) : null}
       </article>
     </li>
   );

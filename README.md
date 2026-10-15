@@ -3,8 +3,7 @@
 Personal portfolio for Cintia Schutt: a software developer moving into cybersecurity,
 with a focus on identity and access management (IAM).
 
-Built with React, TypeScript and Vite. The previous Angular site is kept, untouched, in
-[`legacy-angular/`](legacy-angular/README.md) and in the git history.
+Built with React, TypeScript and Vite. The previous Angular site is in the git history.
 
 ## Run it
 
@@ -12,7 +11,7 @@ Requires Node 20.19 or newer.
 
 ```bash
 npm install        # once
-npm run dev        # local site at http://localhost:5173, with placeholder reminders shown
+npm run dev        # local site at http://localhost:5173
 npm run check      # type-check
 npm run build      # production build into dist/ (also writes per-page HTML, sitemap, CSP)
 npm run preview    # serve the production build locally
@@ -36,12 +35,11 @@ Everything you will edit lives in `src/content/`:
 | Page titles and descriptions | `pages.json` |
 | Career timeline and "why identity and access" | `src/pages/About.tsx` |
 
-Entries marked `placeholder: true` show only in `npm run dev`, never on the published site.
 Only mark learning `completed` when it is. To show the WiCyS logo, put the file in `public/` and set its `logo` path in `site.ts` (check WiCyS's logo-usage guidelines first). The résumé is deliberately not published on the site (it is sent by email on request).
 
 ## Plans and notes
 
-`docs/` holds the career roadmap, job-market notes, certification notes and six project playbooks. It is not part of the published site, but the repository is public, so keep secrets out of it.
+`docs/` holds the career roadmap, job-market notes, certification notes and six project playbooks. It is not part of the published site and is git-ignored, so it stays on your computer. Keep a private backup.
 
 ## Design
 

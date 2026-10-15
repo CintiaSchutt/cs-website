@@ -10,8 +10,6 @@ import type { LearningEntry } from './types';
  * - `status` is 'completed', 'in-progress' or 'planned'. Be strict: only mark
  *   something 'completed' when you have finished it, and name the certificate
  *   or credential exactly as it was issued.
- * - Entries marked `placeholder: true` show in `npm run dev` only. Replace
- *   their bracketed text with the real thing and delete the flag to publish.
  */
 export const learning: LearningEntry[] = [
   {

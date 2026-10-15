@@ -5,12 +5,11 @@ import { Section } from '../components/Section';
 import { StrengthList } from '../components/StrengthList';
 import { roles } from '../content/experience';
 import { learning } from '../content/learning';
-import { visible } from '../content/placeholders';
 import { site } from '../content/site';
 import { strengths } from '../content/strengths';
 
 export function Experience() {
-  const education = visible(learning).filter((entry) => entry.kind === 'Education');
+  const education = learning.filter((entry) => entry.kind === 'Education');
 
   return (
     <div className="container page">

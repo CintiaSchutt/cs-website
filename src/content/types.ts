@@ -36,8 +36,6 @@ export interface LearningEntry {
   status: Status;
   period?: string;
   note?: string;
-  /** Placeholders show in `npm run dev` only (see placeholders.ts). */
-  placeholder?: boolean;
 }
 
 export interface Project {
@@ -52,8 +50,6 @@ export interface Project {
   whatIDid: string[];
   whatILearned: string;
   links?: ExternalLinkData[];
-  /** Placeholders show in `npm run dev` only (see placeholders.ts). */
-  placeholder?: boolean;
 }
 
 /** A project not started yet, listed under "Coming soon" on the Projects page. */
