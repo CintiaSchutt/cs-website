@@ -1,12 +1,29 @@
-# Keeps dependencies and GitHub Actions up to date by opening pull requests.
-# Review and merge them; the workflow type-checks and builds each one first.
+# Checks once a month for newer versions of packages and GitHub Actions and opens
+# grouped pull requests. Review and merge them; the workflow type-checks and builds each one first.
+#
+# Security fixes do not wait for this schedule: with Dependabot security updates turned on
+# (Settings → Code security), they arrive as their own pull requests as soon as an alert is raised.
 version: 2
 updates:
   - package-ecosystem: npm
     directory: /
     schedule:
-      interval: weekly
+      interval: monthly
+    groups:
+      # Usually safe: merge once the check is green.
+      minor-and-patch:
+        applies-to: version-updates
+        update-types: [minor, patch]
+      # Can break things: build and preview the site locally before merging.
+      major:
+        applies-to: version-updates
+        update-types: [major]
+
   - package-ecosystem: github-actions
     directory: /
     schedule:
-      interval: weekly
+      interval: monthly
+    groups:
+      actions:
+        applies-to: version-updates
+        patterns: ['*']
