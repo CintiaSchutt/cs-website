@@ -6,12 +6,6 @@ export function ContactList() {
   return (
     <dl className="contact-list">
       <div>
-        <dt>Email</dt>
-        <dd>
-          <a href={`mailto:${site.email}`}>{site.email}</a>
-        </dd>
-      </div>
-      <div>
         <dt>LinkedIn</dt>
         <dd>
           <ExternalLink href={site.linkedin.href}>{site.linkedin.label}</ExternalLink>

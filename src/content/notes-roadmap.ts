@@ -10,8 +10,6 @@
 export interface RoadmapTopic {
   slug: string;
   title: string;
-  /** Set for vendor-specific topics; left out for concepts that work on any platform. */
-  vendor?: string;
 }
 
 export interface RoadmapArea {
@@ -51,8 +49,8 @@ export const roadmap: RoadmapArea[] = [
       { slug: 'mfa', title: 'Multi-factor authentication (MFA)' },
       { slug: 'passkeys', title: 'Passkeys and WebAuthn' },
       { slug: 'scim', title: 'SCIM provisioning' },
-      { slug: 'app-registration', title: 'Application registration and consent', vendor: 'Microsoft' },
-      { slug: 'conditional-access', title: 'Conditional Access', vendor: 'Microsoft' },
+      { slug: 'app-registration', title: 'Entra application registration and consent' },
+      { slug: 'conditional-access', title: 'Conditional Access (Microsoft Entra)' },
       { slug: 'troubleshooting-sign-in', title: 'Troubleshooting sign-in failures' },
     ],
   },
@@ -62,10 +60,10 @@ export const roadmap: RoadmapArea[] = [
     description: 'Day-to-day work with users, groups, roles and directories.',
     topics: [
       { slug: 'users-groups-roles', title: 'Users, groups and roles' },
-      { slug: 'active-directory', title: 'Active Directory basics', vendor: 'Microsoft' },
-      { slug: 'entra-id', title: 'Microsoft Entra ID basics', vendor: 'Microsoft' },
-      { slug: 'hybrid-identity', title: 'Hybrid identity', vendor: 'Microsoft' },
-      { slug: 'okta', title: 'Okta for workforce identity', vendor: 'Okta' },
+      { slug: 'active-directory', title: 'Active Directory basics' },
+      { slug: 'entra-id', title: 'Microsoft Entra ID basics' },
+      { slug: 'hybrid-identity', title: 'Hybrid identity' },
+      { slug: 'okta', title: 'Okta for workforce identity' },
       { slug: 'provisioning', title: 'Provisioning and deprovisioning' },
     ],
   },
@@ -81,7 +79,7 @@ export const roadmap: RoadmapArea[] = [
       { slug: 'role-design', title: 'Role design' },
       { slug: 'segregation-of-duties', title: 'Segregation of duties' },
       { slug: 'audit-evidence', title: 'Audit evidence for access' },
-      { slug: 'iga-platforms', title: 'SailPoint or Saviynt: core concepts', vendor: 'Vendor' },
+      { slug: 'iga-platforms', title: 'SailPoint or Saviynt: core concepts' },
     ],
   },
   {
@@ -94,7 +92,7 @@ export const roadmap: RoadmapArea[] = [
       { slug: 'vaulting', title: 'Vaulting and credential rotation' },
       { slug: 'session-management', title: 'Privileged session management' },
       { slug: 'just-in-time-access', title: 'Just-in-time access' },
-      { slug: 'pam-platforms', title: 'CyberArk or BeyondTrust: core concepts', vendor: 'Vendor' },
+      { slug: 'pam-platforms', title: 'CyberArk or BeyondTrust: core concepts' },
     ],
   },
   {
@@ -103,7 +101,7 @@ export const roadmap: RoadmapArea[] = [
     description: 'Scripts, APIs and logs that keep identity work repeatable.',
     topics: [
       { slug: 'identity-apis', title: 'Identity APIs' },
-      { slug: 'microsoft-graph', title: 'Microsoft Graph for identity tasks', vendor: 'Microsoft' },
+      { slug: 'microsoft-graph', title: 'Microsoft Graph for identity tasks' },
       { slug: 'scripting', title: 'Scripting identity tasks (PowerShell or Python)' },
       { slug: 'lifecycle-automation', title: 'Automating the lifecycle' },
       { slug: 'logs', title: 'Reading sign-in and audit logs' },
