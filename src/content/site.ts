@@ -3,7 +3,7 @@ import type { Membership } from './types';
 /** Contact details and links used across the site. No phone number, on purpose: it mostly attracts spam. */
 export const site = {
   name: 'Cintia Schutt',
-  email: 'cintiaschutt@gmail.com',
+  email: 'cintia@cintiaschutt.com',
   location: 'Calgary, Alberta, Canada',
   github: {
     label: 'github.com/CintiaSchutt',
