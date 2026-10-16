@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Personal portfolio for Cintia Schutt: a software developer moving into cybersecurity (identity and access management).",
+  "description": "Personal portfolio for Cintia Schutt: a software developer who specializes in identity.",
   "engines": {
     "node": ">=20.19.0"
   },

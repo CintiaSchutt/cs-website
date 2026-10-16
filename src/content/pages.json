@@ -8,20 +8,20 @@
     {
       "path": "/",
       "nav": "Home",
-      "title": "Cintia Schutt | Software developer moving into IAM",
-      "description": "Software developer in Calgary with hands-on OAuth 2.0 and OpenID Connect experience, moving into identity and access management. Projects, labs and experience."
+      "title": "Cintia Schutt | Software developer specializing in identity",
+      "description": "Software developer in Calgary who specializes in identity: OAuth 2.0 and OpenID Connect sign-in for healthcare software. Open to developer and identity and access management roles."
     },
     {
       "path": "/about",
       "nav": "About",
       "title": "About — Cintia Schutt",
-      "description": "How Cintia Schutt went from sales and banking to software development, and why she is turning toward identity and access management."
+      "description": "How Cintia Schutt went from sales and banking to software development, and why identity became the focus."
     },
     {
       "path": "/experience",
       "nav": "Experience",
       "title": "Experience — Cintia Schutt",
-      "description": "Work history in healthcare software, banking and sales, education, and the strengths that carry over into cybersecurity."
+      "description": "Work history in healthcare software, banking and sales, education, and the strengths that carry over into identity work."
     },
     {
       "path": "/projects",
