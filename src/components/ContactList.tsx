@@ -18,14 +18,14 @@ export function ContactList() {
         </dd>
       </div>
       <div>
-        <dt>Location</dt>
-        <dd>{site.location}</dd>
-      </div>
-      <div>
         <dt>Résumé</dt>
         <dd>
           <a href={`mailto:${site.email}?subject=${encodeURIComponent('Résumé request')}`}>Available on request, by email</a>
         </dd>
+      </div>
+      <div>
+        <dt>Location</dt>
+        <dd>{site.location}</dd>
       </div>
     </dl>
   );
