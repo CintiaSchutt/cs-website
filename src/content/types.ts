@@ -59,7 +59,7 @@ export interface UpcomingProject {
   summary: string;
 }
 
-/** A professional community you belong to, shown on Home and About. */
+/** A professional community, shown on the About page. */
 export interface Membership {
   id: string;
   /** Short description shown after the name, for example "a community for …". */
@@ -67,6 +67,6 @@ export interface Membership {
   /** Full name, used in the link text. */
   name: string;
   href: string;
-  /** Path to a logo in public/, e.g. "/wicys-logo.svg". Leave undefined to show the name only. */
+  /** Path to a logo in public/, e.g. "/wicys-badge.webp". Leave undefined to show the name only. */
   logo?: string;
 }

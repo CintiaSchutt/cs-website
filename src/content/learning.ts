@@ -1,15 +1,11 @@
 import type { LearningEntry } from './types';
 
 /**
- * Courses, certifications, topics and education.
+ * Education and certifications. Entries of kind 'Education' appear on the
+ * Experience page; labs and builds go in projects.ts instead.
  *
- * Entries of kind 'Education' appear on the Experience page. Labs, builds and
- * what you are studying go in projects.ts (Projects page), written up as entries.
- *
- * To add an entry, copy one of the objects below and change it.
- * - `status` is 'completed', 'in-progress' or 'planned'. Be strict: only mark
- *   something 'completed' when you have finished it, and name the certificate
- *   or credential exactly as it was issued.
+ * Only mark an entry 'completed' when it is, and name a certificate or
+ * credential exactly as it was issued.
  */
 export const learning: LearningEntry[] = [
   {

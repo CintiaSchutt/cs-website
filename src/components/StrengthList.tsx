@@ -1,6 +1,6 @@
 import type { Strength } from '../content/types';
 
-/** The strengths that carry over into security work: a short title and one line each. */
+/** The strengths that carry over into identity work: a short title and one line each. */
 export function StrengthList({ items }: { items: Strength[] }) {
   return (
     <ul className="strengths">

@@ -6,7 +6,7 @@ import { formatMonth } from '../lib/format';
 import { Link, NavLink } from '../router';
 import { NotFound } from './NotFound';
 
-/** Sidebar with every topic, grouped by category. On small screens it folds into a "Topics" menu. */
+/** Sidebar with the published notes, grouped by area. On small screens it folds into a "Topics" menu. */
 function NotesSidebar() {
   const list = (
     <nav aria-label="Notes topics" className="notes-nav">
@@ -98,7 +98,7 @@ export function NotePage({ slug }: { slug: string }) {
         <Link to="/notes">Notes</Link> <span aria-hidden="true">/</span> {note.category}
       </p>
       <PageHeader title={note.title} lede={note.summary} />
-      {/* Notes are your own Markdown files from src/content/notes, rendered at build time. */}
+      {/* The site's own Markdown files (src/content/notes), converted to HTML in notes.ts. */}
       <article className="prose" dangerouslySetInnerHTML={{ __html: note.html }} />
       {note.updated ? <p className="notes__updated">Last updated {formatMonth(note.updated.slice(0, 7))}</p> : null}
     </NotesShell>

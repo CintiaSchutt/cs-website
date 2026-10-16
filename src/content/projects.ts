@@ -1,12 +1,6 @@
 import type { Project, UpcomingProject } from './types';
 
-/**
- * Projects, labs and write-ups, newest first.
- *
- * When you start a project from `comingSoon` below, remove it from that list
- * and add a full entry here. The template and the steps are in
- * docs/README.md, under "Publishing a project on the site".
- */
+/** Projects, labs and write-ups, newest first. When a project from `comingSoon` starts, move it here as a full entry. */
 export const projects: Project[] = [
   {
     slug: 'this-website',
@@ -27,10 +21,7 @@ export const projects: Project[] = [
   },
 ];
 
-/**
- * Projects not started yet, in the order you plan to build them. Shown under
- * "Coming soon" on the Projects page. The plan for each is in docs/projects/.
- */
+/** Planned projects, in the order they will be built. Shown under "Coming soon" on the Projects page. */
 export const comingSoon: UpcomingProject[] = [
   {
     title: 'Single sign-on with OpenID Connect',

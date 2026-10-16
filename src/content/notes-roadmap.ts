@@ -1,10 +1,7 @@
 /**
  * The study roadmap behind the Notes section: areas in study order, each with
  * its topics. A topic with a matching file in src/content/notes/<slug>.md is a
- * link; one without shows as "Planned".
- *
- * To add a topic, add a line to its area. To publish it, create the Markdown
- * file (see docs/README.md, "Writing a study note").
+ * link; one without is shown greyed out until the note is written.
  */
 
 export interface RoadmapTopic {

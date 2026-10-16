@@ -38,7 +38,7 @@ Settings → Pages.
 GitHub Pages cannot send HTTP security headers, so the site does what a static page can:
 
 - A strict **Content-Security-Policy** meta tag is added to every page at build time
-  (`scripts/postbuild.mjs`): scripts only from the site itself, no inline scripts, no frames,
+  (`scripts/postbuild.mjs`): everything from the site itself by default, no inline scripts,
   no plugins, `upgrade-insecure-requests`. The saved-theme script is an external file
   (`public/theme-init.js`) for that reason.
 - No analytics, trackers, forms or backend. The only third-party requests are Google Fonts
@@ -46,8 +46,10 @@ GitHub Pages cannot send HTTP security headers, so the site does what a static p
 - External links use `rel="noopener noreferrer"`; `referrer` policy is `strict-origin-when-cross-origin`.
 - `public/.well-known/security.txt` gives a contact for security reports. **Its `Expires` date must
   be renewed at least yearly** (currently 2027-10-14).
-- The workflow runs with read-only repository permissions, and `.github/dependabot.yml` opens weekly
-  pull requests for dependency and GitHub Actions updates.
+- Deployment uses GitHub's official Pages actions: the build job can only read the repository, the
+  deploy job can only publish to Pages, and its token lasts one run. Actions are pinned to commit SHAs.
+- `.github/dependabot.yml` opens grouped pull requests once a month for dependency and GitHub Actions
+  updates. Security fixes arrive as soon as an alert is raised (with Dependabot security updates on).
 - Not possible on GitHub Pages: response headers such as HSTS, `frame-ancestors` and
   `Permissions-Policy`. Putting the site behind a service that can add headers (for example Cloudflare)
   would close that gap. GitHub Pages' "Enforce HTTPS" setting should be on.
@@ -67,11 +69,14 @@ To stop visitors' browsers contacting Google and tighten the policy further:
 ## Project layout
 
 ```
-src/content/    your words: projects, learning and education, experience, strengths, site details
-src/pages/      one file per page
-src/components/ header, logo, theme toggle, project card, experience entry, and so on
-src/styles/     tokens (colours, type, space), base, layout, components
-src/router.tsx  a small History API router that manages focus for keyboard and screen-reader users
-scripts/        postbuild.mjs (per-page HTML, sitemap, CSP)
-public/         files copied as they are: favicon, illustration, security.txt
+src/content/                  the words: pages, projects, education, experience, strengths, site details
+src/content/notes/            study notes, one Markdown file per topic (oidc.md is /notes/oidc)
+src/content/notes-roadmap.ts  the Notes topics, grouped by area; unwritten topics show greyed out
+src/pages/                    one file per page
+src/components/               header, logo, theme toggle, project card, experience entry, and so on
+src/styles/                   tokens (colours, type, space), base, layout, components, notes
+src/router.tsx                a small History API router that manages focus for keyboard and screen-reader users
+scripts/                      postbuild.mjs (per-page HTML including each note, sitemap, CSP)
+.github/                      deploy workflow and Dependabot settings
+public/                       files copied as they are: favicon, illustration, security.txt
 ```
