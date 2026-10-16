@@ -1,10 +1,6 @@
 import type { Strength } from './types';
 
-/**
- * Strengths that carry over into security work. Each one must be backed by
- * something real in the work history or education. If you cannot back it up,
- * do not add it.
- */
+/** Strengths that carry over into identity work. Each one is backed by the work history or education. */
 export const strengths: Strength[] = [
   {
     id: 'authentication',

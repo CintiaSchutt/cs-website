@@ -9,7 +9,7 @@ interface TimelineItem {
   detail: string;
 }
 
-/** The career in five lines. Every item comes from your résumés or your own account of your path. */
+/** The career in five lines, oldest first. */
 const timeline: TimelineItem[] = [
   {
     when: '2010 – 2011',

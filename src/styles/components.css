@@ -260,10 +260,6 @@
     font-weight: 600;
   }
 
-  .project--compact h3 a {
-    color: inherit;
-  }
-
   @media (min-width: 52rem) {
     .project__facts > div {
       display: grid;
@@ -277,7 +273,7 @@
     }
   }
 
-  /* ---- Learning ---- */
+  /* ---- Education (Experience page) ---- */
 
   .learning-list {
     list-style: none;

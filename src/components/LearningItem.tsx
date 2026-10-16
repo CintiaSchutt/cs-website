@@ -1,7 +1,7 @@
 import type { LearningEntry } from '../content/types';
 import { StatusBadge } from './StatusBadge';
 
-/** One course, certification or topic. The `id` is a link target (/projects#webauthn). */
+/** One education entry on the Experience page. The `id` is a link target (/experience#bcit). */
 export function LearningItem({ entry }: { entry: LearningEntry }) {
   const headingId = `${entry.id}-title`;
   return (

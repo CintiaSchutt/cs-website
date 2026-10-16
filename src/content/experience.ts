@@ -1,9 +1,6 @@
 import type { Role } from './types';
 
-/**
- * Work history, newest first. Everything here comes from the résumé and the
- * previous site. Do not add detail that is not true: this page is evidence.
- */
+/** Work history, newest first. Only facts that can be backed up: this page is evidence. */
 export const roles: Role[] = [
   {
     id: 'qhr',

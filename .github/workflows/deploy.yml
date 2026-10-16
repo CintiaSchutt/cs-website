@@ -1,4 +1,3 @@
-# .github/workflows/deploy.yml
 name: Deploy to GitHub Pages
 
 # Pull requests to main are checked and built. Pushes to main are also deployed.

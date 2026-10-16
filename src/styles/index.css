@@ -1,4 +1,4 @@
-/* Layer order: later layers win. Mirrors the layer approach of the previous site. */
+/* Layer order: later layers win. */
 @layer reset, tokens, base, layout, components, utilities;
 
 @import './reset.css';
