@@ -34,8 +34,8 @@ const timeline: TimelineItem[] = [
   },
   {
     when: 'Now',
-    title: 'Moving into identity and access',
-    detail: 'Studying identity and access management and planning hands-on labs.',
+    title: 'Specializing in identity',
+    detail: 'Building on my sign-in work: studying identity and access management and doing hands-on labs.',
   },
 ];
 
@@ -62,8 +62,8 @@ export function About() {
       <Section id="why" title="Why identity and access">
         <p>
           At work, sign-in is how millions of people reach sensitive health information, and the
-          hard problems are rarely the happy path. Identity and access management is where I want to
-          work on them: who gets in, and what they can do once they’re inside.
+          hard problems are rarely the happy path. That’s the work I want to keep doing, whether I’m
+          building it or managing it: who gets in, and what they can do once they’re inside.
         </p>
       </Section>
 

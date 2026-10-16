@@ -130,16 +130,6 @@
     color: var(--color-ink-muted);
   }
 
-  .notes-tag {
-    padding: 0.05rem 0.45rem;
-    border: 1px solid var(--color-rule);
-    border-radius: 999px;
-    color: var(--color-ink-muted);
-    font-size: 0.75rem;
-    letter-spacing: 0.04em;
-    white-space: nowrap;
-  }
-
   /* ---- A single note ---- */
 
   .notes__breadcrumb {

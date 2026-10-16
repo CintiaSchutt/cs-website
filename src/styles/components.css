@@ -157,7 +157,17 @@
     border-top: 0;
   }
 
+  /* No extra space under the last entry: the section already has its own padding. */
+  .entry:last-child {
+    padding-bottom: 0;
+  }
+
+  /* Dates and place on one line above the title, like Education, so every
+     section on the page starts at the same left edge. */
   .entry__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 1rem;
     color: var(--color-ink-muted);
     font-size: var(--step--1);
   }
@@ -181,14 +191,12 @@
     color: var(--color-ink-muted);
   }
 
-  .entry .chip-list {
-    margin-top: var(--space-3);
+  .entry__context:last-child {
+    margin-bottom: 0;
   }
 
-  @media (min-width: 52rem) {
-    .entry {
-      grid-template-columns: 11rem minmax(0, 1fr);
-    }
+  .entry .chip-list {
+    margin-top: var(--space-3);
   }
 
   /* ---- Projects ---- */

@@ -12,9 +12,9 @@ export const projects: Project[] = [
     slug: 'this-website',
     title: 'This website',
     summary: 'My personal site, rebuilt in React to be simple, accessible and secure.',
-    status: 'in-progress',
+    status: 'completed',
     period: '2026',
-    goal: 'Replace my old Angular site with a portfolio that shows my move into cybersecurity.',
+    goal: 'Replace my old Angular site with a portfolio that shows my focus on identity.',
     tools: ['React', 'TypeScript', 'Vite', 'Content-Security-Policy', 'GitHub Actions', 'GitHub Pages'],
     whatIDid: [
       'Built it to be keyboard-friendly, with light and dark themes.',

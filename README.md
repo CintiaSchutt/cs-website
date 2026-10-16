@@ -1,7 +1,7 @@
 # cintiaschutt.com
 
-Personal portfolio for Cintia Schutt: a software developer moving into cybersecurity,
-with a focus on identity and access management (IAM).
+Personal portfolio for Cintia Schutt, a software developer who specializes in identity:
+sign-in, single sign-on and identity and access management (IAM).
 
 Built with React, TypeScript and Vite. The previous Angular site is in the git history.
 

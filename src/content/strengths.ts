@@ -24,6 +24,6 @@ export const strengths: Strength[] = [
   {
     id: 'learning',
     title: 'Learning on purpose',
-    summary: 'Retrained at BCIT with distinction, and still studying Spring Boot, Kubernetes and WebAuthn.',
+    summary: 'Retrained at BCIT with distinction. Now studying identity and access management and sharing my notes on this site.',
   },
 ];

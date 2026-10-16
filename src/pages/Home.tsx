@@ -7,13 +7,14 @@ export function Home() {
         <div className="hero__copy">
           <p className="eyebrow">Cintia Schutt · Calgary, Alberta</p>
           <h1 id="hero-title" tabIndex={-1}>
-            I’ve built <span className="nowrap">sign-in</span> for healthcare
-            software. <em>Now I’m focused on securing identity and access.</em>
+            The right people, the right access, <em>and nobody else.</em>
           </h1>
           <p className="lede">
-            I’m a software developer, with hands-on OAuth 2.0 and OpenID Connect
-            experience. I’m focusing my cybersecurity transition on identity and
-            access management, and I’m open to IAM roles.
+            I’m a software developer who specializes in identity. I’ve built
+            OAuth 2.0 and OpenID Connect <span className="nowrap">sign-in</span>{" "}
+            for healthcare software and worked on moving millions of users to a
+            new identity provider. I’m open to developer and identity and access
+            management roles where identity matters.
           </p>
           <p className="hero__actions">
             <ButtonLink to="/projects">See my work</ButtonLink>

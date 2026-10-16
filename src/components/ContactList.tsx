@@ -6,12 +6,6 @@ export function ContactList() {
   return (
     <dl className="contact-list">
       <div>
-        <dt>Email</dt>
-        <dd>
-          <a href={`mailto:${site.email}`}>{site.email}</a>
-        </dd>
-      </div>
-      <div>
         <dt>LinkedIn</dt>
         <dd>
           <ExternalLink href={site.linkedin.href}>{site.linkedin.label}</ExternalLink>
@@ -24,14 +18,14 @@ export function ContactList() {
         </dd>
       </div>
       <div>
-        <dt>Location</dt>
-        <dd>{site.location}</dd>
-      </div>
-      <div>
         <dt>Résumé</dt>
         <dd>
           <a href={`mailto:${site.email}?subject=${encodeURIComponent('Résumé request')}`}>Available on request, by email</a>
         </dd>
+      </div>
+      <div>
+        <dt>Location</dt>
+        <dd>{site.location}</dd>
       </div>
     </dl>
   );

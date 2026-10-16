@@ -77,7 +77,6 @@ export function NotesIndex() {
                         <span className="visually-hidden"> (planned)</span>
                       </span>
                     )}
-                    {topic.vendor ? <span className="notes-tag">{topic.vendor}</span> : null}
                   </li>
                 );
               })}
