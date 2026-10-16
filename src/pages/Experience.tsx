@@ -5,7 +5,6 @@ import { Section } from '../components/Section';
 import { StrengthList } from '../components/StrengthList';
 import { roles } from '../content/experience';
 import { learning } from '../content/learning';
-import { site } from '../content/site';
 import { strengths } from '../content/strengths';
 
 export function Experience() {
@@ -24,9 +23,6 @@ export function Experience() {
             <ExperienceEntry key={role.id} role={role} />
           ))}
         </div>
-        <p>
-          Résumé available on request: <a href={`mailto:${site.email}?subject=${encodeURIComponent('Résumé request')}`}>email me</a>.
-        </p>
       </Section>
 
       {education.length > 0 ? (
