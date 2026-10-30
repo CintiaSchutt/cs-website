@@ -25,3 +25,6 @@ coverage/
 
 # Private planning notes (not published; keep a backup elsewhere)
 docs/
+
+# Instructions for Claude Code (kept on this computer only)
+CLAUDE.md
