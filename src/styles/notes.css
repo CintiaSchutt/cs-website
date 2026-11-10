@@ -137,12 +137,6 @@
     font-size: var(--step--1);
   }
 
-  .notes__updated {
-    margin-top: var(--space-4);
-    color: var(--color-ink-muted);
-    font-size: var(--step--1);
-  }
-
   /* Markdown content */
   .prose {
     max-width: var(--measure);

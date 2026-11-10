@@ -9,7 +9,6 @@ import { roadmap } from './notes-roadmap';
  *   ---
  *   title: OpenID Connect
  *   summary: One sentence shown in the topic list.
- *   updated: 2026-10-15
  *   ---
  *
  * The file name is the topic's slug in notes-roadmap.ts: oidc.md is /notes/oidc.
@@ -22,7 +21,6 @@ export interface Note {
   /** The roadmap area's name, or "Other" for a note not in the roadmap. */
   category: string;
   summary: string;
-  updated?: string;
   html: string;
 }
 
@@ -84,7 +82,6 @@ const notesBySlug = new Map<string, Note>(
       title: data.title ?? slug,
       category: areaForSlug.get(slug) ?? 'Other',
       summary: data.summary ?? '',
-      updated: data.updated,
       html: render(body),
     };
     return [slug, note];
