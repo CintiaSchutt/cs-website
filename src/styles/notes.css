@@ -137,8 +137,13 @@
     font-size: var(--step--1);
   }
 
-  /* Markdown content */
+  /* Markdown content. Tables and code blocks may use the wider column;
+     running text keeps a readable line length. */
   .prose {
+    max-width: 52rem;
+  }
+
+  .prose > :is(p, ul, ol, blockquote, h2, h3) {
     max-width: var(--measure);
   }
 
