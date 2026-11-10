@@ -1,7 +1,6 @@
 ---
 title: Privileged session management
 summary: Routing admin sessions through a controlled point that injects credentials, records activity and can end the session.
-updated: 2026-11-10
 ---
 
 ## In one sentence

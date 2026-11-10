@@ -1,7 +1,6 @@
 ---
 title: Single sign-on (SSO)
 summary: Sign in once at an identity provider and reach many apps, and why that one sign-in then needs strong protection.
-updated: 2026-11-10
 ---
 
 ## In one sentence

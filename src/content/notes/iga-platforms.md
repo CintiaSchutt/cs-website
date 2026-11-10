@@ -1,7 +1,6 @@
 ---
 title: SailPoint or Saviynt: core concepts
 summary: The vocabulary of a dedicated IGA platform, using SailPoint's public documentation, and how it maps to Microsoft Entra.
-updated: 2026-11-10
 ---
 
 ## In one sentence

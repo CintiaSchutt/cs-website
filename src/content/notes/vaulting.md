@@ -1,7 +1,6 @@
 ---
 title: Vaulting and credential rotation
 summary: Keeping privileged passwords and secrets in a controlled vault, checking them out on demand, and changing them automatically.
-updated: 2026-11-10
 ---
 
 ## In one sentence

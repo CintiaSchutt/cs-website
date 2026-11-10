@@ -1,7 +1,6 @@
 ---
 title: Identity APIs
 summary: How scripts and apps manage identities through REST APIs, how they authenticate, and how to use them safely.
-updated: 2026-11-10
 ---
 
 ## In one sentence

@@ -1,7 +1,6 @@
 ---
 title: What is identity governance?
 summary: Identity governance and administration (IGA) proves the right people have the right access, and only for as long as they need it.
-updated: 2026-11-10
 ---
 
 ## In one sentence

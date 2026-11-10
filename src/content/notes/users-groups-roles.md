@@ -1,7 +1,6 @@
 ---
 title: Users, groups and roles
 summary: The three objects behind almost every access decision, and how to combine them without losing control.
-updated: 2026-11-10
 ---
 
 ## In one sentence

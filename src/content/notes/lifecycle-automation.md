@@ -1,7 +1,6 @@
 ---
 title: Automating the lifecycle
 summary: Turning joiner, mover and leaver events into automatic, logged changes, using built-in workflows first and scripts where needed.
-updated: 2026-11-10
 ---
 
 ## In one sentence

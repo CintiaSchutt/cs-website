@@ -1,7 +1,6 @@
 ---
 title: Hybrid identity
 summary: Connecting on-premises Active Directory to Microsoft Entra ID so people use one identity everywhere.
-updated: 2026-11-10
 ---
 
 ## In one sentence

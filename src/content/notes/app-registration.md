@@ -1,7 +1,6 @@
 ---
 title: Entra application registration and consent
 summary: How an app gets an identity in Microsoft Entra, what permissions it can ask for, and who is allowed to approve them.
-updated: 2026-11-10
 ---
 
 ## In one sentence

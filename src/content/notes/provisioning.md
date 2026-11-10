@@ -1,7 +1,6 @@
 ---
 title: Provisioning and deprovisioning
 summary: Creating accounts with the right access, and removing them completely and quickly when they're no longer needed.
-updated: 2026-11-10
 ---
 
 ## In one sentence

@@ -1,7 +1,6 @@
 ---
 title: Access reviews
 summary: Regularly asking the right people to confirm that existing access is still needed, and removing what isn't.
-updated: 2026-11-10
 ---
 
 ## In one sentence

@@ -1,7 +1,6 @@
 ---
 title: Microsoft Entra ID basics
 summary: Microsoft's cloud identity service (formerly Azure AD), how it differs from Active Directory, and what each licence adds.
-updated: 2026-11-10
 ---
 
 ## In one sentence

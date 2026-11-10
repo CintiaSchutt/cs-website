@@ -1,7 +1,6 @@
 ---
 title: OpenID Connect
 summary: An identity layer on top of OAuth 2.0 that tells the app who signed in, using a signed ID token.
-updated: 2026-11-10
 ---
 
 ## In one sentence

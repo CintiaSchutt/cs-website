@@ -1,7 +1,6 @@
 ---
 title: CyberArk or BeyondTrust: core concepts
 summary: The main components and vocabulary of two dedicated PAM platforms, from their official documentation, compared with Entra PIM.
-updated: 2026-11-10
 ---
 
 ## In one sentence

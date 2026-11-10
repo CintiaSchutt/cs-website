@@ -1,7 +1,6 @@
 ---
 title: What is privileged access management?
 summary: Extra protection for the accounts that can change everything, from discovery and vaulting to just-in-time access and session recording.
-updated: 2026-11-10
 ---
 
 ## In one sentence

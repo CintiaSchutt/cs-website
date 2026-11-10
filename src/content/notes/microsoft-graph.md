@@ -1,7 +1,6 @@
 ---
 title: Microsoft Graph for identity tasks
 summary: The single REST API for Microsoft Entra and Microsoft 365, with the queries and permissions I'll use most for identity work.
-updated: 2026-11-10
 ---
 
 ## In one sentence

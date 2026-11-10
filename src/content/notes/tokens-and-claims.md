@@ -1,7 +1,6 @@
 ---
 title: Tokens, claims and JWTs
 summary: What is inside a JSON Web Token, who should read it, and how an API should validate it.
-updated: 2026-11-10
 ---
 
 ## In one sentence

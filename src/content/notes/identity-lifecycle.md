@@ -1,7 +1,6 @@
 ---
 title: The identity lifecycle
 summary: An identity is created, changes over time and must be removed. Each stage has its own access risks.
-updated: 2026-11-10
 ---
 
 ## In one sentence

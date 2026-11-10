@@ -1,7 +1,6 @@
 ---
 title: Digital identities: people, devices and workloads
 summary: Not every identity is a person. Devices and software need identities too, and each kind is secured differently.
-updated: 2026-11-10
 ---
 
 ## In one sentence

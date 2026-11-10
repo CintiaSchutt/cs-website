@@ -1,7 +1,6 @@
 ---
 title: OAuth 2.0
 summary: A framework that lets an app get limited access to an API on a user's behalf, without ever seeing their password.
-updated: 2026-11-10
 ---
 
 ## In one sentence

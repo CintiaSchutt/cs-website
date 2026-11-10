@@ -1,7 +1,6 @@
 ---
 title: Troubleshooting sign-in failures
 summary: A repeatable method for "I can't sign in" tickets, using sign-in logs and AADSTS error codes.
-updated: 2026-11-10
 ---
 
 ## In one sentence

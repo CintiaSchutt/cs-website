@@ -1,7 +1,6 @@
 ---
 title: Audit evidence for access
 summary: What auditors ask about access, which records answer them, and how to keep those records long enough.
-updated: 2026-11-10
 ---
 
 ## In one sentence

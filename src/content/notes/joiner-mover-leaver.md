@@ -1,7 +1,6 @@
 ---
 title: Joiner, mover, leaver
 summary: The three lifecycle events that drive most access changes, with a checklist for each.
-updated: 2026-11-10
 ---
 
 ## In one sentence

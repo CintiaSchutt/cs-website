@@ -1,7 +1,6 @@
 ---
 title: Passkeys and WebAuthn
 summary: Phishing-resistant sign-in with public-key cryptography instead of passwords, and how the browser makes it work.
-updated: 2026-11-10
 ---
 
 ## In one sentence

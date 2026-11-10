@@ -1,7 +1,6 @@
 ---
 title: How the pieces fit: basic IAM architecture
 summary: A map of the main IAM components (directory, identity provider, policy, governance, PAM and logs) and how a request flows through them.
-updated: 2026-11-10
 ---
 
 ## In one sentence

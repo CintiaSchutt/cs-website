@@ -1,7 +1,6 @@
 ---
 title: Reading sign-in and audit logs
 summary: What Microsoft Entra and Okta record, how long they keep it, and how to query it for troubleshooting and investigations.
-updated: 2026-11-10
 ---
 
 ## In one sentence

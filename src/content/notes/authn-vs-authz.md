@@ -1,7 +1,6 @@
 ---
 title: Authentication vs authorization
 summary: Authentication proves who you are. Authorization decides what you are allowed to do.
-updated: 2026-11-10
 ---
 
 ## In one sentence

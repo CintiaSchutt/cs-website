@@ -1,7 +1,6 @@
 ---
 title: Scripting identity tasks (PowerShell or Python)
 summary: Microsoft Graph PowerShell and MSAL for Python, with small, safe examples for everyday identity tasks.
-updated: 2026-11-10
 ---
 
 ## In one sentence

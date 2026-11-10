@@ -1,7 +1,6 @@
 ---
 title: Least privilege and zero trust
 summary: Give each identity only the access it needs, and never trust a request just because of where it comes from.
-updated: 2026-11-10
 ---
 
 ## In one sentence

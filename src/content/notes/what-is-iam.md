@@ -1,7 +1,6 @@
 ---
 title: What is IAM?
 summary: The people, processes and technology that make sure the right identities get the right access to the right resources.
-updated: 2026-11-10
 ---
 
 ## In one sentence

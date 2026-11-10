@@ -2,7 +2,6 @@ import type { ReactNode } from 'react';
 import { PageHeader } from '../components/PageHeader';
 import { noteCategories, noteForSlug } from '../content/notes';
 import { roadmap } from '../content/notes-roadmap';
-import { formatMonth } from '../lib/format';
 import { Link, NavLink } from '../router';
 import { NotFound } from './NotFound';
 
@@ -100,7 +99,6 @@ export function NotePage({ slug }: { slug: string }) {
       <PageHeader title={note.title} lede={note.summary} />
       {/* The site's own Markdown files (src/content/notes), converted to HTML in notes.ts. */}
       <article className="prose" dangerouslySetInnerHTML={{ __html: note.html }} />
-      {note.updated ? <p className="notes__updated">Last updated {formatMonth(note.updated.slice(0, 7))}</p> : null}
     </NotesShell>
   );
 }

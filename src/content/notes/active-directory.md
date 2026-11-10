@@ -1,7 +1,6 @@
 ---
 title: Active Directory basics
 summary: The on-premises directory most organizations still run, with its forests, domains, groups and Kerberos sign-in.
-updated: 2026-11-10
 ---
 
 ## In one sentence

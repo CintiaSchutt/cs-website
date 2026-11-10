@@ -1,7 +1,6 @@
 ---
 title: SAML 2.0
 summary: An XML-based standard for web single sign-on, still common in enterprise and SaaS apps.
-updated: 2026-11-10
 ---
 
 ## In one sentence

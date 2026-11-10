@@ -1,7 +1,6 @@
 ---
 title: RBAC and ABAC
 summary: Two ways to decide who can do what, by role or by attributes, and how Azure and Entra use both.
-updated: 2026-11-10
 ---
 
 ## In one sentence

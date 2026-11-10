@@ -1,7 +1,6 @@
 ---
 title: Just-in-time access
 summary: Granting privileged access only when it's needed, for a limited time, with approval and a record, instead of leaving it on permanently.
-updated: 2026-11-10
 ---
 
 ## In one sentence

@@ -1,7 +1,6 @@
 ---
 title: Conditional Access (Microsoft Entra)
 summary: If-then policies that use signals like user, device, location and risk to allow, block or require more at sign-in.
-updated: 2026-11-10
 ---
 
 ## In one sentence

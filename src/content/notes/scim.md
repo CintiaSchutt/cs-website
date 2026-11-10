@@ -1,7 +1,6 @@
 ---
 title: SCIM provisioning
 summary: A standard REST API and schema for creating, updating and deactivating user accounts across systems.
-updated: 2026-11-10
 ---
 
 ## In one sentence

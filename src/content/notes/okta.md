@@ -1,7 +1,6 @@
 ---
 title: Okta for workforce identity
 summary: Okta's core building blocks (org, Universal Directory, apps, policies and lifecycle management) mapped to concepts I already know.
-updated: 2026-11-10
 ---
 
 ## In one sentence

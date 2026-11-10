@@ -1,7 +1,6 @@
 ---
 title: Segregation of duties
 summary: Making sure no single person holds a combination of access that would let them commit and hide fraud or a serious error.
-updated: 2026-11-10
 ---
 
 ## In one sentence

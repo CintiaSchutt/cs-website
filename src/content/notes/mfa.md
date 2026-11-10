@@ -1,7 +1,6 @@
 ---
 title: Multi-factor authentication (MFA)
 summary: Two or more different kinds of proof at sign-in, and why some kinds resist phishing far better than others.
-updated: 2026-11-10
 ---
 
 ## In one sentence

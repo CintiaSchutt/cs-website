@@ -1,7 +1,6 @@
 ---
 title: Federation and trust
 summary: Federation lets one organization's identity provider vouch for a user to another organization's apps.
-updated: 2026-11-10
 ---
 
 ## In one sentence

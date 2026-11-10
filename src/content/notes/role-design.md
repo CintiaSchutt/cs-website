@@ -1,7 +1,6 @@
 ---
 title: Role design
 summary: Turning a pile of individual permissions into a small set of roles people can understand, assign and review.
-updated: 2026-11-10
 ---
 
 ## In one sentence

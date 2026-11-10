@@ -1,7 +1,6 @@
 ---
 title: Privileged accounts
 summary: The kinds of privileged accounts (human admins, emergency accounts, service accounts, local admins) and how to protect each one.
-updated: 2026-11-10
 ---
 
 ## In one sentence

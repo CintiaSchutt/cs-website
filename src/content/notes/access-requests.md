@@ -1,7 +1,6 @@
 ---
 title: Access requests and approvals
 summary: Letting people ask for access through a controlled, recorded process with the right approvers and an end date.
-updated: 2026-11-10
 ---
 
 ## In one sentence
