@@ -1,41 +1,98 @@
 ---
 title: OAuth 2.0
-summary: A framework that lets an app access an API on a user's behalf without seeing their password.
-updated: 2026-10-15
+summary: A framework that lets an app get limited access to an API on a user's behalf, without ever seeing their password.
+updated: 2026-11-10
 ---
-
-> Sample note for the prototype. Replace it with your own summary.
 
 ## In one sentence
 
-OAuth 2.0 is about **authorization**: it gives an application a limited access token for an API, approved by the user. It does not, by itself, tell the app who the user is.
+OAuth 2.0 (RFC 6749) is an **authorization** framework: it gives a client app a limited **access token** for an API, usually with the user's approval. On its own, it does not tell the app who the user is. That is what [OpenID Connect](/notes/oidc) adds.
 
-## The roles
+## The four roles
 
 | Role | What it is | Example |
 | --- | --- | --- |
-| Resource owner | The user who owns the data | You |
-| Client | The app that wants access | A budgeting app |
-| Authorization server | Issues tokens after the user approves | Okta, Entra ID, Keycloak |
-| Resource server | The API that accepts the token | Your bank's API |
+| Resource owner | Whoever can grant access, usually the user | You |
+| Client | The app that wants access | An Angular or React SPA |
+| Authorization server | Authenticates the user and issues tokens | Microsoft Entra ID, Azure AD B2C, Okta |
+| Resource server | The API that accepts access tokens | Your REST API |
+
+**Client types**: a *confidential* client can keep a secret (server-side web app). A *public* client cannot (a single-page app, a mobile app). Anything shipped to the browser is public.
 
 ## Authorization code flow with PKCE
 
-The recommended flow for web, mobile and single-page apps.
+The recommended flow for web, mobile and single-page apps. PKCE (RFC 7636, "pixie") stops a stolen authorization code from being exchanged by an attacker.
 
-1. The app sends the user to the authorization server with a `code_challenge`.
-2. The user signs in and approves the requested **scopes**.
-3. The server redirects back with a short-lived **authorization code**.
-4. The app exchanges the code, plus the original `code_verifier`, for tokens.
+```http
+1) The browser goes to the authorization endpoint
+GET /authorize?response_type=code
+  &client_id=spa-123
+  &redirect_uri=https://app.example.com/callback
+  &scope=openid invoices.read
+  &state=af0ifjsldkj
+  &code_challenge=E9Melhoa2OwvFrEMTJguCHaoeK1t8URWbuGJSstw-cM
+  &code_challenge_method=S256
 
-PKCE stops a stolen authorization code from being used by anyone except the app that started the flow.
+2) After sign-in and consent, the server redirects back
+https://app.example.com/callback?code=SplxlOBeZQQYbYS6WxSbIA&state=af0ifjsldkj
 
-## Tokens
+3) The app exchanges the code at the token endpoint
+POST /token
+grant_type=authorization_code&code=SplxlOBeZQQYbYS6WxSbIA
+&redirect_uri=https://app.example.com/callback&client_id=spa-123
+&code_verifier=dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk
+```
 
-- **Access token**: sent to the API, short-lived. Often a JWT, but it does not have to be.
-- **Refresh token**: gets new access tokens without asking the user again. Keep it safe.
+- `code_verifier`: a random secret the app creates for each sign-in.
+- `code_challenge`: the base64url-encoded SHA-256 hash of the verifier, sent first.
+- `state`: a random value checked on return, to block cross-site request forgery.
 
-## Watch out for
+## Other grants
 
-- The implicit flow and the password grant are deprecated. Use authorization code with PKCE.
-- Request the smallest scopes that work (least privilege).
+| Grant | Use it for | Status |
+| --- | --- | --- |
+| Authorization code + PKCE | Apps acting for a signed-in user | Recommended |
+| Client credentials | Service-to-service, no user | Fine for confidential clients |
+| Device authorization (RFC 8628) | TVs, CLIs, devices without a browser | Fine |
+| Refresh token | Getting new access tokens silently | Fine, with protections |
+| Implicit | Old SPAs | RFC 9700: **SHOULD NOT** be used |
+| Resource owner password credentials | App collects the password | RFC 9700: **MUST NOT** be used |
+
+## Calling the API
+
+The client sends the access token as a bearer token (RFC 6750):
+
+```http
+GET /api/invoices
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOi...
+```
+
+A *bearer* token works for anyone who holds it, so it must be short-lived and kept out of logs and URLs.
+
+## Where I've seen this
+
+I work with OAuth 2.0 and OpenID Connect at QHR Technologies, including the move to Azure AD B2C. In Angular apps, the SPA is a **public client**: it uses the authorization code flow with PKCE and never holds a client secret.
+
+## Security angle (RFC 9700, OAuth 2.0 Security Best Current Practice)
+
+- Public clients **must** use PKCE. PKCE is recommended for confidential clients too.
+- The authorization server should compare redirect URIs by **exact string match**.
+- Refresh tokens for public clients must be sender-constrained or **rotated** on each use.
+- Restrict access tokens to their intended audience and to the smallest scopes that work.
+- For SPAs, the IETF draft *OAuth 2.0 for Browser-Based Applications* describes a backend-for-frontend (BFF) pattern that keeps tokens out of the browser.
+
+## Check yourself
+
+1. Why is a React or Angular SPA a public client?
+2. What problem does PKCE solve, in one sentence?
+3. Which two grants should no longer be used, and why?
+
+## Sources
+
+- IETF: [RFC 6749, The OAuth 2.0 Authorization Framework](https://www.rfc-editor.org/rfc/rfc6749)
+- IETF: [RFC 6750, Bearer Token Usage](https://www.rfc-editor.org/rfc/rfc6750)
+- IETF: [RFC 7636, Proof Key for Code Exchange (PKCE)](https://www.rfc-editor.org/rfc/rfc7636)
+- IETF: [RFC 9700, OAuth 2.0 Security Best Current Practice](https://www.rfc-editor.org/rfc/rfc9700)
+- IETF: [RFC 8628, Device Authorization Grant](https://www.rfc-editor.org/rfc/rfc8628)
+- IETF draft: [OAuth 2.0 for Browser-Based Applications](https://datatracker.ietf.org/doc/draft-ietf-oauth-browser-based-apps/) (work in progress)
+- Microsoft Learn: [OAuth 2.0 authorization code flow](https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow)
