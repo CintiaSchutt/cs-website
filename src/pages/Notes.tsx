@@ -100,7 +100,7 @@ export function NotePage({ slug }: { slug: string }) {
       {/* The site's own Markdown files (src/content/notes), converted to HTML in notes.ts. */}
       <article className="prose" dangerouslySetInnerHTML={{ __html: note.html }} />
       <p className="notes__back-to-top">
-        <button type="button" className="button button--secondary" onClick={backToTop}>
+        <button type="button" className="notes__back-to-top-button" onClick={backToTop}>
           Back to top <span aria-hidden="true">↑</span>
         </button>
       </p>
