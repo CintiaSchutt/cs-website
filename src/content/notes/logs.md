@@ -71,11 +71,33 @@ Okta's **System Log** records events such as sign-ins, policy evaluations and ad
 - Logs are evidence: store them where the people being logged can't change them (NIST SP 800-92 covers log management practices).
 - Logs contain personal data. Limit who can read them and how long you keep them, according to policy.
 
-## Check yourself
+## Flashcards
 
-1. Which log answers "who changed this group?"
-2. Why check non-interactive sign-ins?
-3. How do you keep sign-in logs for a year?
+```flashcards
+Q: Sign-in logs or audit logs: what does each record?
+A: Sign-in logs record authentication attempts. Audit logs record changes to the directory.
+
+Q: What do provisioning logs answer?
+A: What the provisioning service created, updated or skipped.
+
+Q: Name the four types of sign-in logs.
+A: Interactive user, non-interactive user, service principal and managed identity.
+
+Q: Which log answers "who changed this group?"
+A: The **audit log**.
+
+Q: Name three useful fields in a sign-in entry.
+A: For example: status and error code, correlation ID, application, IP address and location, authentication details, and the Conditional Access result.
+
+Q: Where can diagnostic settings send Entra logs?
+A: To a Log Analytics workspace, a storage account or an event hub.
+
+Q: In KQL, which table holds sign-ins, and which `ResultType` means success?
+A: `SigninLogs`, where `ResultType` `"0"` means success.
+
+Q: Name three things to watch for in identity logs.
+A: For example: many failures from one IP, a success right after many failures, new admin roles or app credentials, Conditional Access changes, and any emergency account sign-in.
+```
 
 ## Sources
 

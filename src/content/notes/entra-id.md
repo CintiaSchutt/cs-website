@@ -54,11 +54,36 @@ Azure AD B2C, which I worked with at QHR Technologies, is a separate tenant type
 - Turn on **security defaults** if the tenant has no Conditional Access.
 - Keep two or more **emergency access** accounts.
 
-## Check yourself
+## Flashcards
 
-1. Name two protocols AD uses that Entra ID doesn't use natively.
-2. What does the `tid` claim identify?
-3. Which licence first includes Conditional Access?
+```flashcards
+Q: What was Microsoft Entra ID called before the 2023 rename?
+A: **Azure Active Directory** (Azure AD).
+
+Q: What is a tenant?
+A: Your organization's dedicated instance of Entra ID, with its own users, groups and apps.
+
+Q: What does the `tid` claim identify?
+A: The **tenant**.
+
+Q: Name two protocols AD uses that Entra ID doesn't use natively.
+A: For example **Kerberos**, **NTLM** or **LDAP**.
+
+Q: Which protocols does Entra ID use?
+A: OpenID Connect, OAuth 2.0, SAML and WS-Federation.
+
+Q: What replaces OUs and Group Policy in the Entra world?
+A: **Administrative units** for delegation, and **Microsoft Intune** for device management.
+
+Q: Which licence first includes Conditional Access?
+A: **P1**.
+
+Q: Which licence adds ID Protection and Privileged Identity Management?
+A: **P2**.
+
+Q: Name products in the wider Microsoft Entra family.
+A: For example **External ID**, **ID Governance** and **Workload ID**.
+```
 
 ## Sources
 

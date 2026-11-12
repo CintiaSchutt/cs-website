@@ -61,11 +61,36 @@ Admin   →  eligible (not active) for "User Administrator", scoped to AU "Finan
 - A group's **owner** controls who gets the group's access, so owners need reviews too.
 - Role-assignable groups need extra protection, because membership grants an admin role.
 
-## Check yourself
+## Flashcards
 
-1. What is the difference between a security group and a Microsoft 365 group?
-2. Global Administrator and Owner: which one is an Entra role, and which is an Azure RBAC role?
-3. Why do dynamic groups help with movers?
+```flashcards
+Q: What are member and guest users?
+A: Members are people in your organization. Guests are people from outside, invited through B2B collaboration.
+
+Q: How long can a deleted Entra user be restored?
+A: **30 days**, from Deleted users.
+
+Q: Security group or Microsoft 365 group: what is each for?
+A: **Security groups** are for access and policy targeting. **Microsoft 365 groups** are for collaboration and contain users only.
+
+Q: What is a dynamic group?
+A: A rule adds and removes members automatically, for example `user.department -eq "Finance"`.
+
+Q: Why do dynamic groups help with movers?
+A: Membership follows HR data, so access changes when the attribute changes.
+
+Q: Global Administrator and Owner: which is an Entra role, and which is Azure RBAC?
+A: **Global Administrator** is an Entra role (the directory). **Owner** is an Azure RBAC role (resources).
+
+Q: How many Global Administrators does Microsoft recommend?
+A: **Fewer than five**.
+
+Q: What are administrative units for?
+A: Limiting an admin to part of the organization, such as one region.
+
+Q: Why prefer groups over direct assignments?
+A: Direct, one-off assignments to users are hard to audit.
+```
 
 ## Sources
 

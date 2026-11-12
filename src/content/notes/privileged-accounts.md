@@ -46,11 +46,33 @@ Microsoft describes **privileged access workstations (PAWs)**: dedicated, locked
 - Service accounts often have more access than any person and never use MFA. Review them like admins.
 - Microsoft recommends fewer than five Global Administrators.
 
-## Check yourself
+## Flashcards
 
-1. Why should an admin have two accounts?
-2. Why must emergency access accounts be cloud-only?
-3. What problem does Windows LAPS solve?
+```flashcards
+Q: Name four types of privileged account.
+A: Human admin accounts, emergency access (break-glass) accounts, directory admin groups, local administrators and service accounts.
+
+Q: Why should an admin have two accounts?
+A: A phishing email to the daily account can't directly reach admin rights.
+
+Q: Why should cloud admin accounts be cloud-only?
+A: So an on-premises compromise can't reach cloud admin through synchronization.
+
+Q: How should emergency access accounts be set up?
+A: Two or more, cloud-only on `*.onmicrosoft.com`, with strong authentication, monitoring on every sign-in, and regular tests.
+
+Q: When are emergency access accounts used?
+A: When Conditional Access, MFA or federation breaks and nobody else can sign in.
+
+Q: What problem does Windows LAPS solve?
+A: Local admin passwords shared across many devices. LAPS manages and backs up a unique password for each device.
+
+Q: What is a privileged access workstation?
+A: A dedicated, locked-down device for admin work, without general web browsing or productivity apps.
+
+Q: Why review service accounts like admins?
+A: They often have more access than any person and never use MFA.
+```
 
 ## Sources
 

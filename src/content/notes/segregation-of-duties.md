@@ -45,11 +45,36 @@ SailPoint's SoD policies are built as **two lists of conflicting access**: ident
 - SoD defends against insider fraud *and* against a single stolen account doing too much.
 - SoD rules must be checked when roles are designed, when access is requested, and during reviews.
 
-## Check yourself
+## Flashcards
 
-1. Give an IT example of conflicting duties.
-2. What is the difference between static and dynamic SoD?
-3. What makes an SoD exception acceptable to an auditor?
+```flashcards
+Q: What is segregation of duties?
+A: Splitting sensitive tasks so no single person can complete a risky process alone.
+
+Q: Give a classic finance example.
+A: Creating a vendor **and** approving payments to it.
+
+Q: Give an IT example.
+A: Writing code and deploying it to production without review, or requesting and approving your own access.
+
+Q: Which NIST control covers SoD?
+A: **AC-5 Separation of Duties**.
+
+Q: Static or dynamic SoD: what is the difference?
+A: **Static**: a user can't be assigned both roles. **Dynamic**: a user may hold both, but can't activate them in the same session.
+
+Q: Preventive or detective controls: what is the difference?
+A: **Preventive** controls block conflicts before access is granted. **Detective** controls report conflicts that already exist.
+
+Q: What makes an SoD exception acceptable?
+A: An owner, a reason, an end date and a compensating control.
+
+Q: How does Entra enforce SoD?
+A: Access packages can be marked **incompatible** with other access packages or groups.
+
+Q: How are SailPoint SoD policies built?
+A: As two lists of conflicting access.
+```
 
 ## Sources
 

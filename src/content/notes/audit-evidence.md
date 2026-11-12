@@ -51,11 +51,33 @@ NIST SP 800-92 is NIST's guide to log management.
 
 Working on enterprise healthcare SaaS that handles sensitive health information means working where evidence of access control matters.
 
-## Check yourself
+## Flashcards
 
-1. How long are sign-in logs kept on Entra ID P1?
-2. A review denied someone's access. What second record proves it was removed?
-3. Why should audit logs be stored where admins can't edit them?
+```flashcards
+Q: What does audit evidence for access prove?
+A: That access was approved, reviewed, removed on time and used appropriately.
+
+Q: What answers "who approved it, and when?"
+A: Access request and approval records.
+
+Q: A review denied someone's access. What second record proves it was removed?
+A: The matching removal in the **audit logs**.
+
+Q: How do you show leavers are removed promptly?
+A: Compare HR termination dates with account disable dates.
+
+Q: How long are audit and sign-in logs kept on P1?
+A: **30 days** (7 days on Free).
+
+Q: How do you keep evidence for a full year?
+A: Export the logs with **diagnostic settings** to Log Analytics, a storage account or a SIEM.
+
+Q: Name four NIST AU controls from this note.
+A: **AU-2** event logging, **AU-3** content of audit records, **AU-6** review and reporting, **AU-11** retention.
+
+Q: Name four qualities of good evidence.
+A: Complete, tamper-resistant, traceable and timestamped.
+```
 
 ## Sources
 

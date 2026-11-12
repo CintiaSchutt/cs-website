@@ -178,8 +178,10 @@
     background: var(--color-surface);
   }
 
+  /* Long lines (URLs, tokens) wrap instead of scrolling sideways. */
   .prose pre {
-    overflow-x: auto;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
     padding: var(--space-2);
     border-radius: var(--radius);
     background: var(--color-surface);
@@ -196,10 +198,20 @@
     color: var(--color-ink-muted);
   }
 
+  /* "anywhere" lets long words like AADSTS7000215 break, so tables never push the page wider. */
   .prose table {
     width: 100%;
     border-collapse: collapse;
     font-size: var(--step--1);
+    overflow-wrap: anywhere;
+  }
+
+  .notes__back-to-top {
+    margin-top: var(--space-4);
+  }
+
+  .notes__back-to-top .button {
+    gap: 0.4em;
   }
 
   .prose th,
@@ -208,6 +220,72 @@
     border-bottom: 1px solid var(--color-rule);
     text-align: left;
     vertical-align: top;
+  }
+
+  /* Flashcards: question visible, answer revealed with <details>. */
+  .flashcards__hint {
+    color: var(--color-ink-muted);
+    font-size: var(--step--1);
+  }
+
+  .prose .flashcards__list {
+    list-style: none;
+    padding: 0;
+    margin-top: var(--space-2);
+    display: grid;
+    gap: var(--space-2);
+  }
+
+  @media (min-width: 40rem) {
+    .prose .flashcards__list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  .prose .flashcards__list > li + li {
+    margin-top: 0;
+  }
+
+  .flashcard {
+    height: 100%;
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius);
+    background: var(--color-surface);
+  }
+
+  .flashcard__question {
+    display: block;
+    padding: var(--space-2);
+    font-weight: 500;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .flashcard__question::-webkit-details-marker {
+    display: none;
+  }
+
+  .flashcard__toggle {
+    display: block;
+    margin-top: 0.5rem;
+    color: var(--color-ink-muted);
+    font-size: var(--step--1);
+    font-weight: 400;
+  }
+
+  .flashcard__hide,
+  .flashcard[open] .flashcard__show {
+    display: none;
+  }
+
+  .flashcard[open] .flashcard__hide {
+    display: inline;
+  }
+
+  .flashcard__answer {
+    margin-inline: var(--space-2);
+    padding-block: var(--space-2);
+    border-top: 1px dashed var(--color-rule);
   }
 
   .prose h2[tabindex],

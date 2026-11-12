@@ -65,11 +65,39 @@ In the move to Azure AD B2C, apps signed users in through OIDC. Questions such a
 - Always validate `aud`: a token issued to another app must be rejected.
 - Don't trust claims sent from the browser. Trust only claims from a token you validated.
 
-## Check yourself
+## Flashcards
 
-1. Which scope makes an OAuth request an OIDC request?
-2. Why is `email` a poor primary key for users?
-3. What does the `nonce` protect against?
+```flashcards
+Q: What does OpenID Connect add to OAuth 2.0?
+A: **Authentication**: an ID token that says who the user is and how they signed in.
+
+Q: Which scope turns an OAuth request into an OIDC request?
+A: `openid`.
+
+Q: Which ID token claims does OIDC Core require?
+A: `iss`, `sub`, `aud`, `exp` and `iat`.
+
+Q: Why use `iss` + `sub` instead of `email` as the user's key?
+A: OIDC Core only guarantees that pair is stable and unique. Emails can change and can be reused.
+
+Q: In Microsoft Entra, how do `sub` and `oid` differ?
+A: `sub` is different for each app. `oid` identifies the user across apps in the tenant.
+
+Q: What is the `nonce` for?
+A: It ties the ID token to this sign-in request: the app checks the value matches the one it sent.
+
+Q: Name the five ID token checks in this note.
+A: `iss` matches the issuer, `aud` contains your `client_id`, the signature is valid with the key from `jwks_uri`, the time is before `exp`, and `nonce` matches.
+
+Q: Where is the discovery document?
+A: `https://<issuer>/.well-known/openid-configuration`.
+
+Q: Does clearing the app's session sign the user out of the identity provider?
+A: No. With RP-Initiated Logout, the app sends the user to the provider's `end_session_endpoint`.
+
+Q: Should an app send the ID token to an API?
+A: No. The ID token is for the app. The access token is for the API.
+```
 
 ## Sources
 

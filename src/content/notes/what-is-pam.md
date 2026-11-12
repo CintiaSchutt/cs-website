@@ -58,11 +58,33 @@ NIST SP 800-53 includes:
 - **Microsoft Entra Privileged Identity Management (PIM)**: just-in-time *role* activation for Entra and Azure.
 - **Dedicated PAM platforms** such as CyberArk and BeyondTrust: credential vaults, rotation and session management across servers, databases, network devices and clouds (see [CyberArk or BeyondTrust](/notes/pam-platforms)).
 
-## Check yourself
+## Flashcards
 
-1. Why do attackers go after privileged accounts?
-2. Name the three planes in Microsoft's enterprise access model.
-3. What is the difference between PIM and a credential vault?
+```flashcards
+Q: What is PAM?
+A: Protecting, controlling and monitoring the accounts and sessions that can perform security-relevant actions.
+
+Q: What is a privileged user, according to NIST?
+A: A user authorized, and therefore trusted, to perform security-relevant functions that ordinary users can't.
+
+Q: Why do attackers go after privileged accounts?
+A: Privileged access is what lets them spread and cause damage.
+
+Q: Name five core PAM capabilities.
+A: For example: discovery, vaulting, rotation, just-in-time access, session management, approval and audit.
+
+Q: Name the three planes in Microsoft's enterprise access model.
+A: The **control plane**, the **management plane** and the **data/workload plane**.
+
+Q: What is the hierarchy rule in that model?
+A: Lower planes must not be able to take control of higher ones.
+
+Q: Which NIST control requires MFA for privileged accounts?
+A: **IA-2(1)**.
+
+Q: What is the difference between Entra PIM and a credential vault?
+A: PIM gives just-in-time **role** activation. A vault stores and rotates **credentials** for servers, databases and devices.
+```
 
 ## Sources
 

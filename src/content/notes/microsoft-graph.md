@@ -62,11 +62,36 @@ In Graph Explorer, sign in with a test account, run `GET /me`, then open the *Mo
 - Prefer `v1.0` for anything that runs unattended.
 - Sign-in and audit data contain personal information. Collect only what you need and protect it.
 
-## Check yourself
+## Flashcards
 
-1. Which version should a production script use?
-2. What permission does reading sign-in logs need?
-3. Why use `$select`?
+```flashcards
+Q: What is Microsoft Graph?
+A: One REST API, at `https://graph.microsoft.com`, for data across Microsoft 365, Windows and Microsoft Entra.
+
+Q: Which version should production scripts use?
+A: **`v1.0`**. `beta` is preview and can change.
+
+Q: How do you return only some properties?
+A: With `$select`, for example `$select=displayName,mail`.
+
+Q: Which permission does reading sign-in logs need?
+A: `AuditLog.Read.All`.
+
+Q: Where are directory changes in Microsoft Graph?
+A: `/auditLogs/directoryAudits`.
+
+Q: What is the least privileged permission for listing users?
+A: `User.ReadBasic.All`.
+
+Q: How many users does `GET /users` return per page by default?
+A: **100**.
+
+Q: Which header do some `$count` queries need?
+A: `ConsistencyLevel: eventual`.
+
+Q: Which tool lets you try Graph calls in the browser?
+A: **Graph Explorer**.
+```
 
 ## Sources
 

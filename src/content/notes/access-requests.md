@@ -47,11 +47,36 @@ SailPoint users request roles, access profiles or entitlements through the **Req
 - Avoid letting people approve their own requests.
 - Requests without expiry slowly become permanent access. Combine requests with [access reviews](/notes/access-reviews).
 
-## Check yourself
+## Flashcards
 
-1. Why should access packages use business-friendly names?
-2. What is the benefit of a two-stage approval?
-3. What happens to access with no expiry and no review?
+```flashcards
+Q: Name four elements of a good access request process.
+A: For example: a catalogue, a business justification, the right approver, multi-stage approval for sensitive access, an expiry and a record.
+
+Q: What is an Entra access package?
+A: A bundle of resources (groups, apps, SharePoint sites) a user can request as one item.
+
+Q: What is a catalog?
+A: A container of resources and access packages, often managed by a business team.
+
+Q: What does an access package policy define?
+A: Who can request it, who must approve, and when access expires.
+
+Q: Why use business-friendly names for requestable access?
+A: People ask for "Finance reporting", not "SG-FIN-RPT-RO-02".
+
+Q: What is the benefit of a two-stage approval?
+A: The manager confirms the need, and the resource owner confirms the risk.
+
+Q: What is rubber-stamping?
+A: Approvers who approve everything, which makes the process useless.
+
+Q: What happens to access with no expiry and no review?
+A: It slowly becomes permanent.
+
+Q: Where do SailPoint users request access?
+A: In the **Request Center**.
+```
 
 ## Sources
 

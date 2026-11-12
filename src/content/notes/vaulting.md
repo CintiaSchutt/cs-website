@@ -52,11 +52,33 @@ Applications need secrets too: API keys, connection strings, certificates.
 - Rotation can break things: services that use the old password stop working. Map dependencies before you rotate.
 - "Break glass" access to the vault itself must be planned and tested.
 
-## Check yourself
+## Flashcards
 
-1. What does the CPM do?
-2. How do exclusive access and one-time passwords work together?
-3. Why is a managed identity better than a secret in Key Vault?
+```flashcards
+Q: What is vaulting?
+A: Storing privileged credentials in a secure, access-controlled store instead of in people's heads, spreadsheets or scripts.
+
+Q: Why rotate credentials automatically?
+A: It limits how long a stolen credential stays useful.
+
+Q: What does CyberArk's CPM do?
+A: Changes passwords on target systems according to policy and stores the new values in the Vault.
+
+Q: What is dual control?
+A: One or more authorized people must approve before the account can be used.
+
+Q: Exclusive access or one-time password: what is the difference?
+A: **Exclusive access**: the account is checked out, and nobody else can use it until it is checked in. **One-time password**: the password changes after every use.
+
+Q: What is a BeyondTrust functional account?
+A: The account Password Safe uses to change passwords on managed systems.
+
+Q: What is better than a secret stored in Key Vault?
+A: A **managed identity** or workload identity federation, so there is no secret to store at all.
+
+Q: What can go wrong with rotation?
+A: Services still using the old password stop working. Map dependencies first.
+```
 
 ## Sources
 

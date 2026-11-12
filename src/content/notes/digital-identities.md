@@ -26,8 +26,8 @@ Microsoft groups these under *workload identities*:
 - **Workload identity federation**: lets a workload outside Azure, such as **GitHub Actions** or a **Kubernetes** workload, swap a token from its own platform for a Microsoft Entra access token. No stored secret is needed.
 
 ```yaml
-# GitHub Actions: sign in to Azure with a federated credential. The IDs below are
-# not passwords, and no client secret is stored.
+# GitHub Actions: sign in to Azure with a federated credential.
+# The IDs below are not passwords, and no client secret is stored.
 permissions:
   id-token: write   # lets the job request an OIDC token from GitHub
 steps:
@@ -52,11 +52,33 @@ I support CI/CD with GitHub Actions, Docker and Azure Kubernetes Service. A pipe
 - Prefer managed identities or workload identity federation over long-lived secrets.
 - Workloads need owners, least privilege and reviews, just like people.
 
-## Check yourself
+## Flashcards
 
-1. What is the difference between a subject and a subscriber in NIST terms?
-2. Why is a managed identity safer than a client secret?
-3. Name two ways a device can be known to Microsoft Entra.
+```flashcards
+Q: What is a digital identity?
+A: The unique representation of a subject (a person, device or piece of software) in an online system, so the system can authenticate it and decide its access.
+
+Q: Name the three kinds of identity in this note.
+A: **People**, **devices** and **workloads** (apps, APIs, scripts, pipelines, containers).
+
+Q: In NIST SP 800-63-4, what are a subject, a subscriber and a claimant?
+A: A **subject** is the person. A **subscriber** has an account with a credential service provider. A **claimant** is someone trying to prove they are that subscriber.
+
+Q: What is a managed identity?
+A: An identity for an Azure resource where Azure handles the credential, so your code never sees a secret.
+
+Q: What does workload identity federation do?
+A: It lets a workload outside Azure, such as GitHub Actions or Kubernetes, swap a token from its own platform for a Microsoft Entra access token, with no stored secret.
+
+Q: In the GitHub Actions example, which permission lets the job request an OIDC token?
+A: `id-token: write`.
+
+Q: Name the three ways a device can be known to Microsoft Entra.
+A: **Registered** (often personal), **joined** (company-owned, cloud first) and **hybrid joined** (also joined to on-premises AD).
+
+Q: Why are workload credentials risky?
+A: Secrets end up in code, config files or pipeline variables with no expiry, and they are easy to forget.
+```
 
 ## Sources
 

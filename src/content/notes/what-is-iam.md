@@ -36,22 +36,47 @@ Microsoft's IAM fundamentals page explains these building blocks: identities, au
 
 My developer work at QHR Technologies included replacing an internal identity provider with **Azure AD B2C**, which is a CIAM product, for millions of users. That work was IAM in practice: OAuth 2.0 and OpenID Connect sign-in, tokens, and a migration plan with a fallback to the old login.
 
-Microsoft has since stopped selling Azure AD B2C to new customers (from May 1, 2025). Existing customers keep using it, with support until at least May 2030. Its successor for customer identity is **Microsoft Entra External ID**.
-
 ## Security angle
 
 Most attacks need an identity at some point: a stolen password, a token, an over-privileged service account. That is why IAM sits at the centre of modern security models like zero trust (see [Least privilege and zero trust](/notes/least-privilege)).
 
-## Check yourself
+## Flashcards
 
-1. What is the difference between workforce IAM and CIAM?
-2. Name the IAM building block that issues tokens to apps.
-3. Why is "who has access, and is it still right?" a separate question from "can they sign in?"
+```flashcards
+Q: In one sentence, what is IAM?
+A: How an organization knows **who** (or what) is asking for access, **proves** it, and **decides** what that identity is allowed to do.
+
+Q: Which IAM term answers "Can you prove it?"
+A: **Authentication** (AuthN), for example a password plus a passkey, or a certificate.
+
+Q: Which IAM term answers "What can you do?"
+A: **Authorization** (AuthZ), for example read-only access to the billing API.
+
+Q: What does governance add on top of authentication and authorization?
+A: It asks whether access is **still right** over time, for example a manager reviewing the team's access every quarter.
+
+Q: What is the difference between workforce IAM and customer IAM (CIAM)?
+A: Workforce IAM signs employees and contractors in to company apps. CIAM signs the public in to a company's product, where scale, self-service sign-up and a smooth experience matter a lot.
+
+Q: What is workload IAM?
+A: Identity for apps, services and scripts that need access without a person present.
+
+Q: What does an identity provider (IdP) do?
+A: It signs people in and issues proof of that sign-in (tokens or assertions) to apps.
+
+Q: Which standards let apps trust an IdP, and which one moves account data between systems?
+A: OAuth 2.0, OpenID Connect and SAML let apps trust an IdP. **SCIM** moves account data.
+
+Q: Is Azure AD B2C a workforce or a CIAM product?
+A: A **CIAM** product: it signs customers in to an organization's apps.
+
+Q: Why does IAM sit at the centre of zero trust?
+A: Most attacks need an identity at some point: a stolen password, a token or an over-privileged service account.
+```
 
 ## Sources
 
 - NIST CSRC Glossary: [identity and access management](https://csrc.nist.gov/glossary/term/identity_and_access_management)
 - Microsoft Learn: [Identity and access management (IAM) fundamentals](https://learn.microsoft.com/en-us/entra/fundamentals/introduction-identity-access-management)
 - Microsoft Learn: [What is Microsoft Entra?](https://learn.microsoft.com/en-us/entra/fundamentals/what-is-entra)
-- Microsoft Learn: [Azure AD B2C FAQ](https://learn.microsoft.com/en-us/azure/active-directory-b2c/faq) (end of sale and support dates)
 - Microsoft Learn: [Microsoft Entra External ID overview](https://learn.microsoft.com/en-us/entra/external-id/external-identities-overview)

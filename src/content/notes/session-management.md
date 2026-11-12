@@ -45,11 +45,27 @@ NIST SP 800-53 includes **AC-12 Session Termination** (end sessions automaticall
 - Recordings may capture sensitive data, such as health or personal information on screen. Protect and retain them carefully.
 - Direct access that bypasses the proxy (a forgotten RDP rule, a local account) defeats the control. Block it at the network level.
 
-## Check yourself
+## Flashcards
 
-1. Why is it valuable that the admin never sees the password?
-2. What two NIST controls relate to sessions?
-3. What undermines a session proxy?
+```flashcards
+Q: What is privileged session management?
+A: A control point between the admin and the target that starts the session without revealing credentials, and can monitor, record and stop it.
+
+Q: Why is it valuable that the admin never sees the password?
+A: The password can't be copied, reused or kept, and every use goes through the control point.
+
+Q: How does CyberArk describe the PSM?
+A: A central control point: users connect to targets through a proxy machine, and sessions are recorded.
+
+Q: Which two NIST controls relate to sessions?
+A: **AC-12** Session Termination and **AU-14** Session Audit.
+
+Q: What undermines a session proxy?
+A: Direct access that bypasses it, such as a forgotten RDP rule or a local account.
+
+Q: Why must recordings be protected carefully?
+A: They may capture sensitive data shown on screen.
+```
 
 ## Sources
 

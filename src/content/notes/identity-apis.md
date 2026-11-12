@@ -54,11 +54,33 @@ I design secure REST APIs as a developer. Identity APIs are the same craft, used
 - Store any secret you must have in a vault such as **Azure Key Vault**.
 - Log what the automation changed, so its actions show up as [audit evidence](/notes/audit-evidence).
 
-## Check yourself
+## Flashcards
 
-1. When should a script use delegated permissions instead of application permissions?
-2. What should a client do when it gets HTTP 429?
-3. Why is idempotency important for provisioning jobs?
+```flashcards
+Q: Name four kinds of identity APIs.
+A: Microsoft Graph, SCIM, Okta APIs, and the OIDC and OAuth endpoints.
+
+Q: Delegated or application permissions: when does a script use each?
+A: **Delegated** when a person runs it interactively (limited to their rights). **Application** for unattended jobs (tenant-wide, admin consent needed).
+
+Q: What does the `/.default` scope mean?
+A: All the application permissions an admin already granted to the app.
+
+Q: How do you handle paging in Microsoft Graph?
+A: Follow `@odata.nextLink` until there isn't one.
+
+Q: What should a client do when it gets HTTP 429?
+A: Wait for the `Retry-After` time, then retry.
+
+Q: What is a delta query?
+A: Asking only for what changed since last time.
+
+Q: Why is idempotency important for provisioning jobs?
+A: Running the same job twice shouldn't create duplicates.
+
+Q: How should an automation app authenticate?
+A: Prefer certificates, managed identities or workload identity federation over secrets, and never commit secrets to Git.
+```
 
 ## Sources
 

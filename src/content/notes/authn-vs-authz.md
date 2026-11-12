@@ -50,11 +50,39 @@ The real authorization check has to happen on the server, on every request. OWAS
 - An API that checks "is signed in" but never "owns this record".
 - Trusting a role sent by the client instead of one from a validated token.
 
-## Check yourself
+## Flashcards
 
-1. A signed-in user gets an error when opening another customer's invoice. Should it be 401 or 403?
-2. Why is an Angular route guard not enough to protect admin data?
-3. Which token is meant for authentication, and which for calling an API?
+```flashcards
+Q: What is the difference between authentication and authorization?
+A: Authentication verifies **who** you are. Authorization decides whether that identity may perform a specific action on a specific resource.
+
+Q: When does each one happen?
+A: Authentication happens first, at sign-in. Authorization happens on **every request** to a resource.
+
+Q: Which token is for authentication, and which is for calling an API?
+A: The **ID token** (OIDC) is proof of authentication. The **access token** (OAuth 2.0) is sent to the API.
+
+Q: What does HTTP **401 Unauthorized** really mean?
+A: *Not authenticated*: the request has no valid credentials. The response includes a `WWW-Authenticate` header.
+
+Q: What does HTTP **403 Forbidden** mean?
+A: The server knows who you are and refuses anyway: an **authorization** failure.
+
+Q: A signed-in user opens another customer's invoice and is refused. 401 or 403?
+A: **403**: they are authenticated, but not authorized for that record.
+
+Q: Why isn't an Angular route guard enough to protect admin data?
+A: It only changes what the browser shows. Anyone can call the API directly, so the server must check authorization on every request.
+
+Q: Which two principles does OWASP's Authorization Cheat Sheet stress?
+A: Validate permissions on **every request**, and **deny by default**.
+
+Q: Which category is #1 in the OWASP Top 10 (2021)?
+A: **Broken access control**.
+
+Q: Give an example of broken access control.
+A: Changing an ID in the URL (`/invoices/42` → `/invoices/43`) and seeing someone else's data, or trusting a role sent by the client instead of one from a validated token.
+```
 
 ## Sources
 

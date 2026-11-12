@@ -53,11 +53,30 @@ Many organizations use both: PIM for cloud admin roles, a PAM platform for every
 - Then map each vendor's terms onto them, using the tables above.
 - Both vendors offer official training and certifications. Check their current catalogues before choosing one.
 
-## Check yourself
+## Flashcards
 
-1. Which CyberArk component rotates passwords?
-2. What is a functional account in BeyondTrust?
-3. Why would an organization with Entra PIM still buy a PAM platform?
+```flashcards
+Q: Name CyberArk's four main components.
+A: The **Vault**, the **PVWA** (web portal), the **CPM** (password rotation) and the **PSM** (session proxy and recording).
+
+Q: Which CyberArk component rotates passwords?
+A: The **CPM**.
+
+Q: Name three CyberArk Master Policy rules.
+A: Dual control, exclusive access and one-time password.
+
+Q: In BeyondTrust, what are a managed system and a managed account?
+A: An asset whose accounts Password Safe manages, and a privileged account on that asset.
+
+Q: What does BeyondTrust's Resource Broker do?
+A: In cloud deployments, it reaches the systems in your network.
+
+Q: Web Console or Web Portal: who uses each?
+A: Admins use the Web Console. Requestors and approvers use the Web Portal.
+
+Q: Why would an organization with Entra PIM still buy a PAM platform?
+A: PIM doesn't vault or rotate server and device passwords, or proxy and record sessions.
+```
 
 ## Sources
 

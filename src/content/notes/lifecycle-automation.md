@@ -49,11 +49,33 @@ Okta Lifecycle Management assigns app access through groups and provisions or **
 
 My planned **joiner, mover, leaver automation** project fits here: read an HR file, then create, update and disable accounts automatically. The design rules above are its acceptance criteria.
 
-## Check yourself
+## Flashcards
 
-1. What should a job do if the HR file has half the usual number of rows?
-2. What is a lifecycle workflow trigger?
-3. When would you use API-driven inbound provisioning?
+```flashcards
+Q: What is lifecycle automation?
+A: Turning HR events into identity changes (create, update, disable) automatically.
+
+Q: What are the three parts of a lifecycle workflow?
+A: A **trigger**, a **scope** and **tasks**.
+
+Q: Give an example of a lifecycle workflow trigger.
+A: "7 days before `employeeHireDate`" or "on `employeeLeaveDateTime`".
+
+Q: When would you use API-driven inbound provisioning?
+A: When the HR source isn't a supported system. A script sends SCIM-formatted bulk requests.
+
+Q: What should a job do if the HR file has half the usual number of rows?
+A: **Stop** (fail safe), instead of disabling everyone missing from the file.
+
+Q: Why keep one source of truth per attribute?
+A: So two systems don't fight over values such as `department`.
+
+Q: Built-in features or scripts: which first?
+A: **Built-in features first.** Write scripts only for the gaps.
+
+Q: Why alert on failures?
+A: A silent failure means leavers keep access.
+```
 
 ## Sources
 

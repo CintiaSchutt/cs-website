@@ -52,11 +52,33 @@ Excluded on purpose: "Approve payments" (separation of duties)
 - A role is a promise: everyone in it gets everything in it. Over-broad roles spread excess access fast.
 - Least privilege still applies: put rarely needed or risky access behind a request, not in the birthright role.
 
-## Check yourself
+## Flashcards
 
-1. What is the difference between an access profile and a role in SailPoint?
-2. Why start role design from jobs instead of systems?
-3. Name one sign that a role model has become unmanageable.
+```flashcards
+Q: What is role design?
+A: Grouping permissions into roles that match real jobs, so access is granted, reviewed and removed as a unit.
+
+Q: Entitlement, access profile, role: how do they differ in SailPoint?
+A: An **entitlement** is one access right on a source. An **access profile** bundles entitlements from one source. A **role** bundles access from one or many sources.
+
+Q: What do SailPoint dynamic roles add?
+A: Extra birthright access based on role dimensions such as location.
+
+Q: Why start role design from jobs instead of systems?
+A: Roles should reflect what a job actually needs.
+
+Q: What does access that only one person has suggest?
+A: An exception to question.
+
+Q: Why does every role need an owner?
+A: Someone must approve changes and review membership.
+
+Q: What is role explosion?
+A: So many roles that nobody can tell them apart, usually because every exception became a role.
+
+Q: Where should risky or rarely needed access go?
+A: Behind a **request**, not in the birthright role.
+```
 
 ## Sources
 

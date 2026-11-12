@@ -50,11 +50,33 @@ A **bearer** assertion works for whoever holds it. **Holder-of-key** means the u
 - Signing certificates expire. A forgotten rollover breaks sign-in for everyone.
 - Trusting an IdP means trusting its security: a compromised IdP can sign in as anyone.
 
-## Check yourself
+## Flashcards
 
-1. What does the relying party use to check an assertion's signature?
-2. What is the difference between a bearer assertion and holder-of-key?
-3. Why does audience restriction matter?
+```flashcards
+Q: What is federation?
+A: A trust relationship where an app (the relying party) accepts a sign-in from an identity provider it doesn't run, based on a signed **assertion**.
+
+Q: What is a relying party?
+A: The app or service provider that trusts the IdP's assertion, such as a SaaS app.
+
+Q: What do the RP and IdP exchange to set up trust?
+A: **Metadata**: identifiers, endpoints and signing keys or certificates. They also agree on which claims are sent.
+
+Q: How does the RP check an assertion's signature?
+A: With the IdP's **public key**.
+
+Q: Where does an OIDC relying party find most of the IdP's settings automatically?
+A: In the discovery document at `/.well-known/openid-configuration`.
+
+Q: How many RPs can one assertion be for at FAL2 and FAL3?
+A: **One** RP per assertion.
+
+Q: What is the difference between a bearer assertion and holder-of-key?
+A: A **bearer** assertion works for whoever holds it. **Holder-of-key** means the user must also prove they hold a specific key.
+
+Q: What forgotten task breaks sign-in for everyone?
+A: A signing **certificate rollover**: certificates expire.
+```
 
 ## Sources
 

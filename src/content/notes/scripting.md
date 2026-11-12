@@ -71,11 +71,33 @@ while url:
 
 Write a read-only script that lists users who haven't signed in for 90 days. (Hint: look at the `signInActivity` property on the user resource and the permission it needs.)
 
-## Check yourself
+## Flashcards
 
-1. Which PowerShell modules are deprecated, and what replaces them?
-2. What does `/.default` mean in the Python example?
-3. Why build the report before the change?
+```flashcards
+Q: Which PowerShell modules are deprecated?
+A: **Azure AD**, **Azure AD Preview** and **MSOnline**.
+
+Q: What replaces them?
+A: **Microsoft Graph PowerShell**.
+
+Q: How do you sign in asking only for the permissions a task needs?
+A: `Connect-MgGraph -Scopes "User.Read.All"`, with the scopes the task needs.
+
+Q: Which cmdlet helps you find the command for an API?
+A: `Find-MgGraphCommand`.
+
+Q: What does MSAL do in the Python example?
+A: It gets the token. Any HTTP client then calls Graph.
+
+Q: Which MSAL method gets an app-only token?
+A: `acquire_token_for_client`.
+
+Q: Name four habits for safe scripts.
+A: Read-only first, a dry-run mode, least privilege, no secrets in code, and logging every change.
+
+Q: Which on-premises module disables an AD account, and with which cmdlet?
+A: The **ActiveDirectory** module, with `Disable-ADAccount`.
+```
 
 ## Sources
 

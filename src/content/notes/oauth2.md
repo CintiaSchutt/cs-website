@@ -80,11 +80,42 @@ I work with OAuth 2.0 and OpenID Connect at QHR Technologies, including the move
 - Restrict access tokens to their intended audience and to the smallest scopes that work.
 - For SPAs, the IETF draft *OAuth 2.0 for Browser-Based Applications* describes a backend-for-frontend (BFF) pattern that keeps tokens out of the browser.
 
-## Check yourself
+## Flashcards
 
-1. Why is a React or Angular SPA a public client?
-2. What problem does PKCE solve, in one sentence?
-3. Which two grants should no longer be used, and why?
+```flashcards
+Q: What kind of framework is OAuth 2.0?
+A: An **authorization** framework: it gives a client a limited access token for an API. On its own, it doesn't say who the user is.
+
+Q: Name the four OAuth 2.0 roles.
+A: **Resource owner**, **client**, **authorization server** and **resource server**.
+
+Q: Why is an Angular or React SPA a public client?
+A: Anything shipped to the browser can't keep a secret.
+
+Q: What problem does PKCE solve?
+A: It stops a stolen authorization code from being exchanged by anyone except the app that started the flow.
+
+Q: How is the `code_challenge` made from the `code_verifier`?
+A: It is the base64url-encoded **SHA-256** hash of the verifier (`code_challenge_method=S256`).
+
+Q: What is the `state` parameter for?
+A: A random value checked on return, to block cross-site request forgery.
+
+Q: Which grant is for service-to-service calls with no user?
+A: **Client credentials**.
+
+Q: What does RFC 9700 say about the implicit and password grants?
+A: The implicit grant **SHOULD NOT** be used. The resource owner password credentials grant **MUST NOT** be used.
+
+Q: How should an authorization server compare redirect URIs?
+A: By **exact string match**.
+
+Q: What must protect refresh tokens issued to public clients?
+A: Sender-constraining or **rotation** on each use.
+
+Q: Why must bearer tokens be short-lived and kept out of logs and URLs?
+A: A bearer token works for **anyone** who holds it.
+```
 
 ## Sources
 

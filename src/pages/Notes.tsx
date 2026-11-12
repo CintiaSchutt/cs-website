@@ -99,6 +99,17 @@ export function NotePage({ slug }: { slug: string }) {
       <PageHeader title={note.title} lede={note.summary} />
       {/* The site's own Markdown files (src/content/notes), converted to HTML in notes.ts. */}
       <article className="prose" dangerouslySetInnerHTML={{ __html: note.html }} />
+      <p className="notes__back-to-top">
+        <button type="button" className="button button--secondary" onClick={backToTop}>
+          Back to top <span aria-hidden="true">↑</span>
+        </button>
+      </p>
     </NotesShell>
   );
+}
+
+/** Scrolls up and moves focus to the note's title, as the router does after navigation. */
+function backToTop() {
+  window.scrollTo(0, 0);
+  document.querySelector<HTMLElement>('main h1')?.focus({ preventScroll: true });
 }

@@ -52,11 +52,33 @@ Built-in cloud governance covers that cloud well. Organizations with many on-pre
 2. Read SailPoint's docs for its vocabulary, using the mapping table above.
 3. In interviews, explain the *concept* first ("an access review campaign"), then the product term.
 
-## Check yourself
+## Flashcards
 
-1. What is a source in SailPoint?
-2. Which SailPoint feature is closest to Entra PIM?
-3. Why might an organization use SailPoint on top of Microsoft Entra?
+```flashcards
+Q: What do dedicated IGA platforms do?
+A: Connect to many systems, collect who has what access, and run governance across all of them.
+
+Q: What does SailPoint's current documentation call its SaaS platform?
+A: **SailPoint Human Fabric**. Older pages say Identity Security Cloud.
+
+Q: What is a source in SailPoint?
+A: An application, database or directory that keeps its own users. SailPoint collects data from it.
+
+Q: What is an authoritative source?
+A: The main source of employee information, such as an HR application, used to create identities.
+
+Q: What is a lifecycle state?
+A: The employment stage someone is in, such as "Pre-Hire", "Employee" or "On Leave".
+
+Q: What is Privilege on Demand?
+A: Just-in-time access: pre-approved, provisioned only when activated, and removed when the period ends.
+
+Q: Map SailPoint's certification campaigns, SoD policies and Request Center to Entra.
+A: Access reviews, incompatible access packages and groups, and My Access (entitlement management).
+
+Q: Why might an organization use SailPoint on top of Entra?
+A: To govern access in one place across many on-premises and third-party systems.
+```
 
 ## Sources
 
