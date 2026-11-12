@@ -53,11 +53,24 @@ const slugify = (text: string) =>
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-|-$/g, '');
 
+const escapeAttribute = (value: string) =>
+  value.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+type RendererThis = { parser: { parseInline: (tokens: Tokens.Generic[]) => string } };
+
 function render(body: string): string {
   const used = new Set<string>();
   const marked = new Marked({
     renderer: {
-      heading(this: { parser: { parseInline: (tokens: Tokens.Generic[]) => string } }, { tokens, depth }: Tokens.Heading) {
+      // External links open in a new tab, like components/ExternalLink.tsx.
+      // Links between notes (/notes/...) keep marked's default output.
+      link(this: RendererThis, { href, title, tokens }: Tokens.Link) {
+        if (!/^https?:\/\//i.test(href)) return false;
+        const inner = this.parser.parseInline(tokens);
+        const titleAttribute = title ? ` title="${escapeAttribute(title)}"` : '';
+        return `<a href="${escapeAttribute(href)}"${titleAttribute} target="_blank" rel="noopener noreferrer">${inner}<span class="visually-hidden"> (opens in a new tab)</span></a>`;
+      },
+      heading(this: RendererThis, { tokens, depth }: Tokens.Heading) {
         const inner = this.parser.parseInline(tokens);
         // Notes start at h2: the page title is the only h1.
         const level = Math.min(Math.max(depth, 2), 6);
