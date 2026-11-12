@@ -36,8 +36,6 @@ Microsoft's IAM fundamentals page explains these building blocks: identities, au
 
 My developer work at QHR Technologies included replacing an internal identity provider with **Azure AD B2C**, which is a CIAM product, for millions of users. That work was IAM in practice: OAuth 2.0 and OpenID Connect sign-in, tokens, and a migration plan with a fallback to the old login.
 
-Microsoft has since stopped selling Azure AD B2C to new customers (from May 1, 2025). Existing customers keep using it, with support until at least May 2030. Its successor for customer identity is **Microsoft Entra External ID**.
-
 ## Security angle
 
 Most attacks need an identity at some point: a stolen password, a token, an over-privileged service account. That is why IAM sits at the centre of modern security models like zero trust (see [Least privilege and zero trust](/notes/least-privilege)).
@@ -53,5 +51,4 @@ Most attacks need an identity at some point: a stolen password, a token, an over
 - NIST CSRC Glossary: [identity and access management](https://csrc.nist.gov/glossary/term/identity_and_access_management)
 - Microsoft Learn: [Identity and access management (IAM) fundamentals](https://learn.microsoft.com/en-us/entra/fundamentals/introduction-identity-access-management)
 - Microsoft Learn: [What is Microsoft Entra?](https://learn.microsoft.com/en-us/entra/fundamentals/what-is-entra)
-- Microsoft Learn: [Azure AD B2C FAQ](https://learn.microsoft.com/en-us/azure/active-directory-b2c/faq) (end of sale and support dates)
 - Microsoft Learn: [Microsoft Entra External ID overview](https://learn.microsoft.com/en-us/entra/external-id/external-identities-overview)
