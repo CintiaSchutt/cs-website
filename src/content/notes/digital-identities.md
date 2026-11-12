@@ -26,8 +26,8 @@ Microsoft groups these under *workload identities*:
 - **Workload identity federation**: lets a workload outside Azure, such as **GitHub Actions** or a **Kubernetes** workload, swap a token from its own platform for a Microsoft Entra access token. No stored secret is needed.
 
 ```yaml
-# GitHub Actions: sign in to Azure with a federated credential. The IDs below are
-# not passwords, and no client secret is stored.
+# GitHub Actions: sign in to Azure with a federated credential.
+# The IDs below are not passwords, and no client secret is stored.
 permissions:
   id-token: write   # lets the job request an OIDC token from GitHub
 steps:
