@@ -210,8 +210,18 @@
     margin-top: var(--space-4);
   }
 
-  .notes__back-to-top .button {
-    gap: 0.4em;
+  /* Quiet text button: small and muted, only the colour changes on hover. */
+  .notes__back-to-top-button {
+    padding: 0.25rem 0;
+    border: 0;
+    background: none;
+    color: var(--color-ink-muted);
+    font-size: var(--step--1);
+    cursor: pointer;
+  }
+
+  .notes__back-to-top-button:hover {
+    color: var(--color-ink);
   }
 
   .prose th,
