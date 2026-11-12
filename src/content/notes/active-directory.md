@@ -56,11 +56,36 @@ Disable-ADAccount -Identity jdoe
 - Microsoft's guidance: reduce permanent membership in privileged groups, use separate admin accounts, and manage DCs from secure admin workstations.
 - In hybrid setups, an on-premises compromise can reach the cloud through synchronization (see [Hybrid identity](/notes/hybrid-identity)).
 
-## Check yourself
+## Flashcards
 
-1. What is the security boundary in AD: the domain or the forest?
-2. When would you use an OU instead of a group?
-3. Why doesn't Kerberos need to send the password for each resource?
+```flashcards
+Q: What is AD DS?
+A: Microsoft's on-premises directory: it stores users, computers and groups, authenticates them and lets admins manage them centrally.
+
+Q: What is the security boundary in AD?
+A: The **forest**.
+
+Q: What is an OU used for?
+A: Delegating administration and applying Group Policy inside a domain.
+
+Q: What does each domain controller hold?
+A: A full copy of its domain's directory data. Changes replicate to all DCs in the domain.
+
+Q: What does the global catalog hold?
+A: A partial copy of every object in the forest, so objects can be found across domains.
+
+Q: Security groups or distribution groups: what is each for?
+A: Security groups are for permissions. Distribution groups are for email only.
+
+Q: Name the three AD group scopes.
+A: **Domain local**, **global** and **universal**.
+
+Q: How does Kerberos avoid sending the password for each resource?
+A: The KDC issues a **ticket-granting ticket** at sign-in, which the user exchanges for service tickets.
+
+Q: Name the most sensitive built-in AD groups.
+A: **Enterprise Admins**, **Domain Admins**, **Schema Admins** and the built-in **Administrators** group.
+```
 
 ## Sources
 

@@ -69,11 +69,36 @@ Entra supports passkeys (FIDO2) as an authentication method, including security 
 
 Open the browser's developer tools on a site that supports passkeys and watch the `navigator.credentials.create` call when you register. Spot the `rp.id` and the `challenge`.
 
-## Check yourself
+## Flashcards
 
-1. What does the server store: the private key or the public key?
-2. Which browser rule makes passkeys phishing-resistant?
-3. Why can't synced passkeys meet NIST AAL3?
+```flashcards
+Q: What is a passkey?
+A: A FIDO credential: a key pair where the private key stays with the user's authenticator and the site stores only the public key.
+
+Q: What does the server store?
+A: The **public key** and a credential ID.
+
+Q: Which browser calls register and use a passkey?
+A: WebAuthn's `navigator.credentials.create()` to register and `navigator.credentials.get()` to sign in.
+
+Q: What is the RP ID?
+A: The domain that identifies the relying party, such as `example.com`. A credential can only be used on its RP ID.
+
+Q: Why are passkeys phishing-resistant?
+A: The browser only allows a credential on the RP ID it was created for, and there is no code to type into a fake page.
+
+Q: What is the difference between user verification and user presence?
+A: **UV**: the authenticator checked the user (fingerprint, face, PIN). **UP**: someone was physically there (a touch or tap).
+
+Q: What does the server check at sign-in?
+A: The challenge, the origin, the RP ID hash, the flags and the signature.
+
+Q: Synced or device-bound: which can meet NIST AAL3?
+A: **Device-bound**. Synced passkeys have an exportable key, so they are not allowed at AAL3.
+
+Q: What is the weak spot in passkey deployments?
+A: **Account recovery**: falling back to email or SMS gives attackers another way in.
+```
 
 ## Sources
 

@@ -62,11 +62,39 @@ Microsoft's built-in policy `microsoft-user-default-low` allows user consent onl
 
 As a developer working with OAuth 2.0 and OIDC, I've configured apps on the developer side: client IDs, redirect URIs and scopes. The IAM side is the same objects seen from the admin's chair: who may consent, which permissions are too broad, and which credentials are about to expire.
 
-## Check yourself
+## Flashcards
 
-1. Which object do Conditional Access and user assignment apply to?
-2. Why do application permissions always need admin consent?
-3. Which token claim carries delegated scopes, and which carries app roles?
+```flashcards
+Q: What is the difference between an application object and a service principal?
+A: The application object is the app's global definition in its home tenant. A service principal is its local instance in each tenant where it is used.
+
+Q: Which object do Conditional Access, consent and user assignment apply to?
+A: The **service principal** (shown under Enterprise applications).
+
+Q: Which credential type does Microsoft recommend over client secrets?
+A: **Certificates**. Federated credentials avoid secrets entirely.
+
+Q: Delegated vs application permissions: who does the app act as?
+A: **Delegated**: the signed-in user. **Application**: the app itself, with no user.
+
+Q: Which token claim carries delegated scopes, and which carries app roles?
+A: `scp` for delegated scopes. `roles` for app roles and application permissions.
+
+Q: Why do application permissions always need admin consent?
+A: They act tenant-wide with no user. For example, `User.Read.All` reads every user.
+
+Q: What does the admin consent workflow do?
+A: Users can **request** an app, and a designated reviewer approves or denies it.
+
+Q: What does the built-in `microsoft-user-default-low` consent policy allow?
+A: User consent only for apps from **verified publishers** (or registered in your tenant), and only for **low-impact** permissions.
+
+Q: What do `AADSTS50011` and `AADSTS65001` mean?
+A: `50011`: the redirect URI doesn't match. `65001`: the user or admin hasn't consented.
+
+Q: What is consent phishing?
+A: An attacker's app asks users for broad permissions, hoping they accept.
+```
 
 ## Sources
 

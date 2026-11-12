@@ -60,11 +60,36 @@ Workflows run on triggers such as the user's hire date or leave date attributes.
 
 One of my planned portfolio projects is **joiner, mover, leaver automation**: creating, updating and disabling accounts automatically from an HR file. This note is the requirements list for it.
 
-## Check yourself
+## Flashcards
 
-1. What is birthright access?
-2. Why does privilege creep happen at the mover stage?
-3. List four things to do for a leaver besides disabling the account.
+```flashcards
+Q: What is birthright access?
+A: What everyone in a role or department gets, such as email, the intranet and team apps.
+
+Q: How can a new hire safely set up their first credential in Entra?
+A: Lifecycle workflows can generate a **Temporary Access Pass** for the manager to hand over.
+
+Q: What step is most often missed for movers?
+A: **Removing** the old role's access.
+
+Q: What is privilege creep?
+A: Collecting access from every role someone has held.
+
+Q: List four leaver tasks besides disabling the account.
+A: Revoke sessions, remove groups, app assignments, licences and admin roles, hand over data and ownership, and delete later.
+
+Q: Which lifecycle workflow template covers movers?
+A: *Real-time employee change*.
+
+Q: What triggers lifecycle workflows?
+A: Attributes such as the user's **hire date** or **leave date**.
+
+Q: Who needs end dates besides employees?
+A: **Contractors** and **guests**.
+
+Q: Which NIST controls cover termination and transfer?
+A: **PS-4** and **PS-5**, along with **AC-2**.
+```
 
 ## Sources
 

@@ -65,11 +65,36 @@ I investigate and resolve production issues with cross-functional teams. Sign-in
 - Don't "fix" a block by excluding the user from Conditional Access without understanding why.
 - Never ask a user to send their password or a token in a ticket.
 
-## Check yourself
+## Flashcards
 
-1. What two IDs from the error page help you find the log entry quickly?
-2. A user gets `AADSTS53003`. Where do you look first?
-3. Why might a failure not show in interactive sign-ins?
+```flashcards
+Q: What are the steps of the troubleshooting method?
+A: Collect the facts, find the log entry, read the error code, then check the **user**, the **app** and the **policy**.
+
+Q: Which two IDs from the error page help you find the log entry?
+A: The **correlation ID** and the **request ID**.
+
+Q: Which sign-in log tab shows which policies applied?
+A: The **Conditional Access** tab.
+
+Q: Why might a failure not appear in interactive sign-ins?
+A: It may come from a background process. Check **non-interactive** and **service principal** sign-ins.
+
+Q: What do `AADSTS50126`, `50057` and `50053` mean?
+A: `50126`: invalid username or password. `50057`: account disabled. `50053`: account locked or sign-in blocked.
+
+Q: What do `AADSTS700016` and `7000215` mean?
+A: `700016`: app not found in the tenant. `7000215`: invalid client secret.
+
+Q: For a SAML app, what should you compare?
+A: The **Identifier** and **Reply URL** in Entra with what the app sends, and check the signing certificate hasn't expired.
+
+Q: How long are sign-in logs kept on Free and on P1/P2?
+A: **7 days** on Free, **30 days** on P1 or P2.
+
+Q: A burst of `50126` errors across many users. What might it be?
+A: **Password spraying**, not a help-desk problem.
+```
 
 ## Sources
 

@@ -69,11 +69,39 @@ Setting up SAML SSO for an enterprise app means filling in the **Identifier (Ent
 - Reject replayed assertions: remember assertion IDs until they expire.
 - Use a maintained SAML library and a hardened XML parser. Never parse SAML by hand.
 
-## Check yourself
+## Flashcards
 
-1. What is the ACS URL?
-2. Which SAML element limits which SP can accept an assertion?
-3. Why is IdP-initiated SSO riskier than SP-initiated?
+```flashcards
+Q: What is SAML 2.0 used for?
+A: Web single sign-on: apps (service providers) trust signed XML assertions from an identity provider.
+
+Q: Name the four SAML building blocks.
+A: **Assertions**, **protocols**, **bindings** and **profiles**.
+
+Q: What is the ACS URL?
+A: The service provider's **Assertion Consumer Service** URL, where the IdP sends the SAML response.
+
+Q: Which bindings usually carry the request and the response?
+A: HTTP **Redirect** for the `AuthnRequest`, HTTP **POST** for the response.
+
+Q: Which element limits which SP can accept an assertion?
+A: `AudienceRestriction` (the `Audience`).
+
+Q: Why is IdP-initiated SSO riskier?
+A: The SP receives a response it never asked for, so there is no `InResponseTo` to match. OWASP points out these extra risks.
+
+Q: What defends against XML Signature Wrapping?
+A: Validating the signature and making sure it covers the part of the document you actually use, with a maintained library.
+
+Q: How do you reject replayed assertions?
+A: Remember assertion IDs until they expire.
+
+Q: What do you fill in for SAML SSO on an Entra enterprise app?
+A: The **Identifier (Entity ID)**, the **Reply URL (ACS URL)** and optionally a **Sign on URL**.
+
+Q: SAML vs OIDC: which format does each use?
+A: SAML uses **XML**. OIDC uses **JSON / JWT**.
+```
 
 ## Sources
 

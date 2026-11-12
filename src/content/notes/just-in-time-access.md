@@ -62,11 +62,30 @@ PIM also works for **groups** (PIM for Groups), so a user can activate group mem
 
 In a Microsoft Entra test tenant with PIM licensing, make your test admin **eligible** for a role. Activate it, then find the activation in PIM's audit history.
 
-## Check yourself
+## Flashcards
 
-1. What's the difference between an eligible and an active assignment?
-2. Name four controls PIM can require at activation.
-3. Why keep emergency accounts outside PIM?
+```flashcards
+Q: What is just-in-time access?
+A: Privilege that is activated when needed and expires automatically, instead of standing access.
+
+Q: Eligible or active assignment: what is the difference?
+A: **Eligible**: the user must activate the role to use it. **Active**: the user has the role without any action.
+
+Q: Name four controls PIM can require at activation.
+A: MFA, a justification, approval and a time limit.
+
+Q: What else does PIM provide besides activation?
+A: Notifications, access reviews and audit history.
+
+Q: What is PIM for Groups?
+A: Activating a group membership that grants several roles or resources at once.
+
+Q: Why keep emergency accounts outside PIM?
+A: So a PIM or MFA outage can't lock everyone out.
+
+Q: How does SailPoint provide just-in-time access?
+A: With **Privilege on Demand**.
+```
 
 ## Sources
 

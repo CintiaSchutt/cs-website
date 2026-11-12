@@ -51,11 +51,36 @@ Strengths: fine-grained and flexible, with no new role per exception. Weakness: 
 
 Designing secure REST APIs means deciding where these checks live. A token tells the API who the caller is and which roles or scopes they have, and the API must still check that the caller may act on *this* record.
 
-## Check yourself
+## Flashcards
 
-1. In NIST RBAC, can a user be given a permission directly?
-2. Name the four inputs to an ABAC decision.
-3. What are the three parts of an Azure role assignment?
+```flashcards
+Q: What is RBAC?
+A: Permissions are assigned to **roles**, and users are assigned to roles.
+
+Q: In NIST RBAC, can a user be given a permission directly?
+A: No. Users get permissions only through roles.
+
+Q: What do hierarchical and constrained RBAC add?
+A: **Hierarchical**: senior roles inherit junior roles' permissions. **Constrained**: separation of duties rules.
+
+Q: What is ABAC?
+A: Each request is decided by rules over attributes of the user, the resource and the context.
+
+Q: Name the four inputs to an ABAC decision in NIST SP 800-162.
+A: **Subject attributes**, **object attributes**, **environment conditions** and **policies**.
+
+Q: What is one strength and one weakness of each model?
+A: RBAC is easy to audit, but every exception can become a new role. ABAC is flexible, but answering "who can see this?" means evaluating the rules.
+
+Q: What are the three parts of an Azure role assignment?
+A: **Security principal** (who), **role definition** (what) and **scope** (where).
+
+Q: What does Azure ABAC add to Azure RBAC?
+A: Role assignment **conditions**, for example reading blobs only when the blob's `Project` tag matches.
+
+Q: Where does an Entra app role appear for the API to check?
+A: In the token's `roles` claim.
+```
 
 ## Sources
 

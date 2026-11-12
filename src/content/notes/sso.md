@@ -47,11 +47,30 @@ Microsoft's guidance is to prefer OIDC or SAML when the app supports them.
 - Disabling a user at the IdP blocks *new* sign-ins. Existing app sessions can last until they expire, so session lifetimes matter.
 - Every app must still validate the token or assertion it receives.
 
-## Check yourself
+## Flashcards
 
-1. Why does a user stay signed in to app B after signing out of app A?
-2. Which SSO option should a team building a new app pick in Entra?
-3. Why does SSO make MFA more important, not less?
+```flashcards
+Q: What is SSO?
+A: Authenticating once and then reaching several apps without signing in again, because they all trust the same identity provider.
+
+Q: Why does a user stay signed in to app B after signing out of app A?
+A: Each app has **its own session**, and the IdP has another. Ending one doesn't end the others.
+
+Q: Which SSO option should a team building a new app pick in Entra?
+A: **OpenID Connect / OAuth 2.0**.
+
+Q: When is password-based SSO used?
+A: For apps with only a username and password form. Entra stores and fills in the credentials.
+
+Q: Name two benefits of SSO.
+A: For example: fewer passwords and resets, one place to enforce MFA and Conditional Access, and one place to disable a leaver.
+
+Q: Why does SSO make MFA more important?
+A: SSO concentrates risk: whoever controls the IdP sign-in reaches every connected app.
+
+Q: Does disabling a user at the IdP end their open app sessions?
+A: Not immediately. It blocks **new** sign-ins. Existing app sessions can last until they expire.
+```
 
 ## Sources
 

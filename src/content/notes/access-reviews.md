@@ -54,11 +54,33 @@ SailPoint's documentation explains that the access model shapes what reviewers s
 - Auditors look for evidence that reviews **happened** and that denials were **acted on**. Keep both (see [Audit evidence](/notes/audit-evidence)).
 - NIST SP 800-53 **AC-2** expects accounts to be reviewed for compliance at a frequency the organization defines.
 
-## Check yourself
+## Flashcards
 
-1. Who is the best reviewer for "should Jane still be in the Billing app group?"
-2. Why can SailPoint reviewers only acknowledge some roles?
-3. What does auto-apply do?
+```flashcards
+Q: What is an access review?
+A: Reviewers confirm or remove existing access on a regular schedule.
+
+Q: Name four kinds of access that get reviewed.
+A: Group membership, app assignments, access package assignments, privileged roles and guests' access.
+
+Q: Who is the best reviewer for "should Jane still be in the Billing app group?"
+A: Usually her **manager** (knows the job) or the **group owner** (knows the access), or both in stages.
+
+Q: How often can Entra access reviews recur?
+A: Weekly, monthly, quarterly or annually.
+
+Q: What does auto-apply do?
+A: Removes denied access automatically when the review completes.
+
+Q: Why can SailPoint reviewers only acknowledge some roles?
+A: Roles assigned automatically by criteria are controlled by the role model.
+
+Q: How do you make reviews meaningful?
+A: Keep them small, give reviewers context, make deny easy and safe, and track completion.
+
+Q: What do auditors look for in reviews?
+A: Evidence that reviews **happened** and that denials were **acted on**.
+```
 
 ## Sources
 

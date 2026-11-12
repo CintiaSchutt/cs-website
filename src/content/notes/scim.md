@@ -69,11 +69,36 @@ Content-Type: application/scim+json
 - Treat SCIM input as untrusted: validate attributes and don't let it grant admin rights by accident.
 - Deprovisioning through SCIM is what closes leavers' accounts in SaaS apps. Test it, not just account creation.
 
-## Check yourself
+## Flashcards
 
-1. Which side hosts the `/Users` endpoint: the IdP or the app?
-2. What is the difference between `id` and `externalId`?
-3. Why do many clients set `active: false` instead of sending `DELETE`?
+```flashcards
+Q: What is SCIM?
+A: An IETF standard schema for users and groups, plus a REST protocol to manage them, so an IdP can provision accounts in apps.
+
+Q: What do RFC 7642, 7643 and 7644 cover?
+A: Concepts and use cases, the core schema, and the protocol.
+
+Q: Which side hosts the `/Users` endpoint?
+A: The **app** (the SCIM service provider). The IdP is the SCIM client.
+
+Q: Which request changes only some attributes of a user?
+A: `PATCH /Users/{id}`.
+
+Q: How do you find a user by username?
+A: `GET /Users?filter=userName eq "jdoe@example.com"`.
+
+Q: What is the difference between `id` and `externalId`?
+A: `id` is set by the app. `externalId` is the client's own identifier.
+
+Q: How do many clients deactivate a user?
+A: By setting `active: false` instead of sending `DELETE`.
+
+Q: Which endpoints let a client discover what a SCIM server supports?
+A: `/ServiceProviderConfig`, `/Schemas` and `/ResourceTypes`.
+
+Q: Why must the SCIM endpoint be well protected?
+A: It can create and disable accounts. Use strong authentication (such as an OAuth bearer token) and TLS.
+```
 
 ## Sources
 

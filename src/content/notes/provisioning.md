@@ -45,11 +45,33 @@ Okta describes provisioning as Create, Read, Update and **Deprovision**. Removin
 - Apps without SCIM need a manual or ticketed deprovisioning step, and someone must own it.
 - Test the leaver path end to end, and log every step as [audit evidence](/notes/audit-evidence).
 
-## Check yourself
+## Flashcards
 
-1. Which is riskier to get wrong: provisioning or deprovisioning? Why?
-2. A disabled user is still using an app 20 minutes later. Is that expected?
-3. What is an orphaned account?
+```flashcards
+Q: What is the difference between provisioning and deprovisioning?
+A: Provisioning creates accounts and grants access. Deprovisioning removes it, and matters most for security.
+
+Q: Inbound or outbound provisioning: what is the difference?
+A: **Inbound**: HR system to directory. **Outbound**: directory to apps, usually through SCIM.
+
+Q: What decides which users Entra provisions to an app?
+A: **Scoping**: users and groups assigned to the app, or matching scoping filters.
+
+Q: What do attribute mappings do?
+A: Decide which directory attributes fill which app attributes.
+
+Q: Initial or incremental cycle: what is the difference?
+A: The **initial** cycle processes everyone in scope. **Incremental** cycles send only changes.
+
+Q: A disabled user is still using an app 20 minutes later. Is that expected?
+A: Yes. Apps using access tokens keep access until the token expires, about an hour by default.
+
+Q: Which three steps does an urgent leaver need?
+A: **Disable** the account, **revoke sign-in sessions**, and remove groups and roles.
+
+Q: What is an orphaned account?
+A: An app account with no matching active person, often in apps outside automated provisioning.
+```
 
 ## Sources
 

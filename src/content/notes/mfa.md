@@ -57,11 +57,42 @@ Two passwords are still **one** factor. A passkey on a phone unlocked with a fin
 - MFA registration and account recovery are attack paths too: protect them like sign-in.
 - For admins, require phishing-resistant MFA.
 
-## Check yourself
+## Flashcards
 
-1. Is a password plus a security question MFA? Why not?
-2. What makes a method phishing-resistant?
-3. What does number matching defend against?
+```flashcards
+Q: Name the three authentication factors.
+A: Something you **know**, something you **have**, something you **are**.
+
+Q: Is a password plus a security question MFA?
+A: No. Both are something you **know**, so it is one factor.
+
+Q: What does AAL2 require in NIST SP 800-63B-4?
+A: Two distinct factors, and a **phishing-resistant** option must be offered.
+
+Q: What does AAL3 require?
+A: A phishing-resistant cryptographic authenticator with a **non-exportable** key.
+
+Q: What makes a method phishing-resistant?
+A: The sign-in is bound to the real website, so a fake site can't relay it.
+
+Q: Which methods does CISA name as phishing-resistant?
+A: **FIDO2/WebAuthn** and **PKI-based** (smart card) authentication.
+
+Q: What does number matching defend against?
+A: "MFA fatigue": spamming push notifications until the user accepts one.
+
+Q: What does NIST say about SMS and email codes?
+A: The phone network (PSTN) is a *restricted* authenticator. Email **SHALL NOT** be used for out-of-band authentication.
+
+Q: What are Entra's three built-in authentication strengths?
+A: *Multifactor authentication*, *Passwordless MFA* and *Phishing-resistant MFA*.
+
+Q: What are NIST's minimum password lengths?
+A: **15** characters when the password is the only factor, **8** when it is part of MFA.
+
+Q: Name two password rules NIST now says **not** to use.
+A: Composition rules (like "one symbol, one number") and forced **periodic** changes.
+```
 
 ## Sources
 

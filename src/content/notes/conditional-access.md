@@ -53,11 +53,39 @@ Example policy: "Admins need phishing-resistant MFA"
 - Exclusions are the most common weak spot. Every excluded user or app needs a reason and a review.
 - Prefer *authentication strengths* over plain "require MFA" for sensitive apps and admins.
 
-## Check yourself
+## Flashcards
 
-1. Two policies match: one requires MFA, the other blocks. What happens?
-2. Why use report-only mode before turning a policy on?
-3. Why must emergency access accounts be excluded and closely monitored?
+```flashcards
+Q: What is a Conditional Access policy?
+A: An **if-then** statement: if the assignments match (who, what, conditions), then apply access controls.
+
+Q: When are Conditional Access policies enforced?
+A: **After first-factor authentication.**
+
+Q: Two policies match: one requires MFA, the other blocks. What happens?
+A: **Block wins.** All matching policies apply, and every grant requirement must be met.
+
+Q: Name three grant controls.
+A: For example: block, require MFA, require an authentication strength, require a compliant or hybrid joined device, require a password change.
+
+Q: Name two session controls.
+A: Sign-in frequency, persistent browser session, or app-enforced restrictions.
+
+Q: Which licence does Conditional Access need, and what is the alternative without it?
+A: **Microsoft Entra ID P1** or higher. Without it, turn on **security defaults**.
+
+Q: What does report-only mode do?
+A: Policies are evaluated and logged, but not enforced.
+
+Q: Which tool tests a specific sign-in scenario against your policies?
+A: The **What If** tool.
+
+Q: How many emergency access accounts does Microsoft recommend, and how are they treated?
+A: **Two or more**, cloud-only, and excluded from policies that could lock everyone out.
+
+Q: What does `AADSTS53003` mean?
+A: Access was blocked by Conditional Access policies.
+```
 
 ## Sources
 

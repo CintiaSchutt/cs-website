@@ -52,11 +52,36 @@ Job postings for IAM roles often name one or the other. The concepts are the sam
 - Test deprovisioning, not just provisioning: a removed assignment should really deactivate the app account.
 - Watch the System Log for policy changes and new admin assignments.
 
-## Check yourself
+## Flashcards
 
-1. What does it mean for a profile to be "sourced" from AD?
-2. Which Okta policy controls the Okta session length?
-3. What happens to an app account when its assignment is removed?
+```flashcards
+Q: What is an Okta org?
+A: The container for your users, groups, apps, policies and security settings, like an Entra tenant.
+
+Q: What is Universal Directory?
+A: The user store and data layer behind all Okta services.
+
+Q: What does it mean for a profile to be sourced from AD?
+A: AD is the authority, so the profile can't be edited in Okta.
+
+Q: Which Okta policy controls the Okta session length?
+A: The **global session policy**.
+
+Q: What do authentication policies control?
+A: The extra requirements before a specific app opens.
+
+Q: How does Okta describe provisioning operations?
+A: Create, Read, Update and **Deprovision** (instead of delete).
+
+Q: What happens to an app account when its assignment is removed?
+A: It is **deactivated**, and access is removed.
+
+Q: Which protocol does Okta use to provision accounts in apps?
+A: **SCIM**.
+
+Q: What is the System Log?
+A: Okta's record of events such as sign-ins, policy decisions and admin changes.
+```
 
 ## Sources
 

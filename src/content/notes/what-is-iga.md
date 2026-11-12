@@ -52,11 +52,30 @@ Regulations and audits (financial, health, privacy) expect organizations to show
 
 My background includes a bank (Banco do Brasil) and enterprise healthcare SaaS that handles sensitive health information (QHR Technologies). Both are highly regulated, and IGA is how regulated organizations show their access controls are working.
 
-## Check yourself
+## Flashcards
 
-1. In one sentence, how is IGA different from access management?
-2. Name the three lifecycles Microsoft uses.
-3. What does SailPoint call an access review?
+```flashcards
+Q: What is IGA?
+A: The processes and tools that control how access is granted, reviewed and removed, and that produce evidence the controls work.
+
+Q: How is IGA different from access management?
+A: Access management asks "can this sign-in succeed now?". IGA asks "is this access still right, and can we prove it?".
+
+Q: Name the three lifecycles Microsoft uses.
+A: The **identity lifecycle**, the **access lifecycle** and **privileged access**.
+
+Q: What does SailPoint call an access review?
+A: A **certification** (run as a campaign).
+
+Q: Which Entra feature handles access requests?
+A: **Entitlement management** (access packages).
+
+Q: Which SailPoint feature is closest to Entra PIM?
+A: **Privilege on Demand**.
+
+Q: Which NIST control expects account approvals and periodic review?
+A: **AC-2**.
+```
 
 ## Sources
 

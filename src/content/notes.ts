@@ -1,4 +1,4 @@
-import { Marked, type Tokens } from 'marked';
+import { Lexer, Marked, type Tokens } from 'marked';
 import { roadmap } from './notes-roadmap';
 
 /**
@@ -13,6 +13,10 @@ import { roadmap } from './notes-roadmap';
  *
  * The file name is the topic's slug in notes-roadmap.ts: oidc.md is /notes/oidc.
  * The roadmap decides each note's area and order.
+ *
+ * A fenced block with the language "flashcards" becomes a set of cards. Cards
+ * are separated by a blank line; each has a "Q:" line and an "A:" line (the
+ * answer may continue on the next lines). Inline Markdown works in both.
  */
 
 export interface Note {
@@ -58,10 +62,46 @@ const escapeAttribute = (value: string) =>
 
 type RendererThis = { parser: { parseInline: (tokens: Tokens.Generic[]) => string } };
 
+interface Flashcard {
+  question: string;
+  answer: string;
+}
+
+function parseFlashcards(text: string): Flashcard[] {
+  return text
+    .split(/\n\s*\n/)
+    .map((block) => /^Q:\s*([\s\S]+?)\n\s*A:\s*([\s\S]+)$/.exec(block.trim()))
+    .filter((match): match is RegExpExecArray => match !== null)
+    .map((match) => ({ question: match[1].trim(), answer: match[2].replace(/\s*\n\s*/g, ' ').trim() }));
+}
+
+/** Native <details> cards: keyboard and screen-reader friendly, and no script needed under the CSP. */
+function renderFlashcards(cards: Flashcard[], inline: (source: string) => string): string {
+  const items = cards
+    .map(
+      (card) =>
+        `<li><details class="flashcard"><summary class="flashcard__question">${inline(card.question)}` +
+        `<span class="flashcard__toggle" aria-hidden="true"><span class="flashcard__show">Show answer</span>` +
+        `<span class="flashcard__hide">Hide answer</span></span></summary>` +
+        `<div class="flashcard__answer">${inline(card.answer)}</div></details></li>`,
+    )
+    .join('');
+  return (
+    `<div class="flashcards"><p class="flashcards__hint">Answer in your head first, then open a card to check.</p>` +
+    `<ol class="flashcards__list">${items}</ol></div>\n`
+  );
+}
+
 function render(body: string): string {
   const used = new Set<string>();
   const marked = new Marked({
     renderer: {
+      code(this: RendererThis, { text, lang }: Tokens.Code) {
+        if (lang !== 'flashcards') return false;
+        const cards = parseFlashcards(text);
+        if (cards.length === 0) return false;
+        return renderFlashcards(cards, (source) => this.parser.parseInline(Lexer.lexInline(source) as Tokens.Generic[]));
+      },
       // External links open in a new tab, like components/ExternalLink.tsx.
       // Links between notes (/notes/...) keep marked's default output.
       link(this: RendererThis, { href, title, tokens }: Tokens.Link) {

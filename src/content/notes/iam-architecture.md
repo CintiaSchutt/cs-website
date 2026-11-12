@@ -56,11 +56,30 @@ This matches NIST SP 800-207's zero trust model: the IdP and policy engine decid
 
 Microsoft's Entra architecture documentation describes this kind of setup, and its "secure introduction" series explains how to isolate resources and delegate administration.
 
-## Check yourself
+## Flashcards
 
-1. Where does the user's identity *originate* in a well-run organization?
-2. Which component enforces "require MFA from unknown locations"?
-3. Name two things that sit "around everything" rather than in the sign-in path.
+```flashcards
+Q: Where should a user's identity originate in a well-run organization?
+A: In the **HR system**, the source of truth.
+
+Q: What does the directory do?
+A: Stores identities, groups and attributes.
+
+Q: What does the policy engine decide?
+A: Whether to allow, block or "require more" (for example MFA) at sign-in.
+
+Q: How do apps get accounts created and removed automatically?
+A: Through **provisioning**, often with SCIM.
+
+Q: What sits "around everything" rather than in the sign-in path?
+A: Governance, privileged access, logs and monitoring, and automation.
+
+Q: Describe a sign-in, end to end.
+A: The app redirects to the IdP, the IdP authenticates the user, the policy engine checks signals, the IdP issues tokens, the API validates the token and checks authorization, and every step is logged.
+
+Q: In NIST SP 800-207 terms, which parts decide and which enforce?
+A: The IdP and policy engine **decide**. The app and API **enforce**.
+```
 
 ## Sources
 

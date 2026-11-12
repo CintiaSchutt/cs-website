@@ -40,11 +40,36 @@ AD user  jdoe  (objectGUID …)  ──sync──►  Entra user  jdoe@contoso.c
 - The sync server is a tier-0 asset: it can change identities in both places. Protect it like a domain controller.
 - Leavers must be disabled in AD *and* the change must sync. Know your sync interval when timing matters.
 
-## Check yourself
+## Flashcards
 
-1. Where is the password checked with PTA?
-2. Why does Microsoft recommend cloud-only accounts for cloud admins?
-3. What is the default Connect Sync interval?
+```flashcards
+Q: What is hybrid identity?
+A: One identity across on-premises and cloud apps, usually by syncing AD to Entra ID and choosing how cloud sign-ins are authenticated.
+
+Q: Name the two sync tools.
+A: **Microsoft Entra Connect Sync** and **Microsoft Entra Cloud Sync**.
+
+Q: What is Connect Sync's default sync interval?
+A: Every **30 minutes**.
+
+Q: Name the three authentication methods.
+A: **Password hash synchronization** (PHS), **pass-through authentication** (PTA) and **federation** (for example AD FS).
+
+Q: Where is the password checked with PTA?
+A: **On-premises**, by agents that check it against AD.
+
+Q: Which feature needs PHS whatever sign-in method you choose?
+A: ID Protection's **leaked credentials** report.
+
+Q: Where are synced attributes edited?
+A: In **AD**, the source of authority, not in Entra.
+
+Q: Why does Microsoft recommend cloud-only accounts for cloud admins?
+A: So an on-premises compromise can't take over cloud admin through synchronization.
+
+Q: Why is the sync server a tier-0 asset?
+A: It can change identities in both places. Protect it like a domain controller.
+```
 
 ## Sources
 

@@ -51,11 +51,36 @@ CISA's model (version 2.0) organizes the work into five pillars: **Identity**, *
 - Standing admin access is a favourite target. Time-bound access reduces the window.
 - Least privilege also applies to app permissions: request the smallest OAuth scopes that work.
 
-## Check yourself
+## Flashcards
 
-1. Name the three dimensions of least privilege used in this note.
-2. What does the policy enforcement point do in NIST's model?
-3. Which CISA pillar is most directly about IAM?
+```flashcards
+Q: What is least privilege?
+A: Each user or process gets only the access it needs for its task. In NIST SP 800-53 it is control **AC-6**.
+
+Q: Name the three dimensions of least privilege in this note.
+A: **What** (the narrowest permission), **where** (the smallest scope) and **when** (only while needed).
+
+Q: What is zero trust, in one sentence?
+A: No request is trusted automatically because of its network location: each one is checked.
+
+Q: Name two NIST SP 800-207 zero trust tenets.
+A: For example: access is granted **per session**, access is decided by **dynamic policy**, and all communication is secured **no matter where it comes from**.
+
+Q: What do the policy engine, policy administrator and policy enforcement point do?
+A: The **PE** decides, the **PA** carries out the decision, and the **PEP** sits in front of the resource and enforces it.
+
+Q: What are Microsoft's three zero trust principles?
+A: **Verify explicitly**, **use least privilege access** and **assume breach**.
+
+Q: Name the five pillars of CISA's Zero Trust Maturity Model.
+A: **Identity**, **Devices**, **Networks**, **Applications and Workloads**, and **Data**.
+
+Q: Name CISA's four maturity stages.
+A: **Traditional**, **Initial**, **Advanced** and **Optimal**.
+
+Q: What is "blast radius"?
+A: How much damage a stolen account can do. Least privilege limits it.
+```
 
 ## Sources
 

@@ -73,11 +73,42 @@ Not every access token is a JWT. Some are *opaque* references that the API check
 - DPoP (RFC 9449) is one way to *sender-constrain* tokens, so a stolen token is useless without the client's key.
 - Decoding a token to debug it is fine. Microsoft points to `jwt.ms`. Don't paste production tokens into sites you don't trust.
 
-## Check yourself
+## Flashcards
 
-1. Can anyone read the payload of a signed JWT?
-2. Why should a client app not parse its access token?
-3. What is the first thing an API should check about `alg`?
+```flashcards
+Q: What is a claim?
+A: One statement inside a token.
+
+Q: What are the three parts of a JWT?
+A: `header.payload.signature`, each base64url-encoded.
+
+Q: Can anyone read the payload of a signed JWT?
+A: Yes. Base64url is encoding, not encryption. The signature only proves the token wasn't changed.
+
+Q: Name the registered claims from RFC 7519.
+A: `iss`, `sub`, `aud`, `exp`, `nbf`, `iat` and `jti`.
+
+Q: What do the Entra claims `tid`, `oid`, `scp` and `roles` carry?
+A: The tenant, the user's object ID, delegated scopes, and app roles or application permissions.
+
+Q: Who should read an access token?
+A: **Only the API.** Microsoft says clients should treat it as an opaque string.
+
+Q: How can an API check an opaque access token?
+A: With the authorization server's **introspection** endpoint (RFC 7662).
+
+Q: What is the first rule about `alg` when validating a JWT?
+A: Allow only the algorithms you expect, and never accept `alg: none`.
+
+Q: How does an API find the right key to verify a signature?
+A: From the issuer's published **JWKS**, chosen by the token's `kid`.
+
+Q: What are Microsoft Entra's default access and refresh token lifetimes?
+A: Access tokens: a random 60 to 90 minutes. Refresh tokens: 24 hours for single-page apps, 90 days for most other cases.
+
+Q: What does DPoP (RFC 9449) do?
+A: It sender-constrains tokens, so a stolen token is useless without the client's key.
+```
 
 ## Sources
 
