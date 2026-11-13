@@ -28,3 +28,8 @@ docs/
 
 # Instructions for Claude Code (kept on this computer only)
 CLAUDE.md
+
+# Local secrets (keep .env.example as the template)
+.env
+.env.*
+!.env.example
